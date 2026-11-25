@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    
+    <title>Nix Ecommerce | Users Activity</title>
+    <!-- HTML5 Shim and Respond.js IE10 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 10]>
+        <script src="../../public/dist/js/respond.min.js"></script>
+    <![endif]-->
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="keywords" content="RoverCRM, perfex, invoice, pos, point of sale, lead, quotation, task, project, support, ticket, crm, hrm, inventory, zohocrm, kanban, customer relationship management, sales, customer, supplier, user, item, variant, laravel, hrsale, woocommerce crm, ecommerce crm, appointment, email template, sms template, url shortner, staff management, timesheet, payroll, project manager, payment, asset management, logistic, human resource, activity">
+<meta name="author" content="demo.nix-ecommerce.nixecommerce.net">
+<meta name="description" content="">    <!-- Favicon icon -->
+                <link rel='shortcut icon' href="../../public/uploads/20221108/08baa7c9b296a9354e9e2748987bec91.ico" type='image/x-icon' />
+        <link rel="stylesheet" href="../../public/datta-able/fonts/fontawesome/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="../../public/datta-able/fonts/material/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="../../public/datta-able/fonts/flag/css/flag-icon.min.css">
+    <link rel="stylesheet" href="../../public/datta-able/plugins/animation/css/animate.min.css">
+
+    <!-- vendor css -->
+    <link rel="stylesheet" href="../../public/datta-able/plugins/bootstrap-v5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../public/datta-able/css/style.min.css">
+    <link rel="stylesheet" href="../../public/datta-able/fonts/feather/css/feather.min.css">
+    <link rel="stylesheet" href="../../public/datta-able/plugins/jquery-scrollbar/css/jquery.scrollbar.min.css">
+    <link rel="stylesheet" href="../../public/datta-able/fonts/datta/datta-icon.min.css">
+    <link rel="stylesheet" href="../../public/datta-able/plugins/jquery-scrollbar/css/perfect-scrollbar.min.css">
+
+    <link rel="stylesheet" href="../../public/dist/css/custom.min.css">
+    <link rel="stylesheet" href="../../public/dist/css/admin-ui.min.css">
+    <link rel="stylesheet" href="../../public/dist/css/role.min.css">
+    
+    <link rel="stylesheet" href="../../public/datta-able/plugins/select2/css/select2.min.css">
+
+    <!--Custom CSS that was written on view-->
+
+    
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="../../public/dist/css/user-list.min.css">
+    <link rel="stylesheet" href="../../public/dist/css/user-activity-list.min.css">
+    <link rel="stylesheet" href="../../public/dist/css/mv-common.min.css">
+    <link rel="stylesheet" href="../../public/dist/css/mv-table.min.css">
+
+    
+    
+    <!-- Theme style RTL -->
+                <script src="../../public/js/lang/en.js"></script>
+        <script type="text/javascript">
+        'use strict';
+        var APP_ROOT = new URL('../../', window.location.href).href.replace(/\/$/, '');
+        var BASE_URL = window.BASE_URL = window.BASE_URL || APP_ROOT;
+        var SITE_URL = APP_ROOT + "/admin";
+        var ADMIN_SITE_URL = APP_ROOT + "/admin";
+        var currencySymbol = '$';
+        var token = 'YfXguxfpniJmtoyGelVtxtq4F6tqvN5pzDagt4i9';
+        var decimal_digits = '2';
+        var thousand_separator = ',';
+        var symbol_position = 'before';
+        var dateFormat = 'dd-mm-yyyy';
+        var app_locale_url = "../../resources/lang/en.json";
+        var row_per_page = '25';
+        var language_direction = 'ltr';
+        var summernote_regex = /<\/*(?:applet|b(?:ase|gsound|link)|embed|frame(?:set)?|ilayer|l(?:ayer|ink)|meta|object|s(?:cript|tyle)|t(?:itle|extarea)|xml)[^>]*?>/gi;
+        window.PHONE_INPUT_CONFIG = {
+        utilJs: "../../public/dist/js/intl-tel-input/utils.min.js",
+        defaultCountryCode: "bd",
+        onlyCountries: []    };
+    var defaultCountryCode = "bd";
+    var allowedPhoneCountryCodes = [];
+    var utilJs = "../../public/dist/js/intl-tel-input/utils.min.js";
+    </script>
+
+    <!-- Required Js -->
+    <script src="../../public/datta-able/plugins/bootstrap-v5/js/popper.min.js"></script>
+    <script src="../../public/datta-able/plugins/bootstrap-v5/js/jquery.min.js"></script>
+    <script src="../../public/dist/js/custom/admin-static-bridge.js"></script>
+    <script src="../../public/datta-able/plugins/bootstrap-v5/js/slim.min.js"></script>
+    <script src="../../public/datta-able/plugins/bootstrap-v5/js/bootstrap.min.js"></script>
+
+    
+</head>
+
+
+<body >
+        <!-- [ Pre-loader ] start -->
+    <div class="loader-bg">
+        <div class="loader-track">
+            <div class="loader-fill"></div>
+        </div>
+    </div>
+    <!-- [ Pre-loader ] End -->
+
+    <!-- [ navigation menu ] start -->
+    
+    <nav class="pcoded-navbar admin-sidebar">
+    <div class="navbar-wrapper">
+        <div class="navbar-brand header-logo">
+            <a href="../../admin/dashboard.html" class="b-brand">
+                                <img class="admin-panel-header-logo" src="../../public/uploads/20221108/20d20c52d903d8d09681b6143df36fbf.png" alt="Nix Ecommerce">
+            </a>
+            <a class="mobile-menu" id="mobile-collapse" href="javascript:void(0)"><span></span></a>
+        </div>
+        <div class="navbar-content scroll-div">
+            <ul class="nav pcoded-inner-navbar">
+                                                                        <li data-username="form elements advance componant validation masking wizard picker select" class=" nav-item  ">
+                        <a href='../../admin/dashboard.html' class="nav-link"><span class="pcoded-micon"><i class="fas fa-home"></i></span><span class="pcoded-mtext">Dashboard</span></a>
+                                            </li>
+                                                        <li data-username="form elements advance componant validation masking wizard picker select" class=" nav-item  pcoded-hasmenu  pcoded-trigger active">
+                        <a href='javascript:' class="nav-link"><span class="pcoded-micon"><i class="fas fa-users"></i></span><span class="pcoded-mtext">Personnel</span></a>
+                                                    <ul class="pcoded-submenu sub-menu-custom">
+                                                                    <li class="">
+                                        <a href="../../admin/user/create.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Add User</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../admin/user/list.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>All Users</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../admin/user/customer--role=3.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Customers</a>
+                                    </li>
+                                                                    <li class="active">
+                                        <a href="../../admin/user/activity.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Login Activities</a>
+                                    </li>
+                                                            </ul>
+                                            </li>
+                                                        <li data-username="form elements advance componant validation masking wizard picker select" class=" nav-item  pcoded-hasmenu  ">
+                        <a href='javascript:' class="nav-link"><span class="pcoded-micon"><i class="fas fa-cube"></i></span><span class="pcoded-mtext">Products</span></a>
+                                                    <ul class="pcoded-submenu sub-menu-custom">
+                                                                    <li class="">
+                                        <a href="../../admin/product/create.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Add Product</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../admin/products.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>All Products</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../admin/pending/products--status=Pending-Review.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Pending Products</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../admin/categories.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Categories</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../admin/brands.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Brands</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../admin/attributes.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Attributes</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../admin/reviews.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Reviews</a>
+                                    </li>
+                                                            </ul>
+                                            </li>
+                                                        <li data-username="form elements advance componant validation masking wizard picker select" class=" nav-item  pcoded-hasmenu  ">
+                        <a href='javascript:' class="nav-link"><span class="pcoded-micon"><i class="fas fa-table"></i></span><span class="pcoded-mtext">Inventory</span></a>
+                                                    <ul class="pcoded-submenu sub-menu-custom">
+                                                                    <li class="">
+                                        <a href="../../admin/inventory/location.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Location</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../admin/inventory/supplier.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Supplier</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../admin/inventory/purchase-order.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Purchase Order</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../admin/inventory.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Stock</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../admin/inventory/transfer.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Transfer</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../admin/inventory/transaction.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Transaction</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../admin/inventory/settings.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Settings</a>
+                                    </li>
+                                                            </ul>
+                                            </li>
+                                                        <li data-username="form elements advance componant validation masking wizard picker select" class=" nav-item  pcoded-hasmenu  ">
+                        <a href='javascript:' class="nav-link"><span class="pcoded-micon"><i class="fas fa-barcode"></i></span><span class="pcoded-mtext">Barcode</span></a>
+                                                    <ul class="pcoded-submenu sub-menu-custom">
+                                                                    <li class="">
+                                        <a href="../../admin/barcode/product.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Product</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../admin/barcode/settings.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Settings</a>
+                                    </li>
+                                                            </ul>
+                                            </li>
+                                                        <li data-username="form elements advance componant validation masking wizard picker select" class=" nav-item  pcoded-hasmenu  ">
+                        <a href='javascript:' class="nav-link"><span class="pcoded-micon"><i class="fas fa-shopping-bag"></i></span><span class="pcoded-mtext">Orders</span></a>
+                                                    <ul class="pcoded-submenu sub-menu-custom">
+                                                                    <li class="">
+                                        <a href="../../admin/orders.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>All Orders</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../admin/transactions.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Transactions</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../admin/refund-requests.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Refunds</a>
+                                    </li>
+                                                            </ul>
+                                            </li>
+                                                        <li data-username="form elements advance componant validation masking wizard picker select" class=" nav-item  pcoded-hasmenu  ">
+                        <a href='javascript:' class="nav-link"><span class="pcoded-micon"><i class="fas fa-user-plus"></i></span><span class="pcoded-mtext">Vendors</span></a>
+                                                    <ul class="pcoded-submenu sub-menu-custom">
+                                                                    <li class="">
+                                        <a href="../../admin/vendors/create.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Add Vendor</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../admin/vendors.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>All Vendors</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../admin/customers.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Customers</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../admin/withdrawals.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Withdrawals</a>
+                                    </li>
+                                                            </ul>
+                                            </li>
+                                                        <li data-username="form elements advance componant validation masking wizard picker select" class=" nav-item  pcoded-hasmenu  ">
+                        <a href='javascript:' class="nav-link"><span class="pcoded-micon"><i class="fab fa-blogger-b"></i></span><span class="pcoded-mtext">Blogs</span></a>
+                                                    <ul class="pcoded-submenu sub-menu-custom">
+                                                                    <li class="">
+                                        <a href="../../admin/blog/create.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Add Post</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../admin/blogs.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>All Posts</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../admin/blog/category/list.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Categories</a>
+                                    </li>
+                                                            </ul>
+                                            </li>
+                                                        <li data-username="form elements advance componant validation masking wizard picker select" class=" nav-item  pcoded-hasmenu  ">
+                        <a href='javascript:' class="nav-link"><span class="pcoded-micon"><i class="fas fa-bullhorn"></i></span><span class="pcoded-mtext">Marketing</span></a>
+                                                    <ul class="pcoded-submenu sub-menu-custom">
+                                                                    <li class="">
+                                        <a href="../../admin/coupon/create.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Add Coupon</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../admin/coupons.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>All Coupons</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../admin/coupon-redeems.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Coupon Redeems</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../admin/popup/create.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Add Popup</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../admin/popups.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>All Popups</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../admin/subscribers.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>All Subscribers</a>
+                                    </li>
+                                                            </ul>
+                                            </li>
+                                                        <li data-username="form elements advance componant validation masking wizard picker select" class=" nav-item  pcoded-hasmenu  ">
+                        <a href='javascript:' class="nav-link"><span class="pcoded-micon"><i class="fa fa-truck"></i></span><span class="pcoded-mtext">Delivery Boy</span></a>
+                                                    <ul class="pcoded-submenu sub-menu-custom">
+                                                                    <li class="">
+                                        <a href="../../admin/delivery/carrier/create.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Add Delivery Boy</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../admin/delivery/carrier.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>All Delivery Boy</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../admin/delivery/withdrawal.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Withdrawals</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../admin/delivery/settings.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Settings</a>
+                                    </li>
+                                                            </ul>
+                                            </li>
+                                                        <li data-username="form elements advance componant validation masking wizard picker select" class=" nav-item  ">
+                        <a href='../../admin/menu-builder.html' class="nav-link"><span class="pcoded-micon"><i class="fas fa-bars"></i></span><span class="pcoded-mtext">Menus</span></a>
+                                            </li>
+                                                        <li data-username="form elements advance componant validation masking wizard picker select" class=" nav-item  pcoded-hasmenu  ">
+                        <a href='javascript:' class="nav-link"><span class="pcoded-micon"><i class="fas fa-window-restore"></i></span><span class="pcoded-mtext">Forms</span></a>
+                                                    <ul class="pcoded-submenu sub-menu-custom">
+                                                                    <li class="">
+                                        <a href="../../admin/forms.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>All Forms</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../admin/forms/submissions.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>All Submissions</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../admin/forms/kyc-form.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>KYC</a>
+                                    </li>
+                                                            </ul>
+                                            </li>
+                                                        <li data-username="form elements advance componant validation masking wizard picker select" class=" nav-item  pcoded-hasmenu  ">
+                        <a href='javascript:' class="nav-link"><span class="pcoded-micon"><i class="fas fa-globe"></i></span><span class="pcoded-mtext">Website Setup</span></a>
+                                                    <ul class="pcoded-submenu sub-menu-custom">
+                                                                    <li class="">
+                                        <a href="../../admin/sliders.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>All Sliders</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../admin/page/home/list.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Home Pages</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../admin/page/list.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Pages</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../admin/theme/list.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Appearance</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../admin/auth/layouts.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Authentication Layout</a>
+                                    </li>
+                                                            </ul>
+                                            </li>
+                                                        <li data-username="form elements advance componant validation masking wizard picker select" class=" nav-item  ">
+                        <a href='../../admin/uploaded-files.html' class="nav-link"><span class="pcoded-micon"><i class="fas fa-folder-open"></i></span><span class="pcoded-mtext">Media Manager</span></a>
+                                            </li>
+                                                        <li data-username="form elements advance componant validation masking wizard picker select" class=" nav-item  pcoded-hasmenu  ">
+                        <a href='javascript:' class="nav-link"><span class="pcoded-micon"><i class="fas fa-ticket-alt"></i></span><span class="pcoded-mtext">Support Tickets</span></a>
+                                                    <ul class="pcoded-submenu sub-menu-custom">
+                                                                    <li class="">
+                                        <a href="../../admin/ticket/add.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Add Ticket</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../admin/ticket/list.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>All Tickets</a>
+                                    </li>
+                                                            </ul>
+                                            </li>
+                                                        <li data-username="form elements advance componant validation masking wizard picker select" class=" nav-item  pcoded-hasmenu  ">
+                        <a href='javascript:' class="nav-link"><span class="pcoded-micon"><i class="fas fa-cogs"></i></span><span class="pcoded-mtext">Tools</span></a>
+                                                    <ul class="pcoded-submenu sub-menu-custom">
+                                                                    <li class="">
+                                        <a href="../../admin/otp-logs.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>OTP Log</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../admin/imports.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Import</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../admin/exports.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Export</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../admin/notifications/log.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Notification Log</a>
+                                    </li>
+                                                            </ul>
+                                            </li>
+                                                        <li data-username="form elements advance componant validation masking wizard picker select" class=" nav-item  pcoded-hasmenu  ">
+                        <a href='javascript:' class="nav-link"><span class="pcoded-micon"><i class="fas fa-cog"></i></span><span class="pcoded-mtext">Configurations</span></a>
+                                                    <ul class="pcoded-submenu sub-menu-custom">
+                                                                    <li class="">
+                                        <a href="../../admin/general-setting.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>General Settings</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../admin/order-setting.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Orders</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../admin/product-setting.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Products</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../admin/settings/currency.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Currencies</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../admin/shippings.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Shipping</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../admin/taxes.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Taxes</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../admin/account-setting.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Accounts</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../admin/email-setting.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Emails</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../admin/sms/configs.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Sms</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../admin/custom-fields.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Custom Fields</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../admin/geolocale.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Geo Locale</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../admin/system-info.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>System Info</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../admin/system-update.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>System Update</a>
+                                    </li>
+                                                            </ul>
+                                            </li>
+                                                        <li data-username="form elements advance componant validation masking wizard picker select" class=" nav-item  ">
+                        <a href='../../admin/advance-reports.html' class="nav-link"><span class="pcoded-micon"><i class="fas fa-chart-bar"></i></span><span class="pcoded-mtext">Advance Reports</span></a>
+                                            </li>
+                                                        <li data-username="form elements advance componant validation masking wizard picker select" class=" nav-item  ">
+                        <a href='../../admin/reports.html' class="nav-link"><span class="pcoded-micon"><i class="fas fa-chart-bar"></i></span><span class="pcoded-mtext">Reports</span></a>
+                                            </li>
+                                                        <li data-username="form elements advance componant validation masking wizard picker select" class=" nav-item  ">
+                        <a href='../../admin/addons.html' class="nav-link"><span class="pcoded-micon"><i class="fas fa-plug"></i></span><span class="pcoded-mtext">Addon Manager</span></a>
+                                            </li>
+                            </ul>
+        </div>
+    </div>
+</nav>
+    <!-- [ navigation menu ] end -->
+
+    <!-- [ Header ] start -->
+    
+    <header class="navbar pcoded-header navbar-expand-lg navbar-light">
+        <div class="m-header header-background-color">
+        <a class="mobile-menu" id="mobile-collapse1" href="javascript:"><span></span></a>
+        <a href="../../admin/dashboard.html" class="b-brand text-decoration-none">
+            <span class="b-title">Nix Ecommerce</span>
+        </a>
+    </div>
+    <a class="mobile-menu text-decoration-none" id="mobile-header" href="javascript:">
+        <i class="feather icon-more-horizontal"></i>
+    </a>
+    <div class="collapse navbar-collapse">
+        <ul class="navbar-nav d-flex flex-row flex-wrap nav-menu ltr:float-left ltr:me-auto ltr:ms-2 rtl:float-right rtl:ms-auto rtl:me-2">
+            <li class="ltr:ms-3 rtl:me-3 nav-parent nav-parent--mobile-sidebar d-lg-none">
+                <button type="button" class="mobile-sidebar-toggle-btn" id="mobile-sidebar-toggle-btn" aria-label="Toggle sidebar">
+                    <i class="feather icon-menu"></i>
+                    <span>Menu</span>
+                </button>
+            </li>
+            <li class="ltr:ms-3 rtl:me-3 nav-parent nav-parent--mobile-hide d-lg-none">
+                <button type="button" class="mobile-header-hide-btn" id="mobile-header-hide-btn" aria-label="Hide mobile header">
+                    <i class="feather icon-eye-off"></i>
+                    <span>Hide Header</span>
+                </button>
+            </li>
+                            
+                <li class="ltr:ms-3 rtl:me-3 nav-parent ">
+                    <a href="javascript:" class="full-screen text-decoration-none ltr:ps-2 rtl:pe-2" onclick="javascript:toggleFullScreen()"><i class="feather icon-maximize"></i></a>
+                </li>
+                            
+                <li class="ltr:ms-3 rtl:me-3 nav-parent ">
+                    <a class="d-flex align-items-center text-decoration-none" href="../../../frontend/index.html" target="_blank">
+                <i class="feather icon-globe"></i><span class="list-curent-color ltr:ms-2 rtl:me-2">Visit Site</span></a>
+                </li>
+                            
+                <li class="ltr:ms-3 rtl:me-3 nav-parent ">
+                    <a class="d-flex align-items-center text-decoration-none" href="../../admin/dashboard.html" target="_blank">
+                <i class="feather icon-external-link"></i><span class="ltr:ms-2 rtl:me-2 list-curent-color">Customer Panel</span></a>
+                </li>
+                            
+                <li class="ltr:ms-3 rtl:me-3 nav-parent ">
+                    <a class="d-flex align-items-center text-decoration-none" href="../../vendor/dashboard.html" target="_blank">
+                <i class="feather icon-external-link"></i><span class="ltr:ms-2 rtl:me-2 list-curent-color">Vendor Panel</span></a>
+                </li>
+                            
+                <li class="ltr:ms-3 rtl:me-3 nav-parent ">
+                    <div class="dropdown quick-dropdown">
+            <a class="dropdown-toggle" data-bs-toggle="dropdown" href="javascript:" title="Quick Links">
+                <i class="feather icon-sliders"></i>
+                <span class="ltr:ms-2 rtl:me-2 list-curent-color">Quick Links</span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right profile-notification quick-link" data-bs-popper="static">
+                <ul class="pro-body"><li><a href="../../admin/user/create.html" class="dropdown-item text-decoration-none" target="_self"><i class="feather icon-user-plus"></i>Add User</a></li><li><a href="../../admin/product/create.html" class="dropdown-item text-decoration-none" target="_self"><i class="feather icon-box"></i>Add Product</a></li><li><a href="../../admin/product-setting.html" class="dropdown-item text-decoration-none" target="_self"><i class="feather icon-settings"></i>Product Setting</a></li><li><a href="../../admin/shippings.html" class="dropdown-item text-decoration-none" target="_self"><i class="feather icon-map"></i>Shipping Setting</a></li><li><a href="../../admin/taxes.html" class="dropdown-item text-decoration-none" target="_self"><i class="feather icon-percent"></i>Tax Setting</a></li><li><a href="../../admin/orders.html" class="dropdown-item text-decoration-none" target="_self"><i class="feather icon-list"></i>Orders</a></li><li><a href="../../admin/coupons.html" class="dropdown-item text-decoration-none" target="_self"><i class="feather icon-tag"></i>Coupons</a></li><li><a href="../../admin/blog/create.html" class="dropdown-item text-decoration-none" target="_self"><i class="feather icon-file-text"></i>Add Blog</a></li><li><a href="../../admin/ticket/list.html" class="dropdown-item text-decoration-none" target="_self"><i class="feather icon-message-circle"></i>Tickets</a></li><li><a href="../../admin/reports.html" class="dropdown-item text-decoration-none" target="_self"><i class="feather icon-bar-chart-2"></i>Reports</a></li><li><a href="../../admin/dashboard.html" class="dropdown-item text-decoration-none" target="_self"><i class="feather icon-trash"></i>Clear Cache</a></li></ul>
+            </div>
+        </div>
+                </li>
+                    </ul>
+        <ul class="navbar-nav nav-icon ltr:ms-lg-auto ltr:ms-2 ltr:me-lg-2 rtl:me-lg-auto rtl:me-2 rtl:ms-lg-2">
+            <li class="header-icon-item header-icon-item--notification">
+                <div class="dropdown">
+                    <a class="dropdown-toggle header-notification-icon" href="#" data-bs-toggle="dropdown">
+                        <i class="icon feather icon-bell"></i>
+                        <span class="mobile-notification-count">1</span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-end notification">
+                        <div class="noti-head">
+                            <h6 class="d-inline-block m-b-0">Notifications</h6>
+                            <div class="float-right">
+                                <a href="../../admin/notifications/mark-as-read.html" class="m-r-10">mark all as read</a>
+                            </div>
+                        </div>
+                        <ul class="noti-body scroll-noti header-notification-body">
+                            
+                        </ul>
+                        <div class="noti-footer">
+                            <a href="../../admin/notifications.html">show all</a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            
+                            <li class="header-icon-item header-icon-item--language">
+                    <div class="dropdown">
+                        <a class="dropdown-toggle flag flag-icon-background flag-icon-gb" id="dropdown-flag" data-bs-toggle="dropdown" href="javascript:" ></a>
+                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-end notification">
+                            <div class="noti-head">
+                                <h6 class="d-inline-block m-b-0">Select Language</h6>
+                            </div>
+                            <ul class="noti-body scroll-noti">
+                                                                    <li class="notification">
+                                        <div class="media lang d-flex" id="en" data-shortname="en">
+                                            <img class="img-radius" src='../../public/datta-able/fonts/flag/flags/4x3/gb.svg' alt="en.jpg">
+                                            <div class="media-body">
+                                                <p><span>English</span></p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                                                    <li class="notification">
+                                        <div class="media lang d-flex" id="bn" data-shortname="bn">
+                                            <img class="img-radius" src='../../public/datta-able/fonts/flag/flags/4x3/bd.svg' alt="">
+                                            <div class="media-body">
+                                                <p><span>Bengali</span></p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                                                    <li class="notification">
+                                        <div class="media lang d-flex" id="fr" data-shortname="fr">
+                                            <img class="img-radius" src='../../public/datta-able/fonts/flag/flags/4x3/fr.svg' alt="">
+                                            <div class="media-body">
+                                                <p><span>French</span></p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                                                    <li class="notification">
+                                        <div class="media lang d-flex" id="zh" data-shortname="zh">
+                                            <img class="img-radius" src='../../public/datta-able/fonts/flag/flags/4x3/cn.svg' alt="">
+                                            <div class="media-body">
+                                                <p><span>Chinese</span></p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                                                    <li class="notification">
+                                        <div class="media lang d-flex" id="ar" data-shortname="ar">
+                                            <img class="img-radius" src='../../public/datta-able/fonts/flag/flags/4x3/sa.svg' alt="">
+                                            <div class="media-body">
+                                                <p><span>Arabic</span></p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                                                    <li class="notification">
+                                        <div class="media lang d-flex" id="be" data-shortname="be">
+                                            <img class="img-radius" src='../../public/datta-able/fonts/flag/flags/4x3/be.svg' alt="">
+                                            <div class="media-body">
+                                                <p><span>Byelorussian</span></p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                                                    <li class="notification">
+                                        <div class="media lang d-flex" id="bg" data-shortname="bg">
+                                            <img class="img-radius" src='../../public/datta-able/fonts/flag/flags/4x3/bg.svg' alt="">
+                                            <div class="media-body">
+                                                <p><span>Bulgarian</span></p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                                                    <li class="notification">
+                                        <div class="media lang d-flex" id="ca" data-shortname="ca">
+                                            <img class="img-radius" src='../../public/datta-able/fonts/flag/flags/4x3/es.svg' alt="">
+                                            <div class="media-body">
+                                                <p><span>Catalan</span></p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                                                    <li class="notification">
+                                        <div class="media lang d-flex" id="et" data-shortname="et">
+                                            <img class="img-radius" src='../../public/datta-able/fonts/flag/flags/4x3/ee.svg' alt="">
+                                            <div class="media-body">
+                                                <p><span>Estonian</span></p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                                                    <li class="notification">
+                                        <div class="media lang d-flex" id="nl" data-shortname="nl">
+                                            <img class="img-radius" src='../../public/datta-able/fonts/flag/flags/4x3/nl.svg' alt="">
+                                            <div class="media-body">
+                                                <p><span>Dutch</span></p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                                            </ul>
+                        </div>
+                    </div>
+                </li>
+                        <li class="ltr:me-2 rtl:ms-2 header-icon-item header-icon-item--settings">
+                <div class="dropdown drp-user">
+                    <a href="javascript:void(0)" class="dropdown-toggle text-decoration-none" data-bs-toggle="dropdown">
+                        <i class="icon feather icon-settings ltr:ms-0 rtl:me-0 f-20"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-end profile-notification">
+                        <div class="pro-head">
+                            <img src="../../public/uploads/20221010/f344eaaaa40173a23c693d1b4b24c794.webp" class="img-radius" alt="User-Profile-Image">
+                            <span>Agatha Williams</span>
+                            <a href="../../admin/login.html" class="dud-logout" title="Logout">
+                                <i class="feather icon-log-out"></i>
+                            </a>
+                        </div>
+                        <ul class="pro-body">
+                            <li><a href="../../admin/profile.html" class="dropdown-item text-decoration-none"><i class="feather icon-user"></i> Profile</a></li>
+                            <li><a href="../../admin/user/activity--userId=1.html" class="dropdown-item text-decoration-none"><i class="feather icon-activity"></i> Login Activities</a></li>
+                            <li><a href="../../admin/login.html" class="dropdown-item text-decoration-none"><i class="feather icon-lock"></i> Sign Out</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="notification-loader d-none">
+        <div class="d-flex justify-content-center align-items-center h-100">
+            <div class="spinner-grow w-40p h-40" role="status"></div>
+        </div>
+    </div>
+</header>
+
+        <!-- [ Header ] end -->
+
+    <!-- [ Main Content ] start -->
+    <div class="pcoded-main-container">
+        <div class="pcoded-wrapper">
+            <div class="pcoded-content">
+                <div class="pcoded-inner-content">
+                    <!-- [ breadcrumb ] start -->
+                    <div id="notifications" class="row no-print">
+    <div class="col-md-12">
+                <div class="noti-alert pad no-print mt-20p">
+                                                                                                        <div
+                        class="alert alert-danger fade show d-flex justify-content-between align-items-center mv-mt-16p mv-mb-0">
+                        <strong>Please configure SMTP setting to work all the email sending and related functionality. <a href=https://demo.nix-ecommerce.nixecommerce.net/admin/email-setting target='_blank'>Configure Now.</a></strong>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                                                                                            <div
+                        class="alert alert-info fade show d-flex justify-content-between align-items-center mv-mt-16p mv-mb-0">
+                        <strong>Demo resets every 4 hours. Before purchasing, Feel free to test all the features. Some features are disabled in demo.</strong>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                                    </div>
+        <div class="top-notification noti-alert pad no-print js-alert mt-20p d-none">
+            <div class="alert alert-success">
+                <strong class="alertText"></strong>
+                <button type="button" class="btn-close ltr:float-right rtl:float-left notification-close" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+                    <!-- [ breadcrumb ] end -->
+                    <div class="main-body">
+                        <div class="page-wrapper">
+                            <!-- [ Main Content ] start -->
+                                                        
+                            <div class="row">
+                                    <div class="col-sm-12 list-container mv-form-page mv-form-list-page mv-table-page mv-pb-24p" id="activity-list-container">
+        <div class="card">
+            <div class="card-header mv-table-header">
+                <div class="mv-table-header__title">
+                    <h1 class="mv-table-title">Users Activity</h1>
+                </div>
+                <div class="mv-table-header__actions card-header-right mv-table-toolbar">
+                    <div class="mv-table-toolbar__main">
+                        <div class="mv-table-toolbar__outlines">
+                            <button class="btn btn-square btn-light f-w-600 btn-sm mb-0 collapsed filterbtn ltr:me-1 rtl:ms-1 mv-table-btn-filter" type="button" data-bs-toggle="collapse" data-bs-target="#filterPanel" aria-expanded="false" aria-controls="filterPanel">
+            <span class="material-symbols-outlined mv-table-mat-icon" aria-hidden="true">tune</span>Filter
+    </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-block table-border-style mv-pb-24p mv-pt-0 mv-px-0">
+                <div class="mv-form-shell mv-mx-auto">
+                    <div class="mv-form-panel">
+                        <div class="mv-form-panel__body mv-pt-20p mv-px-24p mv-pb-8p">
+                            <div class="mv-form-fields mv-form-fields--embedded mv-m-0 mv-p-0">
+                                <div class="d-block mt-1 " data-table="" data-vendor_id="">
+            <span
+            class=" group-filter   active "
+            data-filter-key="log_name" data-filter-value="All">
+            All <span class="text-muted">(1686)</span>
+        </span>
+                    |
+                    <span
+            class=" group-filter  "
+            data-filter-key="log_name" data-filter-value="USER LOGIN">
+            User login <span class="text-muted">(1403)</span>
+        </span>
+                    |
+                    <span
+            class=" group-filter  "
+            data-filter-key="log_name" data-filter-value="USER LOGOUT">
+            User logout <span class="text-muted">(283)</span>
+        </span>
+            </div>
+
+                                <div class="collapse p-0" id="filterPanel"
+>
+    <div class="row my-2 g-2 align-items-stretch mv-filter-panel__row">
+        <div class="col-md-9">
+                                        <input
+    class="form-control inputFieldDesign" id="dataTableSearch" placeholder="Enter 3 characters to search" type="text" name="search">
+    
+                                    </div>
+                                    <div class="col-md-3 d-flex align-items-center">
+                                        <select class="select2 filter ajax_users" name="userId">
+                                            <option value="">All Users</option>
+                                        </select>
+                                    </div>
+    </div>
+</div>
+
+                                <div class="card-body p-0 user_activity_list mv-table-embed border-0 bg-transparent shadow-none">
+    <div class="card-block px-0">
+        <div class="col-sm-12">
+            <link rel="stylesheet" href="../../public/dist/plugins/Responsive-2.2.5/css/responsive.dataTables.min.css">
+ 
+<!-- daterange picker -->
+<link rel="stylesheet" href="../../public/dist/plugins/bootstrap-daterangepicker/daterangepicker.min.css">
+<link rel="stylesheet" href="../../public/dist/css/yajra-custom.min.css">
+
+<div class="table-responsive yajra-data-table-main">
+    <table class="table table-bordered dt-responsive" id="dataTableBuilder" width="100%" cellspacing="0"><thead><tr><th title="Type">Type</th><th title="Description">Description</th><th title="User">User</th><th title="Browser">Browser</th><th title="Platform" width="5%">Platform</th><th title="IP">IP</th><th title="Logged at">Logged at</th><th title="" width="5%"></th></tr></thead></table>
+</div>
+
+<script src="../../public/dist/plugins/DataTables-1.10.21/js/jquery.dataTablesCus.min.js"></script>
+<script src="../../public/dist/plugins/Responsive-2.2.5/js/dataTables.responsive.min.js"></script>
+
+<script type="text/javascript">document.addEventListener("DOMContentLoaded",function(){window.LaravelDataTables=window.LaravelDataTables||{};window.LaravelDataTables["dataTableBuilder"]=$("#dataTableBuilder").DataTable({"serverSide":false,"processing":false,"data":[{"id":3,"log_name":"LOGIN","description":"Login successful","subject_type":null,"subject_id":null,"event":null,"causer_type":"App\\Models\\User","causer_id":1,"properties":{"url":"https://demo.nix-ecommerce.nixecommerce.net/admin/authenticate","method":"POST","status":"success","browser":"Chrome","platform":"Windows","ip_address":"197.211.53.80","user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36","browser_version":"146.0.0.0"},"batch_uuid":null,"created_at":"9-4-2026 9:20 PM","updated_at":"2026-04-09T13:20:26.000000Z","causer":"<a href=\"../../admin/user/edit/1.html\">Agatha Williams</a>","browser":"Chrome 146.0.0.0","platform":"Windows","ip":"197.211.53.80","action":"<form method=\"post\" action=\"https://demo.nix-ecommerce.nixecommerce.net/admin/user/activity/delete/3\" id=\"delete-data-3\" accept-charset=\"UTF-8\" class=\"display_inline\">\n    <input type=\"hidden\" name=\"_token\" value=\"YfXguxfpniJmtoyGelVtxtq4F6tqvN5pzDagt4i9\" autocomplete=\"off\">    <input type=\"hidden\" name=\"_method\" value=\"POST\">\n\n            <a title=\"Trash\" class=\"action-icon confirm-delete \" type=\"button\" data-id=\"3\" data-delete=\"data\" data-label=\"Delete\" data-bs-toggle=\"modal\" data-bs-target=\"#confirmDelete\">\n            <i class=\"feather icon-trash\"></i>\n        </a>\n    </form>\n"},{"id":4,"log_name":"LOGIN","description":"Login successful","subject_type":null,"subject_id":null,"event":null,"causer_type":"App\\Models\\User","causer_id":1,"properties":{"url":"https://www.demo.nix-ecommerce.nixecommerce.net/admin/authenticate","method":"POST","status":"success","browser":"Chrome","platform":"Android","ip_address":"39.40.45.174","user_agent":"Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Mobile Safari/537.36","browser_version":"146.0.0.0"},"batch_uuid":null,"created_at":"10-4-2026 12:33 AM","updated_at":"2026-04-09T16:33:04.000000Z","causer":"<a href=\"../../admin/user/edit/1.html\">Agatha Williams</a>","browser":"Chrome 146.0.0.0","platform":"Android","ip":"39.40.45.174","action":"<form method=\"post\" action=\"https://demo.nix-ecommerce.nixecommerce.net/admin/user/activity/delete/4\" id=\"delete-data-4\" accept-charset=\"UTF-8\" class=\"display_inline\">\n    <input type=\"hidden\" name=\"_token\" value=\"YfXguxfpniJmtoyGelVtxtq4F6tqvN5pzDagt4i9\" autocomplete=\"off\">    <input type=\"hidden\" name=\"_method\" value=\"POST\">\n\n            <a title=\"Trash\" class=\"action-icon confirm-delete \" type=\"button\" data-id=\"4\" data-delete=\"data\" data-label=\"Delete\" data-bs-toggle=\"modal\" data-bs-target=\"#confirmDelete\">\n            <i class=\"feather icon-trash\"></i>\n        </a>\n    </form>\n"},{"id":5,"log_name":"LOGIN","description":"Login successful","subject_type":null,"subject_id":null,"event":null,"causer_type":"App\\Models\\User","causer_id":1,"properties":{"url":"https://demo.nix-ecommerce.nixecommerce.net/admin/authenticate","method":"POST","status":"success","browser":"Chrome","platform":"Windows","ip_address":"119.73.96.8","user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36","browser_version":"146.0.0.0"},"batch_uuid":null,"created_at":"10-4-2026 1:6 AM","updated_at":"2026-04-09T17:06:47.000000Z","causer":"<a href=\"../../admin/user/edit/1.html\">Agatha Williams</a>","browser":"Chrome 146.0.0.0","platform":"Windows","ip":"119.73.96.8","action":"<form method=\"post\" action=\"https://demo.nix-ecommerce.nixecommerce.net/admin/user/activity/delete/5\" id=\"delete-data-5\" accept-charset=\"UTF-8\" class=\"display_inline\">\n    <input type=\"hidden\" name=\"_token\" value=\"YfXguxfpniJmtoyGelVtxtq4F6tqvN5pzDagt4i9\" autocomplete=\"off\">    <input type=\"hidden\" name=\"_method\" value=\"POST\">\n\n            <a title=\"Trash\" class=\"action-icon confirm-delete \" type=\"button\" data-id=\"5\" data-delete=\"data\" data-label=\"Delete\" data-bs-toggle=\"modal\" data-bs-target=\"#confirmDelete\">\n            <i class=\"feather icon-trash\"></i>\n        </a>\n    </form>\n"},{"id":6,"log_name":"LOGIN","description":"Login successful","subject_type":null,"subject_id":null,"event":null,"causer_type":"App\\Models\\User","causer_id":1,"properties":{"url":"https://www.demo.nix-ecommerce.nixecommerce.net/admin/authenticate","method":"POST","status":"success","browser":"Chrome","platform":"Android","ip_address":"152.58.63.128","user_agent":"Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Mobile Safari/537.36","browser_version":"146.0.0.0"},"batch_uuid":null,"created_at":"10-4-2026 1:47 AM","updated_at":"2026-04-09T17:47:15.000000Z","causer":"<a href=\"../../admin/user/edit/1.html\">Agatha Williams</a>","browser":"Chrome 146.0.0.0","platform":"Android","ip":"152.58.63.128","action":"<form method=\"post\" action=\"https://demo.nix-ecommerce.nixecommerce.net/admin/user/activity/delete/6\" id=\"delete-data-6\" accept-charset=\"UTF-8\" class=\"display_inline\">\n    <input type=\"hidden\" name=\"_token\" value=\"YfXguxfpniJmtoyGelVtxtq4F6tqvN5pzDagt4i9\" autocomplete=\"off\">    <input type=\"hidden\" name=\"_method\" value=\"POST\">\n\n            <a title=\"Trash\" class=\"action-icon confirm-delete \" type=\"button\" data-id=\"6\" data-delete=\"data\" data-label=\"Delete\" data-bs-toggle=\"modal\" data-bs-target=\"#confirmDelete\">\n            <i class=\"feather icon-trash\"></i>\n        </a>\n    </form>\n"},{"id":7,"log_name":"LOGIN","description":"Login successful","subject_type":null,"subject_id":null,"event":null,"causer_type":"App\\Models\\User","causer_id":1,"properties":{"url":"https://demo.nix-ecommerce.nixecommerce.net/admin/authenticate","method":"POST","status":"success","browser":"Firefox","platform":"Windows","ip_address":"179.193.58.45","user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0","browser_version":"149.0"},"batch_uuid":null,"created_at":"10-4-2026 2:55 AM","updated_at":"2026-04-09T18:55:02.000000Z","causer":"<a href=\"../../admin/user/edit/1.html\">Agatha Williams</a>","browser":"Firefox 149.0","platform":"Windows","ip":"179.193.58.45","action":"<form method=\"post\" action=\"https://demo.nix-ecommerce.nixecommerce.net/admin/user/activity/delete/7\" id=\"delete-data-7\" accept-charset=\"UTF-8\" class=\"display_inline\">\n    <input type=\"hidden\" name=\"_token\" value=\"YfXguxfpniJmtoyGelVtxtq4F6tqvN5pzDagt4i9\" autocomplete=\"off\">    <input type=\"hidden\" name=\"_method\" value=\"POST\">\n\n            <a title=\"Trash\" class=\"action-icon confirm-delete \" type=\"button\" data-id=\"7\" data-delete=\"data\" data-label=\"Delete\" data-bs-toggle=\"modal\" data-bs-target=\"#confirmDelete\">\n            <i class=\"feather icon-trash\"></i>\n        </a>\n    </form>\n"},{"id":8,"log_name":"LOGIN","description":"Login successful","subject_type":null,"subject_id":null,"event":null,"causer_type":"App\\Models\\User","causer_id":1,"properties":{"url":"https://demo.nix-ecommerce.nixecommerce.net/authenticate","method":"POST","status":"success","browser":"Chrome","platform":"Windows","ip_address":"148.170.188.33","user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36","browser_version":"146.0.0.0"},"batch_uuid":null,"created_at":"10-4-2026 3:29 AM","updated_at":"2026-04-09T19:29:24.000000Z","causer":"<a href=\"../../admin/user/edit/1.html\">Agatha Williams</a>","browser":"Chrome 146.0.0.0","platform":"Windows","ip":"148.170.188.33","action":"<form method=\"post\" action=\"https://demo.nix-ecommerce.nixecommerce.net/admin/user/activity/delete/8\" id=\"delete-data-8\" accept-charset=\"UTF-8\" class=\"display_inline\">\n    <input type=\"hidden\" name=\"_token\" value=\"YfXguxfpniJmtoyGelVtxtq4F6tqvN5pzDagt4i9\" autocomplete=\"off\">    <input type=\"hidden\" name=\"_method\" value=\"POST\">\n\n            <a title=\"Trash\" class=\"action-icon confirm-delete \" type=\"button\" data-id=\"8\" data-delete=\"data\" data-label=\"Delete\" data-bs-toggle=\"modal\" data-bs-target=\"#confirmDelete\">\n            <i class=\"feather icon-trash\"></i>\n        </a>\n    </form>\n"},{"id":9,"log_name":"LOGIN","description":"Login successful","subject_type":null,"subject_id":null,"event":null,"causer_type":"App\\Models\\User","causer_id":1,"properties":{"url":"https://www.demo.nix-ecommerce.nixecommerce.net/authenticate","method":"POST","status":"success","browser":"Firefox","platform":"Windows","ip_address":"154.161.35.6","user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0","browser_version":"149.0"},"batch_uuid":null,"created_at":"10-4-2026 3:39 AM","updated_at":"2026-04-09T19:39:05.000000Z","causer":"<a href=\"../../admin/user/edit/1.html\">Agatha Williams</a>","browser":"Firefox 149.0","platform":"Windows","ip":"154.161.35.6","action":"<form method=\"post\" action=\"https://demo.nix-ecommerce.nixecommerce.net/admin/user/activity/delete/9\" id=\"delete-data-9\" accept-charset=\"UTF-8\" class=\"display_inline\">\n    <input type=\"hidden\" name=\"_token\" value=\"YfXguxfpniJmtoyGelVtxtq4F6tqvN5pzDagt4i9\" autocomplete=\"off\">    <input type=\"hidden\" name=\"_method\" value=\"POST\">\n\n            <a title=\"Trash\" class=\"action-icon confirm-delete \" type=\"button\" data-id=\"9\" data-delete=\"data\" data-label=\"Delete\" data-bs-toggle=\"modal\" data-bs-target=\"#confirmDelete\">\n            <i class=\"feather icon-trash\"></i>\n        </a>\n    </form>\n"},{"id":10,"log_name":"LOGIN","description":"Login successful","subject_type":null,"subject_id":null,"event":null,"causer_type":"App\\Models\\User","causer_id":1,"properties":{"url":"https://demo.nix-ecommerce.nixecommerce.net/admin/authenticate","method":"POST","status":"success","browser":"Chrome","platform":"Windows","ip_address":"27.147.200.181","user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36","browser_version":"146.0.0.0"},"batch_uuid":null,"created_at":"10-4-2026 4:59 AM","updated_at":"2026-04-09T20:59:12.000000Z","causer":"<a href=\"../../admin/user/edit/1.html\">Agatha Williams</a>","browser":"Chrome 146.0.0.0","platform":"Windows","ip":"27.147.200.181","action":"<form method=\"post\" action=\"https://demo.nix-ecommerce.nixecommerce.net/admin/user/activity/delete/10\" id=\"delete-data-10\" accept-charset=\"UTF-8\" class=\"display_inline\">\n    <input type=\"hidden\" name=\"_token\" value=\"YfXguxfpniJmtoyGelVtxtq4F6tqvN5pzDagt4i9\" autocomplete=\"off\">    <input type=\"hidden\" name=\"_method\" value=\"POST\">\n\n            <a title=\"Trash\" class=\"action-icon confirm-delete \" type=\"button\" data-id=\"10\" data-delete=\"data\" data-label=\"Delete\" data-bs-toggle=\"modal\" data-bs-target=\"#confirmDelete\">\n            <i class=\"feather icon-trash\"></i>\n        </a>\n    </form>\n"},{"id":11,"log_name":"LOGIN","description":"Login successful","subject_type":null,"subject_id":null,"event":null,"causer_type":"App\\Models\\User","causer_id":3,"properties":{"url":"https://www.demo.nix-ecommerce.nixecommerce.net/admin/authenticate","method":"POST","status":"success","browser":"Edge","platform":"Windows","ip_address":"38.172.40.14","user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0","browser_version":"146.0.0.0"},"batch_uuid":null,"created_at":"10-4-2026 3:12 PM","updated_at":"2026-04-10T07:12:30.000000Z","causer":"<a href=\"../../admin/user/edit/3.html\">Jamal</a>","browser":"Edge 146.0.0.0","platform":"Windows","ip":"38.172.40.14","action":"<form method=\"post\" action=\"https://demo.nix-ecommerce.nixecommerce.net/admin/user/activity/delete/11\" id=\"delete-data-11\" accept-charset=\"UTF-8\" class=\"display_inline\">\n    <input type=\"hidden\" name=\"_token\" value=\"YfXguxfpniJmtoyGelVtxtq4F6tqvN5pzDagt4i9\" autocomplete=\"off\">    <input type=\"hidden\" name=\"_method\" value=\"POST\">\n\n            <a title=\"Trash\" class=\"action-icon confirm-delete \" type=\"button\" data-id=\"11\" data-delete=\"data\" data-label=\"Delete\" data-bs-toggle=\"modal\" data-bs-target=\"#confirmDelete\">\n            <i class=\"feather icon-trash\"></i>\n        </a>\n    </form>\n"},{"id":12,"log_name":"LOGIN","description":"Login successful","subject_type":null,"subject_id":null,"event":null,"causer_type":"App\\Models\\User","causer_id":1,"properties":{"url":"https://www.demo.nix-ecommerce.nixecommerce.net/admin/authenticate","method":"POST","status":"success","browser":"Chrome","platform":"Windows","ip_address":"79.134.134.150","user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36","browser_version":"146.0.0.0"},"batch_uuid":null,"created_at":"10-4-2026 7:32 PM","updated_at":"2026-04-10T11:32:26.000000Z","causer":"<a href=\"../../admin/user/edit/1.html\">Agatha Williams</a>","browser":"Chrome 146.0.0.0","platform":"Windows","ip":"79.134.134.150","action":"<form method=\"post\" action=\"https://demo.nix-ecommerce.nixecommerce.net/admin/user/activity/delete/12\" id=\"delete-data-12\" accept-charset=\"UTF-8\" class=\"display_inline\">\n    <input type=\"hidden\" name=\"_token\" value=\"YfXguxfpniJmtoyGelVtxtq4F6tqvN5pzDagt4i9\" autocomplete=\"off\">    <input type=\"hidden\" name=\"_method\" value=\"POST\">\n\n            <a title=\"Trash\" class=\"action-icon confirm-delete \" type=\"button\" data-id=\"12\" data-delete=\"data\" data-label=\"Delete\" data-bs-toggle=\"modal\" data-bs-target=\"#confirmDelete\">\n            <i class=\"feather icon-trash\"></i>\n        </a>\n    </form>\n"},{"id":13,"log_name":"LOGIN","description":"Login successful","subject_type":null,"subject_id":null,"event":null,"causer_type":"App\\Models\\User","causer_id":1,"properties":{"url":"https://demo.nix-ecommerce.nixecommerce.net/admin/authenticate","method":"POST","status":"success","browser":"Safari","platform":"iPhone","ip_address":"151.243.25.215","user_agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 17_6_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.6 Mobile/15E148 Safari/604.1","browser_version":"17.6"},"batch_uuid":null,"created_at":"10-4-2026 8:54 PM","updated_at":"2026-04-10T12:54:39.000000Z","causer":"<a href=\"../../admin/user/edit/1.html\">Agatha Williams</a>","browser":"Safari 17.6","platform":"iPhone","ip":"151.243.25.215","action":"<form method=\"post\" action=\"https://demo.nix-ecommerce.nixecommerce.net/admin/user/activity/delete/13\" id=\"delete-data-13\" accept-charset=\"UTF-8\" class=\"display_inline\">\n    <input type=\"hidden\" name=\"_token\" value=\"YfXguxfpniJmtoyGelVtxtq4F6tqvN5pzDagt4i9\" autocomplete=\"off\">    <input type=\"hidden\" name=\"_method\" value=\"POST\">\n\n            <a title=\"Trash\" class=\"action-icon confirm-delete \" type=\"button\" data-id=\"13\" data-delete=\"data\" data-label=\"Delete\" data-bs-toggle=\"modal\" data-bs-target=\"#confirmDelete\">\n            <i class=\"feather icon-trash\"></i>\n        </a>\n    </form>\n"},{"id":14,"log_name":"LOGIN","description":"Login successful","subject_type":null,"subject_id":null,"event":null,"causer_type":"App\\Models\\User","causer_id":1,"properties":{"url":"https://www.demo.nix-ecommerce.nixecommerce.net/admin/authenticate","method":"POST","status":"success","browser":"Chrome","platform":"iPhone","ip_address":"174.201.96.77","user_agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 26_2_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/143.0.7499.151 Mobile/15E148 Safari/604.1","browser_version":"143.0.7499.151"},"batch_uuid":null,"created_at":"10-4-2026 10:38 PM","updated_at":"2026-04-10T14:38:28.000000Z","causer":"<a href=\"../../admin/user/edit/1.html\">Agatha Williams</a>","browser":"Chrome 143.0.7499.151","platform":"iPhone","ip":"174.201.96.77","action":"<form method=\"post\" action=\"https://demo.nix-ecommerce.nixecommerce.net/admin/user/activity/delete/14\" id=\"delete-data-14\" accept-charset=\"UTF-8\" class=\"display_inline\">\n    <input type=\"hidden\" name=\"_token\" value=\"YfXguxfpniJmtoyGelVtxtq4F6tqvN5pzDagt4i9\" autocomplete=\"off\">    <input type=\"hidden\" name=\"_method\" value=\"POST\">\n\n            <a title=\"Trash\" class=\"action-icon confirm-delete \" type=\"button\" data-id=\"14\" data-delete=\"data\" data-label=\"Delete\" data-bs-toggle=\"modal\" data-bs-target=\"#confirmDelete\">\n            <i class=\"feather icon-trash\"></i>\n        </a>\n    </form>\n"},{"id":15,"log_name":"LOGIN","description":"Login successful","subject_type":null,"subject_id":null,"event":null,"causer_type":"App\\Models\\User","causer_id":1,"properties":{"url":"https://www.demo.nix-ecommerce.nixecommerce.net/admin/authenticate","method":"POST","status":"success","browser":"Chrome","platform":"Macintosh","ip_address":"103.166.187.213","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36","browser_version":"146.0.0.0"},"batch_uuid":null,"created_at":"11-4-2026 2:33 AM","updated_at":"2026-04-10T18:33:09.000000Z","causer":"<a href=\"../../admin/user/edit/1.html\">Agatha Williams</a>","browser":"Chrome 146.0.0.0","platform":"Macintosh","ip":"103.166.187.213","action":"<form method=\"post\" action=\"https://demo.nix-ecommerce.nixecommerce.net/admin/user/activity/delete/15\" id=\"delete-data-15\" accept-charset=\"UTF-8\" class=\"display_inline\">\n    <input type=\"hidden\" name=\"_token\" value=\"YfXguxfpniJmtoyGelVtxtq4F6tqvN5pzDagt4i9\" autocomplete=\"off\">    <input type=\"hidden\" name=\"_method\" value=\"POST\">\n\n            <a title=\"Trash\" class=\"action-icon confirm-delete \" type=\"button\" data-id=\"15\" data-delete=\"data\" data-label=\"Delete\" data-bs-toggle=\"modal\" data-bs-target=\"#confirmDelete\">\n            <i class=\"feather icon-trash\"></i>\n        </a>\n    </form>\n"},{"id":16,"log_name":"LOGIN","description":"Login successful","subject_type":null,"subject_id":null,"event":null,"causer_type":"App\\Models\\User","causer_id":1,"properties":{"url":"https://demo.nix-ecommerce.nixecommerce.net/admin/authenticate","method":"POST","status":"success","browser":"Chrome","platform":"Windows","ip_address":"5.193.181.144","user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36","browser_version":"146.0.0.0"},"batch_uuid":null,"created_at":"11-4-2026 11:35 AM","updated_at":"2026-04-11T03:35:52.000000Z","causer":"<a href=\"../../admin/user/edit/1.html\">Agatha Williams</a>","browser":"Chrome 146.0.0.0","platform":"Windows","ip":"5.193.181.144","action":"<form method=\"post\" action=\"https://demo.nix-ecommerce.nixecommerce.net/admin/user/activity/delete/16\" id=\"delete-data-16\" accept-charset=\"UTF-8\" class=\"display_inline\">\n    <input type=\"hidden\" name=\"_token\" value=\"YfXguxfpniJmtoyGelVtxtq4F6tqvN5pzDagt4i9\" autocomplete=\"off\">    <input type=\"hidden\" name=\"_method\" value=\"POST\">\n\n            <a title=\"Trash\" class=\"action-icon confirm-delete \" type=\"button\" data-id=\"16\" data-delete=\"data\" data-label=\"Delete\" data-bs-toggle=\"modal\" data-bs-target=\"#confirmDelete\">\n            <i class=\"feather icon-trash\"></i>\n        </a>\n    </form>\n"},{"id":17,"log_name":"LOGIN","description":"Login successful","subject_type":null,"subject_id":null,"event":null,"causer_type":"App\\Models\\User","causer_id":1,"properties":{"url":"https://demo.nix-ecommerce.nixecommerce.net/admin/authenticate","method":"POST","status":"success","browser":"Chrome","platform":"Windows","ip_address":"150.228.148.31","user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36","browser_version":"146.0.0.0"},"batch_uuid":null,"created_at":"11-4-2026 2:59 PM","updated_at":"2026-04-11T06:59:35.000000Z","causer":"<a href=\"../../admin/user/edit/1.html\">Agatha Williams</a>","browser":"Chrome 146.0.0.0","platform":"Windows","ip":"150.228.148.31","action":"<form method=\"post\" action=\"https://demo.nix-ecommerce.nixecommerce.net/admin/user/activity/delete/17\" id=\"delete-data-17\" accept-charset=\"UTF-8\" class=\"display_inline\">\n    <input type=\"hidden\" name=\"_token\" value=\"YfXguxfpniJmtoyGelVtxtq4F6tqvN5pzDagt4i9\" autocomplete=\"off\">    <input type=\"hidden\" name=\"_method\" value=\"POST\">\n\n            <a title=\"Trash\" class=\"action-icon confirm-delete \" type=\"button\" data-id=\"17\" data-delete=\"data\" data-label=\"Delete\" data-bs-toggle=\"modal\" data-bs-target=\"#confirmDelete\">\n            <i class=\"feather icon-trash\"></i>\n        </a>\n    </form>\n"},{"id":18,"log_name":"LOGIN","description":"Login successful","subject_type":null,"subject_id":null,"event":null,"causer_type":"App\\Models\\User","causer_id":1,"properties":{"url":"https://demo.nix-ecommerce.nixecommerce.net/admin/authenticate","method":"POST","status":"success","browser":"Chrome","platform":"Windows","ip_address":"107.155.50.176","user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.5845.97 Safari/537.36 SE 2.X MetaSr 1.0","browser_version":"116.0.5845.97"},"batch_uuid":null,"created_at":"11-4-2026 3:45 PM","updated_at":"2026-04-11T07:45:12.000000Z","causer":"<a href=\"../../admin/user/edit/1.html\">Agatha Williams</a>","browser":"Chrome 116.0.5845.97","platform":"Windows","ip":"107.155.50.176","action":"<form method=\"post\" action=\"https://demo.nix-ecommerce.nixecommerce.net/admin/user/activity/delete/18\" id=\"delete-data-18\" accept-charset=\"UTF-8\" class=\"display_inline\">\n    <input type=\"hidden\" name=\"_token\" value=\"YfXguxfpniJmtoyGelVtxtq4F6tqvN5pzDagt4i9\" autocomplete=\"off\">    <input type=\"hidden\" name=\"_method\" value=\"POST\">\n\n            <a title=\"Trash\" class=\"action-icon confirm-delete \" type=\"button\" data-id=\"18\" data-delete=\"data\" data-label=\"Delete\" data-bs-toggle=\"modal\" data-bs-target=\"#confirmDelete\">\n            <i class=\"feather icon-trash\"></i>\n        </a>\n    </form>\n"},{"id":19,"log_name":"LOGIN","description":"Login successful","subject_type":null,"subject_id":null,"event":null,"causer_type":"App\\Models\\User","causer_id":1,"properties":{"url":"https://demo.nix-ecommerce.nixecommerce.net/authenticate","method":"POST","status":"success","browser":"Chrome","platform":"Windows","ip_address":"103.158.5.38","user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36","browser_version":"147.0.0.0"},"batch_uuid":null,"created_at":"11-4-2026 4:18 PM","updated_at":"2026-04-11T08:18:35.000000Z","causer":"<a href=\"../../admin/user/edit/1.html\">Agatha Williams</a>","browser":"Chrome 147.0.0.0","platform":"Windows","ip":"103.158.5.38","action":"<form method=\"post\" action=\"https://demo.nix-ecommerce.nixecommerce.net/admin/user/activity/delete/19\" id=\"delete-data-19\" accept-charset=\"UTF-8\" class=\"display_inline\">\n    <input type=\"hidden\" name=\"_token\" value=\"YfXguxfpniJmtoyGelVtxtq4F6tqvN5pzDagt4i9\" autocomplete=\"off\">    <input type=\"hidden\" name=\"_method\" value=\"POST\">\n\n            <a title=\"Trash\" class=\"action-icon confirm-delete \" type=\"button\" data-id=\"19\" data-delete=\"data\" data-label=\"Delete\" data-bs-toggle=\"modal\" data-bs-target=\"#confirmDelete\">\n            <i class=\"feather icon-trash\"></i>\n        </a>\n    </form>\n"},{"id":20,"log_name":"LOGOUT","description":"Logout successful","subject_type":null,"subject_id":null,"event":null,"causer_type":"App\\Models\\User","causer_id":1,"properties":{"url":"https://demo.nix-ecommerce.nixecommerce.net/myaccount/logout","method":"GET","status":"success","browser":"Chrome","platform":"Windows","ip_address":"103.158.5.38","user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36","browser_version":"147.0.0.0"},"batch_uuid":null,"created_at":"11-4-2026 4:19 PM","updated_at":"2026-04-11T08:19:16.000000Z","causer":"<a href=\"../../admin/user/edit/1.html\">Agatha Williams</a>","browser":"Chrome 147.0.0.0","platform":"Windows","ip":"103.158.5.38","action":"<form method=\"post\" action=\"https://demo.nix-ecommerce.nixecommerce.net/admin/user/activity/delete/20\" id=\"delete-data-20\" accept-charset=\"UTF-8\" class=\"display_inline\">\n    <input type=\"hidden\" name=\"_token\" value=\"YfXguxfpniJmtoyGelVtxtq4F6tqvN5pzDagt4i9\" autocomplete=\"off\">    <input type=\"hidden\" name=\"_method\" value=\"POST\">\n\n            <a title=\"Trash\" class=\"action-icon confirm-delete \" type=\"button\" data-id=\"20\" data-delete=\"data\" data-label=\"Delete\" data-bs-toggle=\"modal\" data-bs-target=\"#confirmDelete\">\n            <i class=\"feather icon-trash\"></i>\n        </a>\n    </form>\n"},{"id":21,"log_name":"LOGIN","description":"Login successful","subject_type":null,"subject_id":null,"event":null,"causer_type":"App\\Models\\User","causer_id":1,"properties":{"url":"https://demo.nix-ecommerce.nixecommerce.net/authenticate","method":"POST","status":"success","browser":"Chrome","platform":"Windows","ip_address":"103.158.5.38","user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36","browser_version":"147.0.0.0"},"batch_uuid":null,"created_at":"11-4-2026 4:21 PM","updated_at":"2026-04-11T08:21:32.000000Z","causer":"<a href=\"../../admin/user/edit/1.html\">Agatha Williams</a>","browser":"Chrome 147.0.0.0","platform":"Windows","ip":"103.158.5.38","action":"<form method=\"post\" action=\"https://demo.nix-ecommerce.nixecommerce.net/admin/user/activity/delete/21\" id=\"delete-data-21\" accept-charset=\"UTF-8\" class=\"display_inline\">\n    <input type=\"hidden\" name=\"_token\" value=\"YfXguxfpniJmtoyGelVtxtq4F6tqvN5pzDagt4i9\" autocomplete=\"off\">    <input type=\"hidden\" name=\"_method\" value=\"POST\">\n\n            <a title=\"Trash\" class=\"action-icon confirm-delete \" type=\"button\" data-id=\"21\" data-delete=\"data\" data-label=\"Delete\" data-bs-toggle=\"modal\" data-bs-target=\"#confirmDelete\">\n            <i class=\"feather icon-trash\"></i>\n        </a>\n    </form>\n"},{"id":22,"log_name":"LOGIN","description":"Login successful","subject_type":null,"subject_id":null,"event":null,"causer_type":"App\\Models\\User","causer_id":1,"properties":{"url":"https://demo.nix-ecommerce.nixecommerce.net/authenticate","method":"POST","status":"success","browser":"Chrome","platform":"Windows","ip_address":"103.158.5.38","user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36","browser_version":"146.0.0.0"},"batch_uuid":null,"created_at":"11-4-2026 4:25 PM","updated_at":"2026-04-11T08:25:39.000000Z","causer":"<a href=\"../../admin/user/edit/1.html\">Agatha Williams</a>","browser":"Chrome 146.0.0.0","platform":"Windows","ip":"103.158.5.38","action":"<form method=\"post\" action=\"https://demo.nix-ecommerce.nixecommerce.net/admin/user/activity/delete/22\" id=\"delete-data-22\" accept-charset=\"UTF-8\" class=\"display_inline\">\n    <input type=\"hidden\" name=\"_token\" value=\"YfXguxfpniJmtoyGelVtxtq4F6tqvN5pzDagt4i9\" autocomplete=\"off\">    <input type=\"hidden\" name=\"_method\" value=\"POST\">\n\n            <a title=\"Trash\" class=\"action-icon confirm-delete \" type=\"button\" data-id=\"22\" data-delete=\"data\" data-label=\"Delete\" data-bs-toggle=\"modal\" data-bs-target=\"#confirmDelete\">\n            <i class=\"feather icon-trash\"></i>\n        </a>\n    </form>\n"},{"id":23,"log_name":"LOGOUT","description":"Logout successful","subject_type":null,"subject_id":null,"event":null,"causer_type":"App\\Models\\User","causer_id":1,"properties":{"url":"https://demo.nix-ecommerce.nixecommerce.net/myaccount/logout","method":"GET","status":"success","browser":"Chrome","platform":"Windows","ip_address":"103.158.5.38","user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36","browser_version":"146.0.0.0"},"batch_uuid":null,"created_at":"11-4-2026 4:28 PM","updated_at":"2026-04-11T08:28:08.000000Z","causer":"<a href=\"../../admin/user/edit/1.html\">Agatha Williams</a>","browser":"Chrome 146.0.0.0","platform":"Windows","ip":"103.158.5.38","action":"<form method=\"post\" action=\"https://demo.nix-ecommerce.nixecommerce.net/admin/user/activity/delete/23\" id=\"delete-data-23\" accept-charset=\"UTF-8\" class=\"display_inline\">\n    <input type=\"hidden\" name=\"_token\" value=\"YfXguxfpniJmtoyGelVtxtq4F6tqvN5pzDagt4i9\" autocomplete=\"off\">    <input type=\"hidden\" name=\"_method\" value=\"POST\">\n\n            <a title=\"Trash\" class=\"action-icon confirm-delete \" type=\"button\" data-id=\"23\" data-delete=\"data\" data-label=\"Delete\" data-bs-toggle=\"modal\" data-bs-target=\"#confirmDelete\">\n            <i class=\"feather icon-trash\"></i>\n        </a>\n    </form>\n"},{"id":24,"log_name":"LOGIN","description":"Login successful","subject_type":null,"subject_id":null,"event":null,"causer_type":"App\\Models\\User","causer_id":1,"properties":{"url":"https://demo.nix-ecommerce.nixecommerce.net/authenticate","method":"POST","status":"success","browser":"Chrome","platform":"Windows","ip_address":"103.158.5.38","user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36","browser_version":"146.0.0.0"},"batch_uuid":null,"created_at":"11-4-2026 4:28 PM","updated_at":"2026-04-11T08:28:58.000000Z","causer":"<a href=\"../../admin/user/edit/1.html\">Agatha Williams</a>","browser":"Chrome 146.0.0.0","platform":"Windows","ip":"103.158.5.38","action":"<form method=\"post\" action=\"https://demo.nix-ecommerce.nixecommerce.net/admin/user/activity/delete/24\" id=\"delete-data-24\" accept-charset=\"UTF-8\" class=\"display_inline\">\n    <input type=\"hidden\" name=\"_token\" value=\"YfXguxfpniJmtoyGelVtxtq4F6tqvN5pzDagt4i9\" autocomplete=\"off\">    <input type=\"hidden\" name=\"_method\" value=\"POST\">\n\n            <a title=\"Trash\" class=\"action-icon confirm-delete \" type=\"button\" data-id=\"24\" data-delete=\"data\" data-label=\"Delete\" data-bs-toggle=\"modal\" data-bs-target=\"#confirmDelete\">\n            <i class=\"feather icon-trash\"></i>\n        </a>\n    </form>\n"},{"id":25,"log_name":"LOGOUT","description":"Logout successful","subject_type":null,"subject_id":null,"event":null,"causer_type":"App\\Models\\User","causer_id":1,"properties":{"url":"https://demo.nix-ecommerce.nixecommerce.net/myaccount/logout","method":"GET","status":"success","browser":"Chrome","platform":"Windows","ip_address":"103.158.5.38","user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36","browser_version":"146.0.0.0"},"batch_uuid":null,"created_at":"11-4-2026 4:29 PM","updated_at":"2026-04-11T08:29:03.000000Z","causer":"<a href=\"../../admin/user/edit/1.html\">Agatha Williams</a>","browser":"Chrome 146.0.0.0","platform":"Windows","ip":"103.158.5.38","action":"<form method=\"post\" action=\"https://demo.nix-ecommerce.nixecommerce.net/admin/user/activity/delete/25\" id=\"delete-data-25\" accept-charset=\"UTF-8\" class=\"display_inline\">\n    <input type=\"hidden\" name=\"_token\" value=\"YfXguxfpniJmtoyGelVtxtq4F6tqvN5pzDagt4i9\" autocomplete=\"off\">    <input type=\"hidden\" name=\"_method\" value=\"POST\">\n\n            <a title=\"Trash\" class=\"action-icon confirm-delete \" type=\"button\" data-id=\"25\" data-delete=\"data\" data-label=\"Delete\" data-bs-toggle=\"modal\" data-bs-target=\"#confirmDelete\">\n            <i class=\"feather icon-trash\"></i>\n        </a>\n    </form>\n"},{"id":26,"log_name":"LOGIN","description":"Login successful","subject_type":null,"subject_id":null,"event":null,"causer_type":"App\\Models\\User","causer_id":1,"properties":{"url":"https://demo.nix-ecommerce.nixecommerce.net/admin/authenticate","method":"POST","status":"success","browser":"Chrome","platform":"Windows","ip_address":"150.228.148.31","user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 QuarkPC/6.2.0.685","browser_version":"130.0.0.0"},"batch_uuid":null,"created_at":"11-4-2026 5:25 PM","updated_at":"2026-04-11T09:25:30.000000Z","causer":"<a href=\"../../admin/user/edit/1.html\">Agatha Williams</a>","browser":"Chrome 130.0.0.0","platform":"Windows","ip":"150.228.148.31","action":"<form method=\"post\" action=\"https://demo.nix-ecommerce.nixecommerce.net/admin/user/activity/delete/26\" id=\"delete-data-26\" accept-charset=\"UTF-8\" class=\"display_inline\">\n    <input type=\"hidden\" name=\"_token\" value=\"YfXguxfpniJmtoyGelVtxtq4F6tqvN5pzDagt4i9\" autocomplete=\"off\">    <input type=\"hidden\" name=\"_method\" value=\"POST\">\n\n            <a title=\"Trash\" class=\"action-icon confirm-delete \" type=\"button\" data-id=\"26\" data-delete=\"data\" data-label=\"Delete\" data-bs-toggle=\"modal\" data-bs-target=\"#confirmDelete\">\n            <i class=\"feather icon-trash\"></i>\n        </a>\n    </form>\n"},{"id":27,"log_name":"LOGIN","description":"Login successful","subject_type":null,"subject_id":null,"event":null,"causer_type":"App\\Models\\User","causer_id":3,"properties":{"url":"https://www.demo.nix-ecommerce.nixecommerce.net/admin/authenticate","method":"POST","status":"success","browser":"Chrome","platform":"Windows","ip_address":"49.43.231.254","user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36","browser_version":"146.0.0.0"},"batch_uuid":null,"created_at":"11-4-2026 5:41 PM","updated_at":"2026-04-11T09:41:48.000000Z","causer":"<a href=\"../../admin/user/edit/3.html\">Jamal</a>","browser":"Chrome 146.0.0.0","platform":"Windows","ip":"49.43.231.254","action":"<form method=\"post\" action=\"https://demo.nix-ecommerce.nixecommerce.net/admin/user/activity/delete/27\" id=\"delete-data-27\" accept-charset=\"UTF-8\" class=\"display_inline\">\n    <input type=\"hidden\" name=\"_token\" value=\"YfXguxfpniJmtoyGelVtxtq4F6tqvN5pzDagt4i9\" autocomplete=\"off\">    <input type=\"hidden\" name=\"_method\" value=\"POST\">\n\n            <a title=\"Trash\" class=\"action-icon confirm-delete \" type=\"button\" data-id=\"27\" data-delete=\"data\" data-label=\"Delete\" data-bs-toggle=\"modal\" data-bs-target=\"#confirmDelete\">\n            <i class=\"feather icon-trash\"></i>\n        </a>\n    </form>\n"},{"id":28,"log_name":"LOGIN","description":"Login successful","subject_type":null,"subject_id":null,"event":null,"causer_type":"App\\Models\\User","causer_id":1,"properties":{"url":"https://demo.nix-ecommerce.nixecommerce.net/admin/authenticate","method":"POST","status":"success","browser":"Safari","platform":"iPhone","ip_address":"134.122.153.212","user_agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 18_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.5 Mobile/15E148 Safari/604.1","browser_version":"18.5"},"batch_uuid":null,"created_at":"11-4-2026 6:55 PM","updated_at":"2026-04-11T10:55:19.000000Z","causer":"<a href=\"../../admin/user/edit/1.html\">Agatha Williams</a>","browser":"Safari 18.5","platform":"iPhone","ip":"134.122.153.212","action":"<form method=\"post\" action=\"https://demo.nix-ecommerce.nixecommerce.net/admin/user/activity/delete/28\" id=\"delete-data-28\" accept-charset=\"UTF-8\" class=\"display_inline\">\n    <input type=\"hidden\" name=\"_token\" value=\"YfXguxfpniJmtoyGelVtxtq4F6tqvN5pzDagt4i9\" autocomplete=\"off\">    <input type=\"hidden\" name=\"_method\" value=\"POST\">\n\n            <a title=\"Trash\" class=\"action-icon confirm-delete \" type=\"button\" data-id=\"28\" data-delete=\"data\" data-label=\"Delete\" data-bs-toggle=\"modal\" data-bs-target=\"#confirmDelete\">\n            <i class=\"feather icon-trash\"></i>\n        </a>\n    </form>\n"},{"id":29,"log_name":"LOGIN","description":"Login successful","subject_type":null,"subject_id":null,"event":null,"causer_type":"App\\Models\\User","causer_id":3,"properties":{"url":"https://www.demo.nix-ecommerce.nixecommerce.net/authenticate","method":"POST","status":"success","browser":"Safari","platform":"iPhone","ip_address":"2.58.42.65","user_agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Mobile/15E148 Safari/604.1","browser_version":"26.2"},"batch_uuid":null,"created_at":"11-4-2026 10:33 PM","updated_at":"2026-04-11T14:33:42.000000Z","causer":"<a href=\"../../admin/user/edit/3.html\">Jamal</a>","browser":"Safari 26.2","platform":"iPhone","ip":"2.58.42.65","action":"<form method=\"post\" action=\"https://demo.nix-ecommerce.nixecommerce.net/admin/user/activity/delete/29\" id=\"delete-data-29\" accept-charset=\"UTF-8\" class=\"display_inline\">\n    <input type=\"hidden\" name=\"_token\" value=\"YfXguxfpniJmtoyGelVtxtq4F6tqvN5pzDagt4i9\" autocomplete=\"off\">    <input type=\"hidden\" name=\"_method\" value=\"POST\">\n\n            <a title=\"Trash\" class=\"action-icon confirm-delete \" type=\"button\" data-id=\"29\" data-delete=\"data\" data-label=\"Delete\" data-bs-toggle=\"modal\" data-bs-target=\"#confirmDelete\">\n            <i class=\"feather icon-trash\"></i>\n        </a>\n    </form>\n"},{"id":30,"log_name":"LOGIN","description":"Login successful","subject_type":null,"subject_id":null,"event":null,"causer_type":"App\\Models\\User","causer_id":1,"properties":{"url":"https://www.demo.nix-ecommerce.nixecommerce.net/authenticate","method":"POST","status":"success","browser":"Firefox","platform":"Windows","ip_address":"154.161.139.167","user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0","browser_version":"149.0"},"batch_uuid":null,"created_at":"12-4-2026 12:57 AM","updated_at":"2026-04-11T16:57:37.000000Z","causer":"<a href=\"../../admin/user/edit/1.html\">Agatha Williams</a>","browser":"Firefox 149.0","platform":"Windows","ip":"154.161.139.167","action":"<form method=\"post\" action=\"https://demo.nix-ecommerce.nixecommerce.net/admin/user/activity/delete/30\" id=\"delete-data-30\" accept-charset=\"UTF-8\" class=\"display_inline\">\n    <input type=\"hidden\" name=\"_token\" value=\"YfXguxfpniJmtoyGelVtxtq4F6tqvN5pzDagt4i9\" autocomplete=\"off\">    <input type=\"hidden\" name=\"_method\" value=\"POST\">\n\n            <a title=\"Trash\" class=\"action-icon confirm-delete \" type=\"button\" data-id=\"30\" data-delete=\"data\" data-label=\"Delete\" data-bs-toggle=\"modal\" data-bs-target=\"#confirmDelete\">\n            <i class=\"feather icon-trash\"></i>\n        </a>\n    </form>\n"},{"id":31,"log_name":"LOGOUT","description":"Logout successful","subject_type":null,"subject_id":null,"event":null,"causer_type":"App\\Models\\User","causer_id":1,"properties":{"url":"https://www.demo.nix-ecommerce.nixecommerce.net/myaccount/logout","method":"GET","status":"success","browser":"Firefox","platform":"Windows","ip_address":"154.161.139.167","user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0","browser_version":"149.0"},"batch_uuid":null,"created_at":"12-4-2026 1:20 AM","updated_at":"2026-04-11T17:20:44.000000Z","causer":"<a href=\"../../admin/user/edit/1.html\">Agatha Williams</a>","browser":"Firefox 149.0","platform":"Windows","ip":"154.161.139.167","action":"<form method=\"post\" action=\"https://demo.nix-ecommerce.nixecommerce.net/admin/user/activity/delete/31\" id=\"delete-data-31\" accept-charset=\"UTF-8\" class=\"display_inline\">\n    <input type=\"hidden\" name=\"_token\" value=\"YfXguxfpniJmtoyGelVtxtq4F6tqvN5pzDagt4i9\" autocomplete=\"off\">    <input type=\"hidden\" name=\"_method\" value=\"POST\">\n\n            <a title=\"Trash\" class=\"action-icon confirm-delete \" type=\"button\" data-id=\"31\" data-delete=\"data\" data-label=\"Delete\" data-bs-toggle=\"modal\" data-bs-target=\"#confirmDelete\">\n            <i class=\"feather icon-trash\"></i>\n        </a>\n    </form>\n"},{"id":32,"log_name":"LOGIN","description":"Login successful","subject_type":null,"subject_id":null,"event":null,"causer_type":"App\\Models\\User","causer_id":2,"properties":{"url":"https://www.demo.nix-ecommerce.nixecommerce.net/authenticate","method":"POST","status":"success","browser":"Firefox","platform":"Windows","ip_address":"154.161.139.167","user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0","browser_version":"149.0"},"batch_uuid":null,"created_at":"12-4-2026 2:14 AM","updated_at":"2026-04-11T18:14:55.000000Z","causer":"<a href=\"../../admin/user/edit/2.html\">Blaine Keller</a>","browser":"Firefox 149.0","platform":"Windows","ip":"154.161.139.167","action":"<form method=\"post\" action=\"https://demo.nix-ecommerce.nixecommerce.net/admin/user/activity/delete/32\" id=\"delete-data-32\" accept-charset=\"UTF-8\" class=\"display_inline\">\n    <input type=\"hidden\" name=\"_token\" value=\"YfXguxfpniJmtoyGelVtxtq4F6tqvN5pzDagt4i9\" autocomplete=\"off\">    <input type=\"hidden\" name=\"_method\" value=\"POST\">\n\n            <a title=\"Trash\" class=\"action-icon confirm-delete \" type=\"button\" data-id=\"32\" data-delete=\"data\" data-label=\"Delete\" data-bs-toggle=\"modal\" data-bs-target=\"#confirmDelete\">\n            <i class=\"feather icon-trash\"></i>\n        </a>\n    </form>\n"},{"id":33,"log_name":"LOGIN","description":"Login successful","subject_type":null,"subject_id":null,"event":null,"causer_type":"App\\Models\\User","causer_id":1,"properties":{"url":"https://www.demo.nix-ecommerce.nixecommerce.net/admin/authenticate","method":"POST","status":"success","browser":"Chrome","platform":"Windows","ip_address":"103.87.249.118","user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36","browser_version":"147.0.0.0"},"batch_uuid":null,"created_at":"12-4-2026 12:36 PM","updated_at":"2026-04-12T04:36:56.000000Z","causer":"<a href=\"../../admin/user/edit/1.html\">Agatha Williams</a>","browser":"Chrome 147.0.0.0","platform":"Windows","ip":"103.87.249.118","action":"<form method=\"post\" action=\"https://demo.nix-ecommerce.nixecommerce.net/admin/user/activity/delete/33\" id=\"delete-data-33\" accept-charset=\"UTF-8\" class=\"display_inline\">\n    <input type=\"hidden\" name=\"_token\" value=\"YfXguxfpniJmtoyGelVtxtq4F6tqvN5pzDagt4i9\" autocomplete=\"off\">    <input type=\"hidden\" name=\"_method\" value=\"POST\">\n\n            <a title=\"Trash\" class=\"action-icon confirm-delete \" type=\"button\" data-id=\"33\" data-delete=\"data\" data-label=\"Delete\" data-bs-toggle=\"modal\" data-bs-target=\"#confirmDelete\">\n            <i class=\"feather icon-trash\"></i>\n        </a>\n    </form>\n"},{"id":34,"log_name":"LOGIN","description":"Login successful","subject_type":null,"subject_id":null,"event":null,"causer_type":"App\\Models\\User","causer_id":1,"properties":{"url":"https://www.demo.nix-ecommerce.nixecommerce.net/admin/authenticate","method":"POST","status":"success","browser":"Chrome","platform":"Windows","ip_address":"177.182.12.43","user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36","browser_version":"146.0.0.0"},"batch_uuid":null,"created_at":"12-4-2026 12:49 PM","updated_at":"2026-04-12T04:49:02.000000Z","causer":"<a href=\"../../admin/user/edit/1.html\">Agatha Williams</a>","browser":"Chrome 146.0.0.0","platform":"Windows","ip":"177.182.12.43","action":"<form method=\"post\" action=\"https://demo.nix-ecommerce.nixecommerce.net/admin/user/activity/delete/34\" id=\"delete-data-34\" accept-charset=\"UTF-8\" class=\"display_inline\">\n    <input type=\"hidden\" name=\"_token\" value=\"YfXguxfpniJmtoyGelVtxtq4F6tqvN5pzDagt4i9\" autocomplete=\"off\">    <input type=\"hidden\" name=\"_method\" value=\"POST\">\n\n            <a title=\"Trash\" class=\"action-icon confirm-delete \" type=\"button\" data-id=\"34\" data-delete=\"data\" data-label=\"Delete\" data-bs-toggle=\"modal\" data-bs-target=\"#confirmDelete\">\n            <i class=\"feather icon-trash\"></i>\n        </a>\n    </form>\n"},{"id":35,"log_name":"LOGIN","description":"Login successful","subject_type":null,"subject_id":null,"event":null,"causer_type":"App\\Models\\User","causer_id":1,"properties":{"url":"https://demo.nix-ecommerce.nixecommerce.net/authenticate","method":"POST","status":"success","browser":"Chrome","platform":"Windows","ip_address":"90.36.27.140","user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36","browser_version":"146.0.0.0"},"batch_uuid":null,"created_at":"12-4-2026 3:1 PM","updated_at":"2026-04-12T07:01:07.000000Z","causer":"<a href=\"../../admin/user/edit/1.html\">Agatha Williams</a>","browser":"Chrome 146.0.0.0","platform":"Windows","ip":"90.36.27.140","action":"<form method=\"post\" action=\"https://demo.nix-ecommerce.nixecommerce.net/admin/user/activity/delete/35\" id=\"delete-data-35\" accept-charset=\"UTF-8\" class=\"display_inline\">\n    <input type=\"hidden\" name=\"_token\" value=\"YfXguxfpniJmtoyGelVtxtq4F6tqvN5pzDagt4i9\" autocomplete=\"off\">    <input type=\"hidden\" name=\"_method\" value=\"POST\">\n\n            <a title=\"Trash\" class=\"action-icon confirm-delete \" type=\"button\" data-id=\"35\" data-delete=\"data\" data-label=\"Delete\" data-bs-toggle=\"modal\" data-bs-target=\"#confirmDelete\">\n            <i class=\"feather icon-trash\"></i>\n        </a>\n    </form>\n"},{"id":36,"log_name":"LOGIN","description":"Login successful","subject_type":null,"subject_id":null,"event":null,"causer_type":"App\\Models\\User","causer_id":1,"properties":{"url":"https://demo.nix-ecommerce.nixecommerce.net/admin/authenticate","method":"POST","status":"success","browser":"Chrome","platform":"Windows","ip_address":"95.173.197.67","user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36","browser_version":"147.0.0.0"},"batch_uuid":null,"created_at":"12-4-2026 5:59 PM","updated_at":"2026-04-12T09:59:35.000000Z","causer":"<a href=\"../../admin/user/edit/1.html\">Agatha Williams</a>","browser":"Chrome 147.0.0.0","platform":"Windows","ip":"95.173.197.67","action":"<form method=\"post\" action=\"https://demo.nix-ecommerce.nixecommerce.net/admin/user/activity/delete/36\" id=\"delete-data-36\" accept-charset=\"UTF-8\" class=\"display_inline\">\n    <input type=\"hidden\" name=\"_token\" value=\"YfXguxfpniJmtoyGelVtxtq4F6tqvN5pzDagt4i9\" autocomplete=\"off\">    <input type=\"hidden\" name=\"_method\" value=\"POST\">\n\n            <a title=\"Trash\" class=\"action-icon confirm-delete \" type=\"button\" data-id=\"36\" data-delete=\"data\" data-label=\"Delete\" data-bs-toggle=\"modal\" data-bs-target=\"#confirmDelete\">\n            <i class=\"feather icon-trash\"></i>\n        </a>\n    </form>\n"},{"id":37,"log_name":"LOGIN","description":"Inactive user","subject_type":null,"subject_id":null,"event":null,"causer_type":"App\\Models\\User","causer_id":2,"properties":{"url":"https://demo.nix-ecommerce.nixecommerce.net/admin/authenticate","method":"POST","status":"failed","browser":"Chrome","platform":"Windows","ip_address":"49.43.140.94","user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36","browser_version":"146.0.0.0"},"batch_uuid":null,"created_at":"12-4-2026 7:38 PM","updated_at":"2026-04-12T11:38:45.000000Z","causer":"<a href=\"../../admin/user/edit/2.html\">Blaine Keller</a>","browser":"Chrome 146.0.0.0","platform":"Windows","ip":"49.43.140.94","action":"<form method=\"post\" action=\"https://demo.nix-ecommerce.nixecommerce.net/admin/user/activity/delete/37\" id=\"delete-data-37\" accept-charset=\"UTF-8\" class=\"display_inline\">\n    <input type=\"hidden\" name=\"_token\" value=\"YfXguxfpniJmtoyGelVtxtq4F6tqvN5pzDagt4i9\" autocomplete=\"off\">    <input type=\"hidden\" name=\"_method\" value=\"POST\">\n\n            <a title=\"Trash\" class=\"action-icon confirm-delete \" type=\"button\" data-id=\"37\" data-delete=\"data\" data-label=\"Delete\" data-bs-toggle=\"modal\" data-bs-target=\"#confirmDelete\">\n            <i class=\"feather icon-trash\"></i>\n        </a>\n    </form>\n"},{"id":38,"log_name":"LOGOUT","description":"Logout successful","subject_type":null,"subject_id":null,"event":null,"causer_type":"App\\Models\\User","causer_id":2,"properties":{"url":"https://demo.nix-ecommerce.nixecommerce.net/myaccount/logout","method":"GET","status":"success","browser":"Chrome","platform":"Windows","ip_address":"49.43.140.94","user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36","browser_version":"146.0.0.0"},"batch_uuid":null,"created_at":"12-4-2026 7:39 PM","updated_at":"2026-04-12T11:39:33.000000Z","causer":"<a href=\"../../admin/user/edit/2.html\">Blaine Keller</a>","browser":"Chrome 146.0.0.0","platform":"Windows","ip":"49.43.140.94","action":"<form method=\"post\" action=\"https://demo.nix-ecommerce.nixecommerce.net/admin/user/activity/delete/38\" id=\"delete-data-38\" accept-charset=\"UTF-8\" class=\"display_inline\">\n    <input type=\"hidden\" name=\"_token\" value=\"YfXguxfpniJmtoyGelVtxtq4F6tqvN5pzDagt4i9\" autocomplete=\"off\">    <input type=\"hidden\" name=\"_method\" value=\"POST\">\n\n            <a title=\"Trash\" class=\"action-icon confirm-delete \" type=\"button\" data-id=\"38\" data-delete=\"data\" data-label=\"Delete\" data-bs-toggle=\"modal\" data-bs-target=\"#confirmDelete\">\n            <i class=\"feather icon-trash\"></i>\n        </a>\n    </form>\n"},{"id":39,"log_name":"LOGIN","description":"Login successful","subject_type":null,"subject_id":null,"event":null,"causer_type":"App\\Models\\User","causer_id":1,"properties":{"url":"https://demo.nix-ecommerce.nixecommerce.net/authenticate","method":"POST","status":"success","browser":"Chrome","platform":"Windows","ip_address":"49.43.140.94","user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36","browser_version":"146.0.0.0"},"batch_uuid":null,"created_at":"12-4-2026 7:39 PM","updated_at":"2026-04-12T11:39:50.000000Z","causer":"<a href=\"../../admin/user/edit/1.html\">Agatha Williams</a>","browser":"Chrome 146.0.0.0","platform":"Windows","ip":"49.43.140.94","action":"<form method=\"post\" action=\"https://demo.nix-ecommerce.nixecommerce.net/admin/user/activity/delete/39\" id=\"delete-data-39\" accept-charset=\"UTF-8\" class=\"display_inline\">\n    <input type=\"hidden\" name=\"_token\" value=\"YfXguxfpniJmtoyGelVtxtq4F6tqvN5pzDagt4i9\" autocomplete=\"off\">    <input type=\"hidden\" name=\"_method\" value=\"POST\">\n\n            <a title=\"Trash\" class=\"action-icon confirm-delete \" type=\"button\" data-id=\"39\" data-delete=\"data\" data-label=\"Delete\" data-bs-toggle=\"modal\" data-bs-target=\"#confirmDelete\">\n            <i class=\"feather icon-trash\"></i>\n        </a>\n    </form>\n"},{"id":40,"log_name":"LOGIN","description":"Login successful","subject_type":null,"subject_id":null,"event":null,"causer_type":"App\\Models\\User","causer_id":1,"properties":{"url":"https://demo.nix-ecommerce.nixecommerce.net/authenticate","method":"POST","status":"success","browser":"Chrome","platform":"Windows","ip_address":"154.192.115.114","user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36","browser_version":"146.0.0.0"},"batch_uuid":null,"created_at":"12-4-2026 8:52 PM","updated_at":"2026-04-12T12:52:28.000000Z","causer":"<a href=\"../../admin/user/edit/1.html\">Agatha Williams</a>","browser":"Chrome 146.0.0.0","platform":"Windows","ip":"154.192.115.114","action":"<form method=\"post\" action=\"https://demo.nix-ecommerce.nixecommerce.net/admin/user/activity/delete/40\" id=\"delete-data-40\" accept-charset=\"UTF-8\" class=\"display_inline\">\n    <input type=\"hidden\" name=\"_token\" value=\"YfXguxfpniJmtoyGelVtxtq4F6tqvN5pzDagt4i9\" autocomplete=\"off\">    <input type=\"hidden\" name=\"_method\" value=\"POST\">\n\n            <a title=\"Trash\" class=\"action-icon confirm-delete \" type=\"button\" data-id=\"40\" data-delete=\"data\" data-label=\"Delete\" data-bs-toggle=\"modal\" data-bs-target=\"#confirmDelete\">\n            <i class=\"feather icon-trash\"></i>\n        </a>\n    </form>\n"},{"id":41,"log_name":"LOGIN","description":"Login successful","subject_type":null,"subject_id":null,"event":null,"causer_type":"App\\Models\\User","causer_id":1,"properties":{"url":"https://www.demo.nix-ecommerce.nixecommerce.net/admin/authenticate","method":"POST","status":"success","browser":"Chrome","platform":"Windows","ip_address":"82.225.58.59","user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36","browser_version":"146.0.0.0"},"batch_uuid":null,"created_at":"12-4-2026 11:17 PM","updated_at":"2026-04-12T15:17:22.000000Z","causer":"<a href=\"../../admin/user/edit/1.html\">Agatha Williams</a>","browser":"Chrome 146.0.0.0","platform":"Windows","ip":"82.225.58.59","action":"<form method=\"post\" action=\"https://demo.nix-ecommerce.nixecommerce.net/admin/user/activity/delete/41\" id=\"delete-data-41\" accept-charset=\"UTF-8\" class=\"display_inline\">\n    <input type=\"hidden\" name=\"_token\" value=\"YfXguxfpniJmtoyGelVtxtq4F6tqvN5pzDagt4i9\" autocomplete=\"off\">    <input type=\"hidden\" name=\"_method\" value=\"POST\">\n\n            <a title=\"Trash\" class=\"action-icon confirm-delete \" type=\"button\" data-id=\"41\" data-delete=\"data\" data-label=\"Delete\" data-bs-toggle=\"modal\" data-bs-target=\"#confirmDelete\">\n            <i class=\"feather icon-trash\"></i>\n        </a>\n    </form>\n"},{"id":42,"log_name":"LOGIN","description":"Login successful","subject_type":null,"subject_id":null,"event":null,"causer_type":"App\\Models\\User","causer_id":1,"properties":{"url":"https://demo.nix-ecommerce.nixecommerce.net/admin/authenticate","method":"POST","status":"success","browser":"Chrome","platform":"Windows","ip_address":"82.225.58.59","user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36","browser_version":"146.0.0.0"},"batch_uuid":null,"created_at":"13-4-2026 12:56 AM","updated_at":"2026-04-12T16:56:53.000000Z","causer":"<a href=\"../../admin/user/edit/1.html\">Agatha Williams</a>","browser":"Chrome 146.0.0.0","platform":"Windows","ip":"82.225.58.59","action":"<form method=\"post\" action=\"https://demo.nix-ecommerce.nixecommerce.net/admin/user/activity/delete/42\" id=\"delete-data-42\" accept-charset=\"UTF-8\" class=\"display_inline\">\n    <input type=\"hidden\" name=\"_token\" value=\"YfXguxfpniJmtoyGelVtxtq4F6tqvN5pzDagt4i9\" autocomplete=\"off\">    <input type=\"hidden\" name=\"_method\" value=\"POST\">\n\n            <a title=\"Trash\" class=\"action-icon confirm-delete \" type=\"button\" data-id=\"42\" data-delete=\"data\" data-label=\"Delete\" data-bs-toggle=\"modal\" data-bs-target=\"#confirmDelete\">\n            <i class=\"feather icon-trash\"></i>\n        </a>\n    </form>\n"},{"id":43,"log_name":"LOGOUT","description":"Logout successful","subject_type":null,"subject_id":null,"event":null,"causer_type":"App\\Models\\User","causer_id":1,"properties":{"url":"https://www.demo.nix-ecommerce.nixecommerce.net/admin/logout","method":"GET","status":"success","browser":"Chrome","platform":"Windows","ip_address":"82.225.58.59","user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36","browser_version":"146.0.0.0"},"batch_uuid":null,"created_at":"13-4-2026 1:42 AM","updated_at":"2026-04-12T17:42:04.000000Z","causer":"<a href=\"../../admin/user/edit/1.html\">Agatha Williams</a>","browser":"Chrome 146.0.0.0","platform":"Windows","ip":"82.225.58.59","action":"<form method=\"post\" action=\"https://demo.nix-ecommerce.nixecommerce.net/admin/user/activity/delete/43\" id=\"delete-data-43\" accept-charset=\"UTF-8\" class=\"display_inline\">\n    <input type=\"hidden\" name=\"_token\" value=\"YfXguxfpniJmtoyGelVtxtq4F6tqvN5pzDagt4i9\" autocomplete=\"off\">    <input type=\"hidden\" name=\"_method\" value=\"POST\">\n\n            <a title=\"Trash\" class=\"action-icon confirm-delete \" type=\"button\" data-id=\"43\" data-delete=\"data\" data-label=\"Delete\" data-bs-toggle=\"modal\" data-bs-target=\"#confirmDelete\">\n            <i class=\"feather icon-trash\"></i>\n        </a>\n    </form>\n"},{"id":44,"log_name":"LOGIN","description":"Login successful","subject_type":null,"subject_id":null,"event":null,"causer_type":"App\\Models\\User","causer_id":1,"properties":{"url":"https://www.demo.nix-ecommerce.nixecommerce.net/admin/authenticate","method":"POST","status":"success","browser":"Chrome","platform":"Windows","ip_address":"82.225.58.59","user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36","browser_version":"146.0.0.0"},"batch_uuid":null,"created_at":"13-4-2026 1:42 AM","updated_at":"2026-04-12T17:42:46.000000Z","causer":"<a href=\"../../admin/user/edit/1.html\">Agatha Williams</a>","browser":"Chrome 146.0.0.0","platform":"Windows","ip":"82.225.58.59","action":"<form method=\"post\" action=\"https://demo.nix-ecommerce.nixecommerce.net/admin/user/activity/delete/44\" id=\"delete-data-44\" accept-charset=\"UTF-8\" class=\"display_inline\">\n    <input type=\"hidden\" name=\"_token\" value=\"YfXguxfpniJmtoyGelVtxtq4F6tqvN5pzDagt4i9\" autocomplete=\"off\">    <input type=\"hidden\" name=\"_method\" value=\"POST\">\n\n            <a title=\"Trash\" class=\"action-icon confirm-delete \" type=\"button\" data-id=\"44\" data-delete=\"data\" data-label=\"Delete\" data-bs-toggle=\"modal\" data-bs-target=\"#confirmDelete\">\n            <i class=\"feather icon-trash\"></i>\n        </a>\n    </form>\n"},{"id":45,"log_name":"LOGOUT","description":"Logout successful","subject_type":null,"subject_id":null,"event":null,"causer_type":"App\\Models\\User","causer_id":1,"properties":{"url":"https://www.demo.nix-ecommerce.nixecommerce.net/admin/logout","method":"GET","status":"success","browser":"Chrome","platform":"Windows","ip_address":"82.225.58.59","user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36","browser_version":"146.0.0.0"},"batch_uuid":null,"created_at":"13-4-2026 1:45 AM","updated_at":"2026-04-12T17:45:26.000000Z","causer":"<a href=\"../../admin/user/edit/1.html\">Agatha Williams</a>","browser":"Chrome 146.0.0.0","platform":"Windows","ip":"82.225.58.59","action":"<form method=\"post\" action=\"https://demo.nix-ecommerce.nixecommerce.net/admin/user/activity/delete/45\" id=\"delete-data-45\" accept-charset=\"UTF-8\" class=\"display_inline\">\n    <input type=\"hidden\" name=\"_token\" value=\"YfXguxfpniJmtoyGelVtxtq4F6tqvN5pzDagt4i9\" autocomplete=\"off\">    <input type=\"hidden\" name=\"_method\" value=\"POST\">\n\n            <a title=\"Trash\" class=\"action-icon confirm-delete \" type=\"button\" data-id=\"45\" data-delete=\"data\" data-label=\"Delete\" data-bs-toggle=\"modal\" data-bs-target=\"#confirmDelete\">\n            <i class=\"feather icon-trash\"></i>\n        </a>\n    </form>\n"},{"id":46,"log_name":"LOGIN","description":"Login successful","subject_type":null,"subject_id":null,"event":null,"causer_type":"App\\Models\\User","causer_id":1,"properties":{"url":"https://demo.nix-ecommerce.nixecommerce.net/admin/authenticate","method":"POST","status":"success","browser":"Chrome","platform":"Windows","ip_address":"49.43.140.94","user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36","browser_version":"146.0.0.0"},"batch_uuid":null,"created_at":"13-4-2026 2:26 AM","updated_at":"2026-04-12T18:26:31.000000Z","causer":"<a href=\"../../admin/user/edit/1.html\">Agatha Williams</a>","browser":"Chrome 146.0.0.0","platform":"Windows","ip":"49.43.140.94","action":"<form method=\"post\" action=\"https://demo.nix-ecommerce.nixecommerce.net/admin/user/activity/delete/46\" id=\"delete-data-46\" accept-charset=\"UTF-8\" class=\"display_inline\">\n    <input type=\"hidden\" name=\"_token\" value=\"YfXguxfpniJmtoyGelVtxtq4F6tqvN5pzDagt4i9\" autocomplete=\"off\">    <input type=\"hidden\" name=\"_method\" value=\"POST\">\n\n            <a title=\"Trash\" class=\"action-icon confirm-delete \" type=\"button\" data-id=\"46\" data-delete=\"data\" data-label=\"Delete\" data-bs-toggle=\"modal\" data-bs-target=\"#confirmDelete\">\n            <i class=\"feather icon-trash\"></i>\n        </a>\n    </form>\n"},{"id":47,"log_name":"LOGIN","description":"Login successful","subject_type":null,"subject_id":null,"event":null,"causer_type":"App\\Models\\User","causer_id":1,"properties":{"url":"https://www.demo.nix-ecommerce.nixecommerce.net/admin/authenticate","method":"POST","status":"success","browser":"Chrome","platform":"iPhone","ip_address":"82.18.192.136","user_agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 26_3_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/147.0.7727.47 Mobile/15E148 Safari/604.1","browser_version":"147.0.7727.47"},"batch_uuid":null,"created_at":"13-4-2026 6:30 AM","updated_at":"2026-04-12T22:30:48.000000Z","causer":"<a href=\"../../admin/user/edit/1.html\">Agatha Williams</a>","browser":"Chrome 147.0.7727.47","platform":"iPhone","ip":"82.18.192.136","action":"<form method=\"post\" action=\"https://demo.nix-ecommerce.nixecommerce.net/admin/user/activity/delete/47\" id=\"delete-data-47\" accept-charset=\"UTF-8\" class=\"display_inline\">\n    <input type=\"hidden\" name=\"_token\" value=\"YfXguxfpniJmtoyGelVtxtq4F6tqvN5pzDagt4i9\" autocomplete=\"off\">    <input type=\"hidden\" name=\"_method\" value=\"POST\">\n\n            <a title=\"Trash\" class=\"action-icon confirm-delete \" type=\"button\" data-id=\"47\" data-delete=\"data\" data-label=\"Delete\" data-bs-toggle=\"modal\" data-bs-target=\"#confirmDelete\">\n            <i class=\"feather icon-trash\"></i>\n        </a>\n    </form>\n"},{"id":48,"log_name":"LOGIN","description":"Login successful","subject_type":null,"subject_id":null,"event":null,"causer_type":"App\\Models\\User","causer_id":1,"properties":{"url":"https://www.demo.nix-ecommerce.nixecommerce.net/admin/authenticate","method":"POST","status":"success","browser":"Chrome","platform":"Windows","ip_address":"49.43.140.162","user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36","browser_version":"146.0.0.0"},"batch_uuid":null,"created_at":"13-4-2026 1:3 PM","updated_at":"2026-04-13T05:03:47.000000Z","causer":"<a href=\"../../admin/user/edit/1.html\">Agatha Williams</a>","browser":"Chrome 146.0.0.0","platform":"Windows","ip":"49.43.140.162","action":"<form method=\"post\" action=\"https://demo.nix-ecommerce.nixecommerce.net/admin/user/activity/delete/48\" id=\"delete-data-48\" accept-charset=\"UTF-8\" class=\"display_inline\">\n    <input type=\"hidden\" name=\"_token\" value=\"YfXguxfpniJmtoyGelVtxtq4F6tqvN5pzDagt4i9\" autocomplete=\"off\">    <input type=\"hidden\" name=\"_method\" value=\"POST\">\n\n            <a title=\"Trash\" class=\"action-icon confirm-delete \" type=\"button\" data-id=\"48\" data-delete=\"data\" data-label=\"Delete\" data-bs-toggle=\"modal\" data-bs-target=\"#confirmDelete\">\n            <i class=\"feather icon-trash\"></i>\n        </a>\n    </form>\n"},{"id":49,"log_name":"LOGIN","description":"Login successful","subject_type":null,"subject_id":null,"event":null,"causer_type":"App\\Models\\User","causer_id":1,"properties":{"url":"https://www.demo.nix-ecommerce.nixecommerce.net/admin/authenticate","method":"POST","status":"success","browser":"Chrome","platform":"Windows","ip_address":"157.119.82.2","user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36","browser_version":"146.0.0.0"},"batch_uuid":null,"created_at":"13-4-2026 4:16 PM","updated_at":"2026-04-13T08:16:24.000000Z","causer":"<a href=\"../../admin/user/edit/1.html\">Agatha Williams</a>","browser":"Chrome 146.0.0.0","platform":"Windows","ip":"157.119.82.2","action":"<form method=\"post\" action=\"https://demo.nix-ecommerce.nixecommerce.net/admin/user/activity/delete/49\" id=\"delete-data-49\" accept-charset=\"UTF-8\" class=\"display_inline\">\n    <input type=\"hidden\" name=\"_token\" value=\"YfXguxfpniJmtoyGelVtxtq4F6tqvN5pzDagt4i9\" autocomplete=\"off\">    <input type=\"hidden\" name=\"_method\" value=\"POST\">\n\n            <a title=\"Trash\" class=\"action-icon confirm-delete \" type=\"button\" data-id=\"49\" data-delete=\"data\" data-label=\"Delete\" data-bs-toggle=\"modal\" data-bs-target=\"#confirmDelete\">\n            <i class=\"feather icon-trash\"></i>\n        </a>\n    </form>\n"},{"id":50,"log_name":"LOGOUT","description":"Logout successful","subject_type":null,"subject_id":null,"event":null,"causer_type":"App\\Models\\User","causer_id":1,"properties":{"url":"https://www.demo.nix-ecommerce.nixecommerce.net/admin/logout","method":"GET","status":"success","browser":"Chrome","platform":"Windows","ip_address":"157.119.82.2","user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36","browser_version":"146.0.0.0"},"batch_uuid":null,"created_at":"13-4-2026 4:26 PM","updated_at":"2026-04-13T08:26:38.000000Z","causer":"<a href=\"../../admin/user/edit/1.html\">Agatha Williams</a>","browser":"Chrome 146.0.0.0","platform":"Windows","ip":"157.119.82.2","action":"<form method=\"post\" action=\"https://demo.nix-ecommerce.nixecommerce.net/admin/user/activity/delete/50\" id=\"delete-data-50\" accept-charset=\"UTF-8\" class=\"display_inline\">\n    <input type=\"hidden\" name=\"_token\" value=\"YfXguxfpniJmtoyGelVtxtq4F6tqvN5pzDagt4i9\" autocomplete=\"off\">    <input type=\"hidden\" name=\"_method\" value=\"POST\">\n\n            <a title=\"Trash\" class=\"action-icon confirm-delete \" type=\"button\" data-id=\"50\" data-delete=\"data\" data-label=\"Delete\" data-bs-toggle=\"modal\" data-bs-target=\"#confirmDelete\">\n            <i class=\"feather icon-trash\"></i>\n        </a>\n    </form>\n"},{"id":51,"log_name":"LOGIN","description":"Login successful","subject_type":null,"subject_id":null,"event":null,"causer_type":"App\\Models\\User","causer_id":1,"properties":{"url":"https://demo.nix-ecommerce.nixecommerce.net/admin/authenticate","method":"POST","status":"success","browser":"Chrome","platform":"Android","ip_address":"180.148.214.182","user_agent":"Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Mobile Safari/537.36","browser_version":"146.0.0.0"},"batch_uuid":null,"created_at":"13-4-2026 8:59 PM","updated_at":"2026-04-13T12:59:20.000000Z","causer":"<a href=\"../../admin/user/edit/1.html\">Agatha Williams</a>","browser":"Chrome 146.0.0.0","platform":"Android","ip":"180.148.214.182","action":"<form method=\"post\" action=\"https://demo.nix-ecommerce.nixecommerce.net/admin/user/activity/delete/51\" id=\"delete-data-51\" accept-charset=\"UTF-8\" class=\"display_inline\">\n    <input type=\"hidden\" name=\"_token\" value=\"YfXguxfpniJmtoyGelVtxtq4F6tqvN5pzDagt4i9\" autocomplete=\"off\">    <input type=\"hidden\" name=\"_method\" value=\"POST\">\n\n            <a title=\"Trash\" class=\"action-icon confirm-delete \" type=\"button\" data-id=\"51\" data-delete=\"data\" data-label=\"Delete\" data-bs-toggle=\"modal\" data-bs-target=\"#confirmDelete\">\n            <i class=\"feather icon-trash\"></i>\n        </a>\n    </form>\n"},{"id":52,"log_name":"LOGIN","description":"Inactive user","subject_type":null,"subject_id":null,"event":null,"causer_type":"App\\Models\\User","causer_id":31,"properties":{"url":"https://demo.nix-ecommerce.nixecommerce.net/admin/authenticate","method":"POST","status":"failed","browser":"Chrome","platform":"Windows","ip_address":"154.192.109.28","user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36","browser_version":"146.0.0.0"},"batch_uuid":null,"created_at":"13-4-2026 10:10 PM","updated_at":"2026-04-13T14:10:07.000000Z","causer":"N/A","browser":"Chrome 146.0.0.0","platform":"Windows","ip":"154.192.109.28","action":"<form method=\"post\" action=\"https://demo.nix-ecommerce.nixecommerce.net/admin/user/activity/delete/52\" id=\"delete-data-52\" accept-charset=\"UTF-8\" class=\"display_inline\">\n    <input type=\"hidden\" name=\"_token\" value=\"YfXguxfpniJmtoyGelVtxtq4F6tqvN5pzDagt4i9\" autocomplete=\"off\">    <input type=\"hidden\" name=\"_method\" value=\"POST\">\n\n            <a title=\"Trash\" class=\"action-icon confirm-delete \" type=\"button\" data-id=\"52\" data-delete=\"data\" data-label=\"Delete\" data-bs-toggle=\"modal\" data-bs-target=\"#confirmDelete\">\n            <i class=\"feather icon-trash\"></i>\n        </a>\n    </form>\n"}],"columns":[{"data":"log_name","name":"log_name","title":"Type","orderable":false,"searchable":false},{"data":"description","name":"description","title":"Description","orderable":false,"searchable":true},{"data":"causer","name":"causer","title":"User","orderable":false,"searchable":true},{"data":"browser","name":"browser","title":"Browser","orderable":false,"searchable":true},{"data":"platform","name":"platform","title":"Platform","orderable":false,"width":"5%","searchable":true},{"data":"ip","name":"ip","title":"IP","orderable":false,"searchable":true},{"data":"created_at","name":"created_at","title":"Logged at","orderable":false,"searchable":true},{"data":"action","name":"action","title":"","orderable":false,"searchable":false,"width":"5%","className":"text-right align-middle"}],"pageLength":25,"language":{"url":"https:\/\/demo.nix-ecommerce.nixecommerce.net\/resources\/lang\/en.json"},"order":[0,"DESC"],"dom":"Bfrtip"});});</script>
+
+<script>
+    var searchMinLength = 3;
+    var searchDelay = 500;
+</script>
+
+<script src="../../public/dist/js/custom/yajra-custom.min.js"></script>
+        </div>
+    </div>
+</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div
+    class="modal fade admin-delete-modal admin-delete-modal--v2"
+    id="confirmDelete"
+    tabindex="-1"
+    role="alertdialog"
+    aria-modal="true"
+    aria-labelledby="confirmDeleteLabel"
+     aria-describedby="confirmDeleteMessage confirmDeleteMessageSecondary"     data-bs-backdrop="static"
+    data-bs-keyboard="true"
+>
+    <div class="modal-dialog modal-dialog-centered admin-delete-modal-dialog" role="document">
+        <div class="modal-content admin-delete-modal-content">
+            <header class="admin-delete-modal-header-v2">
+                <h2 class="admin-delete-modal-title-v2" id="confirmDeleteLabel">Delete item?</h2>
+                <button
+                    type="button"
+                    class="admin-delete-modal-close-v2"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                >
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </header>
+
+            <div class="admin-delete-modal-body-v2">
+                                    <div class="admin-delete-modal-icon-v2" aria-hidden="true">
+                        <i class="feather icon-trash-2"></i>
+                    </div>
+                    <p class="admin-delete-modal-primary-v2" id="confirmDeleteMessage">Are you sure you want to delete this item?</p>
+                    <p
+                        class="admin-delete-modal-secondary-v2 "
+                        id="confirmDeleteMessageSecondary"
+                                            >This action cannot be undone.</p>
+
+                                                </div>
+
+            <footer class="admin-delete-modal-footer-v2">
+                <div class="admin-delete-modal-footer-actions">
+                    <button
+        type="button"
+         data-bs-dismiss="modal"         class="admin-btn admin-btn-cancel admin-delete-modal-btn-ghost"
+    >
+        Cancel
+    </button>
+                    <button
+    type="button"
+        class="admin-btn admin-btn-danger admin-delete-modal-confirm-btn admin-delete-modal-btn-danger" id="confirmDeleteSubmitBtn" data-task=""
+>
+            <i class="feather icon-trash-2" aria-hidden="true"></i>
+        <span>Delete</span>
+</button>
+                </div>
+                <div class="admin-delete-modal-footer-loading" aria-live="polite">
+                    <span class="ajax-loading" aria-hidden="true"></span>
+                </div>
+            </footer>
+        </div>
+    </div>
+</div>
+    <script src="../../public/dist/js/custom/delete-modal.min.js"></script>
+    <div class="modal fade admin-delete-modal admin-delete-modal--v2" id="batchDelete" tabindex="-1" role="alertdialog" aria-modal="true" aria-labelledby="batchDeleteLabel" aria-describedby="batchDeleteMessage batchDeleteMessageSecondary" data-bs-backdrop="static" data-bs-keyboard="true">
+    <div class="modal-dialog modal-dialog-centered admin-delete-modal-dialog" role="document">
+        <div class="modal-content admin-delete-modal-content">
+            <header class="admin-delete-modal-header-v2">
+                <h2 class="admin-delete-modal-title-v2" id="batchDeleteLabel">Delete items?</h2>
+                <button type="button" class="admin-delete-modal-close-v2" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </header>
+            <div class="admin-delete-modal-body-v2">
+                <div class="admin-delete-modal-icon-v2" aria-hidden="true">
+                    <i class="feather icon-trash-2"></i>
+                </div>
+                <p class="admin-delete-modal-primary-v2" id="batchDeleteMessage">Are you sure you want to delete the selected items?</p>
+                <p class="admin-delete-modal-secondary-v2" id="batchDeleteMessageSecondary">This action cannot be undone.</p>
+            </div>
+            <footer class="admin-delete-modal-footer-v2">
+                <div class="admin-delete-modal-footer-actions">
+                    <button
+        type="button"
+         data-bs-dismiss="modal"         class="admin-btn admin-btn-cancel admin-delete-modal-btn-ghost"
+    >
+        Cancel
+    </button>
+                    <button type="button" class="admin-btn admin-btn-danger admin-delete-modal-confirm-btn admin-delete-modal-btn-danger batch-delete-operation">
+                        <i class="feather icon-trash-2" aria-hidden="true"></i>
+                        <span>Delete</span>
+                    </button>
+                </div>
+                <div class="admin-delete-modal-footer-loading" aria-live="polite">
+                    <span class="ajax-loading" aria-hidden="true"></span>
+                </div>
+            </footer>
+        </div>
+    </div>
+</div>
+        </div>
+    </div>
+                            </div>
+
+                                                                                    <!-- [ Main Content ] end -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- [ Main Content ] end -->
+
+    <!-- Warning Section start -->
+    <!-- Older IE warning message -->
+    <!--[if lt IE 11]>
+        <div class="ie-warning">
+            <h1>Warning!!</h1>
+            <p>You are using an outdated version of Internet Explorer, please upgrade to any of the following web browsers to access this website.
+            </p>
+            <div class="iew-container">
+                <ul class="iew-download">
+                    <li>
+                        <a href="//www.google.com/chrome/">
+                            <img src="../../public/datta-able/images/browser/chrome.png" alt="Chrome">
+                            <div>Chrome</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="//www.mozilla.org/en-US/firefox/new/">
+                            <img src="../../public/datta-able/images/browser/firefox.png" alt="Firefox">
+                            <div>Firefox</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="//www.opera.com">
+                            <img src="../../public/datta-able/images/browser/opera.png" alt="Opera">
+                            <div>Opera</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="//www.apple.com/safari/">
+                            <img src="../../public/datta-able/images/browser/safari.png" alt="Safari">
+                            <div>Safari</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="//windows.microsoft.com/en-us/internet-explorer/download-ie">
+                            <img src="../../public/datta-able/images/browser/ie.png" alt="Image">
+                            <div>IE (11 & above)</div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <p>Sorry for the inconvenience!</p>
+        </div>
+    <![endif]-->
+    <!-- Warning Section Ends -->
+
+    <!-- Required Js -->
+    <script src="../../public/datta-able/js/pcoded.min.js"></script>
+    <script src="../../public/datta-able/plugins/select2/js/select2.full.min.js"></script>
+    <script src="../../public/dist/js/custom/app-layout.min.js"></script>
+    <script src="../../public/dist/js/custom/admin-layout.min.js"></script>
+
+    <!-- Custom Js -->
+
+    
+    
+        <script type="text/javascript">
+        'use strict';
+        var searchURI = "https://demo.nix-ecommerce.nixecommerce.net/admin/find-users-with-ajax";
+    </script>
+    <script src="../../public/dist/js/custom/permission.min.js"></script>
+    <script src="../../public/dist/js/custom/users-activity-list.min.js"></script>
+
+    
+    
+    </body>
+
+</html>

@@ -1,0 +1,1831 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    
+    <title>Nix Ecommerce | View Order</title>
+    <!-- HTML5 Shim and Respond.js IE10 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 10]>
+        <script src="../../../public/dist/js/respond.min.js"></script>
+    <![endif]-->
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="keywords" content="RoverCRM, perfex, invoice, pos, point of sale, lead, quotation, task, project, support, ticket, crm, hrm, inventory, zohocrm, kanban, customer relationship management, sales, customer, supplier, user, item, variant, laravel, hrsale, woocommerce crm, ecommerce crm, appointment, email template, sms template, url shortner, staff management, timesheet, payroll, project manager, payment, asset management, logistic, human resource, activity">
+<meta name="author" content="demo.nix-ecommerce.nixecommerce.net">
+<meta name="description" content="">    <!-- Favicon icon -->
+                <link rel='shortcut icon' href="../../../public/uploads/20221108/08baa7c9b296a9354e9e2748987bec91.ico" type='image/x-icon' />
+        <link rel="stylesheet" href="../../../public/datta-able/fonts/fontawesome/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="../../../public/datta-able/fonts/material/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="../../../public/datta-able/fonts/flag/css/flag-icon.min.css">
+    <link rel="stylesheet" href="../../../public/datta-able/plugins/animation/css/animate.min.css">
+
+    <!-- vendor css -->
+    <link rel="stylesheet" href="../../../public/datta-able/plugins/bootstrap-v5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../public/datta-able/css/style.min.css">
+    <link rel="stylesheet" href="../../../public/datta-able/fonts/feather/css/feather.min.css">
+    <link rel="stylesheet" href="../../../public/datta-able/plugins/jquery-scrollbar/css/jquery.scrollbar.min.css">
+    <link rel="stylesheet" href="../../../public/datta-able/fonts/datta/datta-icon.min.css">
+    <link rel="stylesheet" href="../../../public/datta-able/plugins/jquery-scrollbar/css/perfect-scrollbar.min.css">
+
+    <link rel="stylesheet" href="../../../public/dist/css/custom.min.css">
+    <link rel="stylesheet" href="../../../public/dist/css/admin-ui.min.css">
+    <link rel="stylesheet" href="../../../public/dist/css/role.min.css">
+    
+    <link rel="stylesheet" href="../../../public/datta-able/plugins/select2/css/select2.min.css">
+
+    <!--Custom CSS that was written on view-->
+
+    
+        <!-- date range picker css -->
+    <link rel="stylesheet" href="../../../public/dist/plugins/bootstrap-daterangepicker/daterangepicker.min.css">
+    <!-- select2 css -->
+    <link rel="stylesheet" href="../../../public/datta-able/plugins/select2/css/select2.min.css">
+    <link rel="stylesheet" href="../../../public/dist/plugins/jQueryUI/jquery-ui.min.css" type="text/css"/>
+    <link rel="stylesheet" href="../../../public/dist/css/invoice.min.css">
+    <link rel="stylesheet" href="../../../public/dist/css/mv-form.min.css">
+    <link rel="stylesheet" href="../../../public/dist/css/order-view.min.css">
+
+    
+    
+    <!-- Theme style RTL -->
+                <script src="../../../public/js/lang/en.js"></script>
+        <script type="text/javascript">
+        'use strict';
+        var APP_ROOT = new URL('../../../', window.location.href).href.replace(/\/$/, '');
+        var BASE_URL = window.BASE_URL = window.BASE_URL || APP_ROOT;
+        var SITE_URL = APP_ROOT + "/admin";
+        var ADMIN_SITE_URL = APP_ROOT + "/admin";
+        var currencySymbol = '$';
+        var token = 'YfXguxfpniJmtoyGelVtxtq4F6tqvN5pzDagt4i9';
+        var decimal_digits = '2';
+        var thousand_separator = ',';
+        var symbol_position = 'before';
+        var dateFormat = 'dd-mm-yyyy';
+        var app_locale_url = "../../../resources/lang/en.json";
+        var row_per_page = '25';
+        var language_direction = 'ltr';
+        var summernote_regex = /<\/*(?:applet|b(?:ase|gsound|link)|embed|frame(?:set)?|ilayer|l(?:ayer|ink)|meta|object|s(?:cript|tyle)|t(?:itle|extarea)|xml)[^>]*?>/gi;
+        window.PHONE_INPUT_CONFIG = {
+        utilJs: "../../../public/dist/js/intl-tel-input/utils.min.js",
+        defaultCountryCode: "bd",
+        onlyCountries: []    };
+    var defaultCountryCode = "bd";
+    var allowedPhoneCountryCodes = [];
+    var utilJs = "../../../public/dist/js/intl-tel-input/utils.min.js";
+    </script>
+
+    <!-- Required Js -->
+    <script src="../../../public/datta-able/plugins/bootstrap-v5/js/popper.min.js"></script>
+    <script src="../../../public/datta-able/plugins/bootstrap-v5/js/jquery.min.js"></script>
+    <script src="../../../public/dist/js/custom/admin-static-bridge.js"></script>
+    <script src="../../../public/datta-able/plugins/bootstrap-v5/js/slim.min.js"></script>
+    <script src="../../../public/datta-able/plugins/bootstrap-v5/js/bootstrap.min.js"></script>
+
+    
+</head>
+
+
+<body >
+        <!-- [ Pre-loader ] start -->
+    <div class="loader-bg">
+        <div class="loader-track">
+            <div class="loader-fill"></div>
+        </div>
+    </div>
+    <!-- [ Pre-loader ] End -->
+
+    <!-- [ navigation menu ] start -->
+    
+    <nav class="pcoded-navbar admin-sidebar">
+    <div class="navbar-wrapper">
+        <div class="navbar-brand header-logo">
+            <a href="../../../admin/dashboard.html" class="b-brand">
+                                <img class="admin-panel-header-logo" src="../../../public/uploads/20221108/20d20c52d903d8d09681b6143df36fbf.png" alt="Nix Ecommerce">
+            </a>
+            <a class="mobile-menu" id="mobile-collapse" href="javascript:void(0)"><span></span></a>
+        </div>
+        <div class="navbar-content scroll-div">
+            <ul class="nav pcoded-inner-navbar">
+                                                                        <li data-username="form elements advance componant validation masking wizard picker select" class=" nav-item  ">
+                        <a href='../../../admin/dashboard.html' class="nav-link"><span class="pcoded-micon"><i class="fas fa-home"></i></span><span class="pcoded-mtext">Dashboard</span></a>
+                                            </li>
+                                                        <li data-username="form elements advance componant validation masking wizard picker select" class=" nav-item  pcoded-hasmenu  ">
+                        <a href='javascript:' class="nav-link"><span class="pcoded-micon"><i class="fas fa-users"></i></span><span class="pcoded-mtext">Personnel</span></a>
+                                                    <ul class="pcoded-submenu sub-menu-custom">
+                                                                    <li class="">
+                                        <a href="../../../admin/user/create.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Add User</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../../admin/user/list.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>All Users</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../../admin/user/customer--role=3.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Customers</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../../admin/user/activity.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Login Activities</a>
+                                    </li>
+                                                            </ul>
+                                            </li>
+                                                        <li data-username="form elements advance componant validation masking wizard picker select" class=" nav-item  pcoded-hasmenu  ">
+                        <a href='javascript:' class="nav-link"><span class="pcoded-micon"><i class="fas fa-cube"></i></span><span class="pcoded-mtext">Products</span></a>
+                                                    <ul class="pcoded-submenu sub-menu-custom">
+                                                                    <li class="">
+                                        <a href="../../../admin/product/create.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Add Product</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../../admin/products.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>All Products</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../../admin/pending/products--status=Pending-Review.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Pending Products</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../../admin/categories.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Categories</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../../admin/brands.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Brands</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../../admin/attributes.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Attributes</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../../admin/reviews.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Reviews</a>
+                                    </li>
+                                                            </ul>
+                                            </li>
+                                                        <li data-username="form elements advance componant validation masking wizard picker select" class=" nav-item  pcoded-hasmenu  ">
+                        <a href='javascript:' class="nav-link"><span class="pcoded-micon"><i class="fas fa-table"></i></span><span class="pcoded-mtext">Inventory</span></a>
+                                                    <ul class="pcoded-submenu sub-menu-custom">
+                                                                    <li class="">
+                                        <a href="../../../admin/inventory/location.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Location</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../../admin/inventory/supplier.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Supplier</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../../admin/inventory/purchase-order.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Purchase Order</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../../admin/inventory.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Stock</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../../admin/inventory/transfer.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Transfer</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../../admin/inventory/transaction.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Transaction</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../../admin/inventory/settings.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Settings</a>
+                                    </li>
+                                                            </ul>
+                                            </li>
+                                                        <li data-username="form elements advance componant validation masking wizard picker select" class=" nav-item  pcoded-hasmenu  ">
+                        <a href='javascript:' class="nav-link"><span class="pcoded-micon"><i class="fas fa-barcode"></i></span><span class="pcoded-mtext">Barcode</span></a>
+                                                    <ul class="pcoded-submenu sub-menu-custom">
+                                                                    <li class="">
+                                        <a href="../../../admin/barcode/product.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Product</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../../admin/barcode/settings.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Settings</a>
+                                    </li>
+                                                            </ul>
+                                            </li>
+                                                        <li data-username="form elements advance componant validation masking wizard picker select" class=" nav-item  pcoded-hasmenu  pcoded-trigger active">
+                        <a href='javascript:' class="nav-link"><span class="pcoded-micon"><i class="fas fa-shopping-bag"></i></span><span class="pcoded-mtext">Orders</span></a>
+                                                    <ul class="pcoded-submenu sub-menu-custom">
+                                                                    <li class="active">
+                                        <a href="../../../admin/orders.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>All Orders</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../../admin/transactions.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Transactions</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../../admin/refund-requests.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Refunds</a>
+                                    </li>
+                                                            </ul>
+                                            </li>
+                                                        <li data-username="form elements advance componant validation masking wizard picker select" class=" nav-item  pcoded-hasmenu  ">
+                        <a href='javascript:' class="nav-link"><span class="pcoded-micon"><i class="fas fa-user-plus"></i></span><span class="pcoded-mtext">Vendors</span></a>
+                                                    <ul class="pcoded-submenu sub-menu-custom">
+                                                                    <li class="">
+                                        <a href="../../../admin/vendors/create.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Add Vendor</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../../admin/vendors.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>All Vendors</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../../admin/customers.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Customers</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../../admin/withdrawals.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Withdrawals</a>
+                                    </li>
+                                                            </ul>
+                                            </li>
+                                                        <li data-username="form elements advance componant validation masking wizard picker select" class=" nav-item  pcoded-hasmenu  ">
+                        <a href='javascript:' class="nav-link"><span class="pcoded-micon"><i class="fab fa-blogger-b"></i></span><span class="pcoded-mtext">Blogs</span></a>
+                                                    <ul class="pcoded-submenu sub-menu-custom">
+                                                                    <li class="">
+                                        <a href="../../../admin/blog/create.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Add Post</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../../admin/blogs.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>All Posts</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../../admin/blog/category/list.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Categories</a>
+                                    </li>
+                                                            </ul>
+                                            </li>
+                                                        <li data-username="form elements advance componant validation masking wizard picker select" class=" nav-item  pcoded-hasmenu  ">
+                        <a href='javascript:' class="nav-link"><span class="pcoded-micon"><i class="fas fa-bullhorn"></i></span><span class="pcoded-mtext">Marketing</span></a>
+                                                    <ul class="pcoded-submenu sub-menu-custom">
+                                                                    <li class="">
+                                        <a href="../../../admin/coupon/create.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Add Coupon</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../../admin/coupons.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>All Coupons</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../../admin/coupon-redeems.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Coupon Redeems</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../../admin/popup/create.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Add Popup</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../../admin/popups.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>All Popups</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../../admin/subscribers.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>All Subscribers</a>
+                                    </li>
+                                                            </ul>
+                                            </li>
+                                                        <li data-username="form elements advance componant validation masking wizard picker select" class=" nav-item  pcoded-hasmenu  ">
+                        <a href='javascript:' class="nav-link"><span class="pcoded-micon"><i class="fa fa-truck"></i></span><span class="pcoded-mtext">Delivery Boy</span></a>
+                                                    <ul class="pcoded-submenu sub-menu-custom">
+                                                                    <li class="">
+                                        <a href="../../../admin/delivery/carrier/create.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Add Delivery Boy</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../../admin/delivery/carrier.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>All Delivery Boy</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../../admin/delivery/withdrawal.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Withdrawals</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../../admin/delivery/settings.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Settings</a>
+                                    </li>
+                                                            </ul>
+                                            </li>
+                                                        <li data-username="form elements advance componant validation masking wizard picker select" class=" nav-item  ">
+                        <a href='../../../admin/menu-builder.html' class="nav-link"><span class="pcoded-micon"><i class="fas fa-bars"></i></span><span class="pcoded-mtext">Menus</span></a>
+                                            </li>
+                                                        <li data-username="form elements advance componant validation masking wizard picker select" class=" nav-item  pcoded-hasmenu  ">
+                        <a href='javascript:' class="nav-link"><span class="pcoded-micon"><i class="fas fa-window-restore"></i></span><span class="pcoded-mtext">Forms</span></a>
+                                                    <ul class="pcoded-submenu sub-menu-custom">
+                                                                    <li class="">
+                                        <a href="../../../admin/forms.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>All Forms</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../../admin/forms/submissions.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>All Submissions</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../../admin/forms/kyc-form.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>KYC</a>
+                                    </li>
+                                                            </ul>
+                                            </li>
+                                                        <li data-username="form elements advance componant validation masking wizard picker select" class=" nav-item  pcoded-hasmenu  ">
+                        <a href='javascript:' class="nav-link"><span class="pcoded-micon"><i class="fas fa-globe"></i></span><span class="pcoded-mtext">Website Setup</span></a>
+                                                    <ul class="pcoded-submenu sub-menu-custom">
+                                                                    <li class="">
+                                        <a href="../../../admin/sliders.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>All Sliders</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../../admin/page/home/list.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Home Pages</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../../admin/page/list.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Pages</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../../admin/theme/list.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Appearance</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../../admin/auth/layouts.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Authentication Layout</a>
+                                    </li>
+                                                            </ul>
+                                            </li>
+                                                        <li data-username="form elements advance componant validation masking wizard picker select" class=" nav-item  ">
+                        <a href='../../../admin/uploaded-files.html' class="nav-link"><span class="pcoded-micon"><i class="fas fa-folder-open"></i></span><span class="pcoded-mtext">Media Manager</span></a>
+                                            </li>
+                                                        <li data-username="form elements advance componant validation masking wizard picker select" class=" nav-item  pcoded-hasmenu  ">
+                        <a href='javascript:' class="nav-link"><span class="pcoded-micon"><i class="fas fa-ticket-alt"></i></span><span class="pcoded-mtext">Support Tickets</span></a>
+                                                    <ul class="pcoded-submenu sub-menu-custom">
+                                                                    <li class="">
+                                        <a href="../../../admin/ticket/add.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Add Ticket</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../../admin/ticket/list.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>All Tickets</a>
+                                    </li>
+                                                            </ul>
+                                            </li>
+                                                        <li data-username="form elements advance componant validation masking wizard picker select" class=" nav-item  pcoded-hasmenu  ">
+                        <a href='javascript:' class="nav-link"><span class="pcoded-micon"><i class="fas fa-cogs"></i></span><span class="pcoded-mtext">Tools</span></a>
+                                                    <ul class="pcoded-submenu sub-menu-custom">
+                                                                    <li class="">
+                                        <a href="../../../admin/otp-logs.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>OTP Log</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../../admin/imports.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Import</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../../admin/exports.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Export</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../../admin/notifications/log.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Notification Log</a>
+                                    </li>
+                                                            </ul>
+                                            </li>
+                                                        <li data-username="form elements advance componant validation masking wizard picker select" class=" nav-item  pcoded-hasmenu  ">
+                        <a href='javascript:' class="nav-link"><span class="pcoded-micon"><i class="fas fa-cog"></i></span><span class="pcoded-mtext">Configurations</span></a>
+                                                    <ul class="pcoded-submenu sub-menu-custom">
+                                                                    <li class="">
+                                        <a href="../../../admin/general-setting.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>General Settings</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../../admin/order-setting.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Orders</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../../admin/product-setting.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Products</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../../admin/settings/currency.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Currencies</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../../admin/shippings.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Shipping</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../../admin/taxes.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Taxes</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../../admin/account-setting.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Accounts</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../../admin/email-setting.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Emails</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../../admin/sms/configs.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Sms</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../../admin/custom-fields.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Custom Fields</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../../admin/geolocale.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>Geo Locale</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../../admin/system-info.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>System Info</a>
+                                    </li>
+                                                                    <li class="">
+                                        <a href="../../../admin/system-update.html" class="d-flex align-items-center "> <span class="pcoded-micon"> <i class=""></i></span>System Update</a>
+                                    </li>
+                                                            </ul>
+                                            </li>
+                                                        <li data-username="form elements advance componant validation masking wizard picker select" class=" nav-item  ">
+                        <a href='../../../admin/advance-reports.html' class="nav-link"><span class="pcoded-micon"><i class="fas fa-chart-bar"></i></span><span class="pcoded-mtext">Advance Reports</span></a>
+                                            </li>
+                                                        <li data-username="form elements advance componant validation masking wizard picker select" class=" nav-item  ">
+                        <a href='../../../admin/reports.html' class="nav-link"><span class="pcoded-micon"><i class="fas fa-chart-bar"></i></span><span class="pcoded-mtext">Reports</span></a>
+                                            </li>
+                                                        <li data-username="form elements advance componant validation masking wizard picker select" class=" nav-item  ">
+                        <a href='../../../admin/addons.html' class="nav-link"><span class="pcoded-micon"><i class="fas fa-plug"></i></span><span class="pcoded-mtext">Addon Manager</span></a>
+                                            </li>
+                            </ul>
+        </div>
+    </div>
+</nav>
+    <!-- [ navigation menu ] end -->
+
+    <!-- [ Header ] start -->
+    
+    <header class="navbar pcoded-header navbar-expand-lg navbar-light">
+        <div class="m-header header-background-color">
+        <a class="mobile-menu" id="mobile-collapse1" href="javascript:"><span></span></a>
+        <a href="../../../admin/dashboard.html" class="b-brand text-decoration-none">
+            <span class="b-title">Nix Ecommerce</span>
+        </a>
+    </div>
+    <a class="mobile-menu text-decoration-none" id="mobile-header" href="javascript:">
+        <i class="feather icon-more-horizontal"></i>
+    </a>
+    <div class="collapse navbar-collapse">
+        <ul class="navbar-nav d-flex flex-row flex-wrap nav-menu ltr:float-left ltr:me-auto ltr:ms-2 rtl:float-right rtl:ms-auto rtl:me-2">
+            <li class="ltr:ms-3 rtl:me-3 nav-parent nav-parent--mobile-sidebar d-lg-none">
+                <button type="button" class="mobile-sidebar-toggle-btn" id="mobile-sidebar-toggle-btn" aria-label="Toggle sidebar">
+                    <i class="feather icon-menu"></i>
+                    <span>Menu</span>
+                </button>
+            </li>
+            <li class="ltr:ms-3 rtl:me-3 nav-parent nav-parent--mobile-hide d-lg-none">
+                <button type="button" class="mobile-header-hide-btn" id="mobile-header-hide-btn" aria-label="Hide mobile header">
+                    <i class="feather icon-eye-off"></i>
+                    <span>Hide Header</span>
+                </button>
+            </li>
+                            
+                <li class="ltr:ms-3 rtl:me-3 nav-parent ">
+                    <a href="javascript:" class="full-screen text-decoration-none ltr:ps-2 rtl:pe-2" onclick="javascript:toggleFullScreen()"><i class="feather icon-maximize"></i></a>
+                </li>
+                            
+                <li class="ltr:ms-3 rtl:me-3 nav-parent ">
+                    <a class="d-flex align-items-center text-decoration-none" href="../../../../frontend/index.html" target="_blank">
+                <i class="feather icon-globe"></i><span class="list-curent-color ltr:ms-2 rtl:me-2">Visit Site</span></a>
+                </li>
+                            
+                <li class="ltr:ms-3 rtl:me-3 nav-parent ">
+                    <a class="d-flex align-items-center text-decoration-none" href="../../../admin/dashboard.html" target="_blank">
+                <i class="feather icon-external-link"></i><span class="ltr:ms-2 rtl:me-2 list-curent-color">Customer Panel</span></a>
+                </li>
+                            
+                <li class="ltr:ms-3 rtl:me-3 nav-parent ">
+                    <a class="d-flex align-items-center text-decoration-none" href="../../../vendor/dashboard.html" target="_blank">
+                <i class="feather icon-external-link"></i><span class="ltr:ms-2 rtl:me-2 list-curent-color">Vendor Panel</span></a>
+                </li>
+                            
+                <li class="ltr:ms-3 rtl:me-3 nav-parent ">
+                    <div class="dropdown quick-dropdown">
+            <a class="dropdown-toggle" data-bs-toggle="dropdown" href="javascript:" title="Quick Links">
+                <i class="feather icon-sliders"></i>
+                <span class="ltr:ms-2 rtl:me-2 list-curent-color">Quick Links</span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right profile-notification quick-link" data-bs-popper="static">
+                <ul class="pro-body"><li><a href="../../../admin/user/create.html" class="dropdown-item text-decoration-none" target="_self"><i class="feather icon-user-plus"></i>Add User</a></li><li><a href="../../../admin/product/create.html" class="dropdown-item text-decoration-none" target="_self"><i class="feather icon-box"></i>Add Product</a></li><li><a href="../../../admin/product-setting.html" class="dropdown-item text-decoration-none" target="_self"><i class="feather icon-settings"></i>Product Setting</a></li><li><a href="../../../admin/shippings.html" class="dropdown-item text-decoration-none" target="_self"><i class="feather icon-map"></i>Shipping Setting</a></li><li><a href="../../../admin/taxes.html" class="dropdown-item text-decoration-none" target="_self"><i class="feather icon-percent"></i>Tax Setting</a></li><li><a href="../../../admin/orders.html" class="dropdown-item text-decoration-none" target="_self"><i class="feather icon-list"></i>Orders</a></li><li><a href="../../../admin/coupons.html" class="dropdown-item text-decoration-none" target="_self"><i class="feather icon-tag"></i>Coupons</a></li><li><a href="../../../admin/blog/create.html" class="dropdown-item text-decoration-none" target="_self"><i class="feather icon-file-text"></i>Add Blog</a></li><li><a href="../../../admin/ticket/list.html" class="dropdown-item text-decoration-none" target="_self"><i class="feather icon-message-circle"></i>Tickets</a></li><li><a href="../../../admin/reports.html" class="dropdown-item text-decoration-none" target="_self"><i class="feather icon-bar-chart-2"></i>Reports</a></li><li><a href="../../../admin/dashboard.html" class="dropdown-item text-decoration-none" target="_self"><i class="feather icon-trash"></i>Clear Cache</a></li></ul>
+            </div>
+        </div>
+                </li>
+                    </ul>
+        <ul class="navbar-nav nav-icon ltr:ms-lg-auto ltr:ms-2 ltr:me-lg-2 rtl:me-lg-auto rtl:me-2 rtl:ms-lg-2">
+            <li class="header-icon-item header-icon-item--notification">
+                <div class="dropdown">
+                    <a class="dropdown-toggle header-notification-icon" href="#" data-bs-toggle="dropdown">
+                        <i class="icon feather icon-bell"></i>
+                        <span class="mobile-notification-count">0</span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-end notification">
+                        <div class="noti-head">
+                            <h6 class="d-inline-block m-b-0">Notifications</h6>
+                            <div class="float-right">
+                                <a href="../../../admin/notifications/mark-as-read.html" class="m-r-10">mark all as read</a>
+                            </div>
+                        </div>
+                        <ul class="noti-body scroll-noti header-notification-body">
+                            
+                        </ul>
+                        <div class="noti-footer">
+                            <a href="../../../admin/notifications.html">show all</a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            
+                            <li class="header-icon-item header-icon-item--language">
+                    <div class="dropdown">
+                        <a class="dropdown-toggle flag flag-icon-background flag-icon-gb" id="dropdown-flag" data-bs-toggle="dropdown" href="javascript:" ></a>
+                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-end notification">
+                            <div class="noti-head">
+                                <h6 class="d-inline-block m-b-0">Select Language</h6>
+                            </div>
+                            <ul class="noti-body scroll-noti">
+                                                                    <li class="notification">
+                                        <div class="media lang d-flex" id="en" data-shortname="en">
+                                            <img class="img-radius" src='../../../public/datta-able/fonts/flag/flags/4x3/gb.svg' alt="en.jpg">
+                                            <div class="media-body">
+                                                <p><span>English</span></p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                                                    <li class="notification">
+                                        <div class="media lang d-flex" id="bn" data-shortname="bn">
+                                            <img class="img-radius" src='../../../public/datta-able/fonts/flag/flags/4x3/bd.svg' alt="">
+                                            <div class="media-body">
+                                                <p><span>Bengali</span></p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                                                    <li class="notification">
+                                        <div class="media lang d-flex" id="fr" data-shortname="fr">
+                                            <img class="img-radius" src='../../../public/datta-able/fonts/flag/flags/4x3/fr.svg' alt="">
+                                            <div class="media-body">
+                                                <p><span>French</span></p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                                                    <li class="notification">
+                                        <div class="media lang d-flex" id="zh" data-shortname="zh">
+                                            <img class="img-radius" src='../../../public/datta-able/fonts/flag/flags/4x3/cn.svg' alt="">
+                                            <div class="media-body">
+                                                <p><span>Chinese</span></p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                                                    <li class="notification">
+                                        <div class="media lang d-flex" id="ar" data-shortname="ar">
+                                            <img class="img-radius" src='../../../public/datta-able/fonts/flag/flags/4x3/sa.svg' alt="">
+                                            <div class="media-body">
+                                                <p><span>Arabic</span></p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                                                    <li class="notification">
+                                        <div class="media lang d-flex" id="be" data-shortname="be">
+                                            <img class="img-radius" src='../../../public/datta-able/fonts/flag/flags/4x3/be.svg' alt="">
+                                            <div class="media-body">
+                                                <p><span>Byelorussian</span></p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                                                    <li class="notification">
+                                        <div class="media lang d-flex" id="bg" data-shortname="bg">
+                                            <img class="img-radius" src='../../../public/datta-able/fonts/flag/flags/4x3/bg.svg' alt="">
+                                            <div class="media-body">
+                                                <p><span>Bulgarian</span></p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                                                    <li class="notification">
+                                        <div class="media lang d-flex" id="ca" data-shortname="ca">
+                                            <img class="img-radius" src='../../../public/datta-able/fonts/flag/flags/4x3/es.svg' alt="">
+                                            <div class="media-body">
+                                                <p><span>Catalan</span></p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                                                    <li class="notification">
+                                        <div class="media lang d-flex" id="et" data-shortname="et">
+                                            <img class="img-radius" src='../../../public/datta-able/fonts/flag/flags/4x3/ee.svg' alt="">
+                                            <div class="media-body">
+                                                <p><span>Estonian</span></p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                                                    <li class="notification">
+                                        <div class="media lang d-flex" id="nl" data-shortname="nl">
+                                            <img class="img-radius" src='../../../public/datta-able/fonts/flag/flags/4x3/nl.svg' alt="">
+                                            <div class="media-body">
+                                                <p><span>Dutch</span></p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                                            </ul>
+                        </div>
+                    </div>
+                </li>
+                        <li class="ltr:me-2 rtl:ms-2 header-icon-item header-icon-item--settings">
+                <div class="dropdown drp-user">
+                    <a href="javascript:void(0)" class="dropdown-toggle text-decoration-none" data-bs-toggle="dropdown">
+                        <i class="icon feather icon-settings ltr:ms-0 rtl:me-0 f-20"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-end profile-notification">
+                        <div class="pro-head">
+                            <img src="../../../public/uploads/20221010/f344eaaaa40173a23c693d1b4b24c794.webp" class="img-radius" alt="User-Profile-Image">
+                            <span>Agatha Williams</span>
+                            <a href="../../../admin/login.html" class="dud-logout" title="Logout">
+                                <i class="feather icon-log-out"></i>
+                            </a>
+                        </div>
+                        <ul class="pro-body">
+                            <li><a href="../../../admin/profile.html" class="dropdown-item text-decoration-none"><i class="feather icon-user"></i> Profile</a></li>
+                            <li><a href="../../../admin/user/activity--userId=1.html" class="dropdown-item text-decoration-none"><i class="feather icon-activity"></i> Login Activities</a></li>
+                            <li><a href="../../../admin/login.html" class="dropdown-item text-decoration-none"><i class="feather icon-lock"></i> Sign Out</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="notification-loader d-none">
+        <div class="d-flex justify-content-center align-items-center h-100">
+            <div class="spinner-grow w-40p h-40" role="status"></div>
+        </div>
+    </div>
+</header>
+
+        <!-- [ Header ] end -->
+
+    <!-- [ Main Content ] start -->
+    <div class="pcoded-main-container">
+        <div class="pcoded-wrapper">
+            <div class="pcoded-content">
+                <div class="pcoded-inner-content">
+                    <!-- [ breadcrumb ] start -->
+                    <div id="notifications" class="row no-print">
+    <div class="col-md-12">
+                <div class="noti-alert pad no-print mt-20p">
+                                                                                                                                                                </div>
+        <div class="top-notification noti-alert pad no-print js-alert mt-20p d-none">
+            <div class="alert alert-success">
+                <strong class="alertText"></strong>
+                <button type="button" class="btn-close ltr:float-right rtl:float-left notification-close" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+                    <!-- [ breadcrumb ] end -->
+                    <div class="main-body">
+                        <div class="page-wrapper">
+                            <!-- [ Main Content ] start -->
+                                                        
+                            <div class="row">
+                                
+    <!-- Main content (layout aligned with admin invoice view) -->
+    <div class="col-md-12 mt-4" id="invoice-view-container">
+        
+        <div class="col-md-12 no-print notification-msg-bar smoothly-hide px-0">
+            <div class="noti-alert pad">
+                <div class="alert bg-dark text-light m-0 text-center">
+                    <span class="notification-msg"></span>
+                </div>
+            </div>
+        </div>
+                <div class="main-body">
+            <div class="page-wrapper">
+                <div class="row">
+                    <div class="col-lg-9">
+                                                <div class="card">
+                                                                                                                                                                            <div class="card-header">
+    <h5 class="card-title text-uppercase"><span class="font-bold">#ORD-0002</span> Order Details</h5>
+        <div class="row">
+        <div class="col-sm-12 col-md">
+            <div class="row">
+                <div class="col-md-8">
+                    <h6 class="card-subtitle text-muted">Payment Status :
+                        <span id="admin-order-payment-badge"><span class="badge badge-mv-success f-12 f-w-600">Paid</span></span>
+                    </h6>
+                </div>
+                            </div>
+        </div>
+                <div class="col-sm-12 col-md-4">
+            <h6 class="card-subtitle text-muted">Payment Method:
+                <span class="badge badge-mv-secondary f-12 f-w-600"> Stripe</span>
+            </h6>
+        </div>
+                        <div class="col-sm-12 col-md-4">
+            <h6 class="card-subtitle text-muted">Paid On:
+                <span class="font-bold">20-5-2026</span>
+                            </h6>
+        </div>
+            </div>
+            <form action="https://demo.nix-ecommerce.nixecommerce.net/admin/orders/update-payment-status/2" method="POST" class="admin-payment-status-form mt-3" id="admin-payment-status-form" data-has-accepted-payments="1">
+            <input type="hidden" name="_token" value="YfXguxfpniJmtoyGelVtxtq4F6tqvN5pzDagt4i9" autocomplete="off">            <input type="hidden" name="force_unpaid_confirmation" id="force_unpaid_confirmation" value="0">
+            <div class="admin-payment-status-box">
+                <div class="admin-payment-status-copy">
+                    <label class="admin-payment-status-label" for="admin_payment_status">Payment Status</label>
+                </div>
+                <div class="admin-payment-status-actions">
+                    <div class="admin-payment-status-select-wrap">
+                        <select class="form-control admin-payment-status-select" id="admin_payment_status" name="payment_status" aria-label="Admin Payment Status">
+                            <option value="Paid" selected>Paid</option>
+                            <option value="Unpaid" >Unpaid</option>
+                        </select>
+                    </div>
+                    <button
+    type="button"
+    class="admin-btn admin-btn-primary admin-payment-status-btn" id="admin-payment-status-submit"
+>
+    
+    Update Payment
+</button>
+                </div>
+            </div>
+        </form>
+        <div
+    class="modal fade admin-delete-modal admin-delete-modal--v2"
+    id="payment_status_warning_modal"
+    tabindex="-1"
+    role="alertdialog"
+    aria-modal="true"
+    aria-labelledby="payment_status_warning_modalLabel"
+     aria-describedby="confirmDeleteMessage"     data-bs-backdrop="static"
+    data-bs-keyboard="true"
+>
+    <div class="modal-dialog modal-dialog-centered admin-delete-modal-dialog" role="document">
+        <div class="modal-content admin-delete-modal-content">
+            <header class="admin-delete-modal-header-v2">
+                <h2 class="admin-delete-modal-title-v2" id="payment_status_warning_modalLabel">Are you sure?</h2>
+                <button
+                    type="button"
+                    class="admin-delete-modal-close-v2"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                >
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </header>
+
+            <div class="admin-delete-modal-body-v2">
+                                    <div class="admin-delete-modal-icon-v2" aria-hidden="true">
+                        <i class="feather icon-trash-2"></i>
+                    </div>
+                    <p class="admin-delete-modal-primary-v2" id="confirmDeleteMessage">This order already has accepted payment transactions. Marking it as unpaid may create accounting or payment-history inconsistencies.</p>
+                    <p
+                        class="admin-delete-modal-secondary-v2 d-none"
+                        id="payment_status_warning_modalMessageSecondary"
+                         hidden                     ></p>
+
+                                                </div>
+
+            <footer class="admin-delete-modal-footer-v2">
+                <div class="admin-delete-modal-footer-actions">
+                    <button
+        type="button"
+         data-bs-dismiss="modal"         class="admin-btn admin-btn-cancel admin-delete-modal-btn-ghost"
+    >
+        Cancel
+    </button>
+                    <button
+    type="button"
+        class="admin-btn admin-btn-danger admin-delete-modal-confirm-btn admin-delete-modal-btn-danger" id="confirm-payment-status-unpaid" data-task=""
+>
+            <i class="feather icon-trash-2" aria-hidden="true"></i>
+        <span>Yes, Confirm</span>
+</button>
+                </div>
+                <div class="admin-delete-modal-footer-loading" aria-live="polite">
+                    <span class="ajax-loading" aria-hidden="true"></span>
+                </div>
+            </footer>
+        </div>
+    </div>
+</div>
+</div>
+                                                                                                                                                                                                                                                <div class="card-block pb-5">
+    <div class="row invoive-info">
+        <div class="col-md-3 col-sm-6">
+
+            <div class="fw-bold text-dark f-20 mb-3 mt-3 mt-md-0">#ORD-0002</div>
+
+            <div class="row">
+                <div class="col-md-10 mb-2">
+                    <h6 class="text-dark mb-1">Order Date:</h6>
+                    <input class="form-control inputFieldDesign" id="order_date" value='2026-05-20' type="text">
+                </div>
+                <div class="col-md-10 mt-2 mb-2">
+                    <h6 class="text-dark mb-1">Status:</h6>
+
+                                            <span  class="font-bold">Completed</span>
+                                    </div>
+                <div class="col-md-10 mt-2">
+                    <h6 class="text-dark mb-1">Customers:</h6>
+
+                    <select class="form-control user-ajax select2" name="user_id" id="user_id">
+                        <option value=2>Blaine Keller</option>
+                    </select>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <div class="fw-bold text-dark mb-3 mt-3 mt-md-0">
+                <span class="pe-2">Bill To</span>
+                <a class="text-dark billing-address-edit" href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#order_edit_billing_address" role="button">
+                    <i class="feather icon-edit-1"></i>
+                </a>
+            </div>
+            <div class="billing-information-container" id="billing_address">
+                <address>
+                                                                            <span class="billing-address-name">Blaine Keller</span><br>
+                                                                                                <span class="billing-address-phone">0135467989</span><br>
+                                                                                                <span class="billing-address-email">blainekeller@gmail.com</span><br>
+                                                                                                <span class="text-dark">---------------</span><br>
+                                                                        <div class="mb-1">-------------------------------------------</div>
+                                                                                                <span class="billing-address-street">Road no 1, House no 129</span><br>
+                                                                                                                            <span class="billing-address-city">dhaka</span>,
+                                                                                        <span class="billing-address-state">Dhaka</span>
+                                        <br>
+                                                                                                        <span class="billing-address-country">Bangladesh</span>,
+                                                                                                                    <span class="billing-address-zip">1229</span>
+                                                                <br>
+                                                    <span class="billing-address-type-of-place">(Home)</span>
+                                </address>
+            </div>
+
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <div class="fw-bold text-dark mb-3 mt-3 mt-md-0">
+                <span class="pe-2">Ship To</span>
+                <a class="text-dark shipping-address-edit" href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#order_edit_shipping_address" role="button">
+                    <i class="feather icon-edit-1"></i>
+                </a>
+            </div>
+            <div class="billing-information-container" id="shipping_address">
+                <address>
+                                                                            <span class="shipping-address-name">Blaine Keller</span><br>
+                                                                                                <span class="shipping-address-phone">0135467989</span><br>
+                                                                                                <span class="shipping-address-email">blainekeller@gmail.com</span><br>
+                                                                                                <span class="text-dark">---------------</span><br>
+                                                                        <div class="mb-1">-------------------------------------------</div>
+                                                                                                <span class="shipping-address-street">Road no 1, House no 129</span><br>
+                                                                                                                            <span class="shipping-address-city">dhaka</span>,
+                                                                                        <span class="shipping-address-state">Dhaka</span>
+                                        <br>
+                                                                                                        <span class="shipping-address-country">Bangladesh</span>,
+                                                                                                                    <span class="shipping-address-zip">1229</span>
+                                                                <br>
+                                                    <span class="shipping-address-type-of-place">(Home)</span>
+                                </address>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="modal fade" id="order_edit_billing_address" tabindex="-1" role="dialog" aria-labelledby="order_edit_billing_address_label" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="order_edit_billing_address_label">Edit billing address</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body mv-form mv-p-0">
+                <div class="mv-form-callout mv-p-12p mv-mb-24p" role="note">
+                    <p class="mv-form-callout__text mv-m-0">Fields marked with a red asterisk are required.</p>
+                </div>
+                <section class="mv-form-section mv-m-0 mv-p-0 mv-mb-0" aria-labelledby="order-modal-billing-heading">
+                    <h2 id="order-modal-billing-heading" class="visually-hidden">Billing address</h2>
+                    <div class="address-form" id="billing_address_edit_section">
+                        <div id="addressForm">
+                            <section class="order-address-modal-section" aria-labelledby="order-billing-account-heading">
+                                <h3 id="order-billing-account-heading" class="order-address-modal-section__heading">Account Information</h3>
+                                <div class="mv-form-grid">
+                                                                <div class="mv-form-grid__cell">
+                                    <div class="form-group row mb-0">
+                                        <label for="first_name" class="col-form-label ltr:ps-3 rtl:pe-3 require">First Name</label>
+                                        <div class="col-sm-12">
+                                            <input type="text" placeholder="First Name" class="form-control form-width inputFieldDesign has_require" name="first_name" id="first_name" value="Blaine">
+                                        </div>
+                                    </div>
+                                </div>
+                                                                                                <div class="mv-form-grid__cell">
+                                    <div class="form-group row mb-0">
+                                        <label for="last_name" class="col-form-label ltr:ps-3 rtl:pe-3 ">Last Name</label>
+                                        <div class="col-sm-12">
+                                            <input type="text" placeholder="Last Name" class="form-control form-width inputFieldDesign " name="last_name" id="last_name" value="Keller">
+                                        </div>
+                                    </div>
+                                </div>
+                                                                                                <div class="mv-form-grid__cell mv-form-grid__cell--full">
+                                    <div class="form-group row mb-0">
+                                        <label for="company_name" class="col-form-label ltr:ps-3 rtl:pe-3 ">Company name</label>
+                                        <div class="col-sm-12">
+                                            <input type="text" placeholder="Company name" class="form-control form-width inputFieldDesign " name="company_name" id="company_name" value="">
+                                        </div>
+                                    </div>
+                                </div>
+                                                                                                <div class="mv-form-grid__cell">
+                                    <div class="form-group row mb-0">
+                                        <label for="phone" class="col-form-label ltr:ps-3 rtl:pe-3 require">Phone number</label>
+                                        <div class="col-sm-12">
+                                            <input type="text" placeholder="Phone number" class="form-control form-width inputFieldDesign has_require" name="phone" id="phone" value="0135467989">
+                                        </div>
+                                    </div>
+                                </div>
+                                                                                                <div class="mv-form-grid__cell">
+                                    <div class="form-group row mb-0">
+                                        <label for="email" class="col-form-label ltr:ps-3 rtl:pe-3 ">Email Address</label>
+                                        <div class="col-sm-12">
+                                            <input type="text" placeholder="Email Address" class="form-control form-width inputFieldDesign " name="email" id="email" value="blainekeller@gmail.com">
+                                        </div>
+                                    </div>
+                                </div>
+                                                                </div>
+                            </section>
+
+                            <section class="order-address-modal-section" aria-labelledby="order-billing-street-heading">
+                                <h3 id="order-billing-street-heading" class="order-address-modal-section__heading">Address Details</h3>
+                                <div class="mv-form-grid">
+                                                                <div class="mv-form-grid__cell">
+                                    <div class="form-group row mb-0">
+                                        <label for="address_1" class="col-form-label ltr:ps-3 rtl:pe-3 require">Address1</label>
+                                        <div class="col-sm-12">
+                                            <input type="text" placeholder="Address1" class="form-control form-width inputFieldDesign has_require" name="address_1" id="address_1" value="Road no 1, House no 129">
+                                        </div>
+                                    </div>
+                                </div>
+                                                                                                <div class="mv-form-grid__cell">
+                                    <div class="form-group row mb-0">
+                                        <label for="address_2" class="col-form-label ltr:ps-3 rtl:pe-3 ">Address2</label>
+                                        <div class="col-sm-12">
+                                            <input type="text" placeholder="Address2" class="form-control form-width inputFieldDesign " name="address_2" id="address_2" value="">
+                                        </div>
+                                    </div>
+                                </div>
+                                                                </div>
+                            </section>
+
+                            <section class="order-address-modal-section" aria-labelledby="order-billing-location-heading">
+                                <h3 id="order-billing-location-heading" class="order-address-modal-section__heading">Location Details</h3>
+                                <div class="mv-form-grid">
+                                                                <div class="mv-form-grid__cell validSelect">
+                                    <div class="form-group row mb-0">
+                                        <label for="country" class="col-form-label ltr:ps-3 rtl:pe-3 require">Country</label>
+                                        <div class="col-sm-12">
+                                            <select name="country" id="country" class="form-control select2 addressSelect has_require">
+                                                <option value="">Select One</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                                                                                <div class="mv-form-grid__cell validSelect">
+                                    <div class="form-group row mb-0">
+                                        <label for="state" class="col-form-label ltr:ps-3 rtl:pe-3 require">State</label>
+                                        <div class="col-sm-12">
+                                            <select name="state" id="state" class="form-control select2 addressSelect has_require">
+                                                <option value="">Select One</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                                                                                <div class="mv-form-grid__cell validSelect">
+                                    <div class="form-group row mb-0">
+                                        <label for="city" class="col-form-label ltr:ps-3 rtl:pe-3 require">City</label>
+                                        <div class="col-sm-12">
+                                            <select name="city" id="city" class="form-control select2 addressSelect has_require">
+                                                <option value="dhaka">
+                                                    dhaka
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                                                                                <div class="mv-form-grid__cell">
+                                    <div class="form-group row mb-0">
+                                        <label for="zip" class="col-form-label ltr:ps-3 rtl:pe-3 require">Post Code/Zip</label>
+                                        <div class="col-sm-12">
+                                            <input type="text" placeholder="Post Code/Zip" class="form-control form-width inputFieldDesign has_require" name="zip" id="zip" value="1229">
+                                        </div>
+                                    </div>
+                                </div>
+                                                                </div>
+                            </section>
+
+                            <section class="order-address-modal-section" aria-labelledby="order-billing-place-heading">
+                                <h3 id="order-billing-place-heading" class="order-address-modal-section__heading">Place Preference</h3>
+                                <div class="mv-form-grid">
+                                                                <div class="orm-group row mv-mb-18p">
+                                    <span class="col-sm-6 col-form-label text-left d-block require">Type Of Your Place</span>
+                                    <div class="col-md-6 col-12 d-flex flex-column mv-user-login-radios" role="radiogroup" aria-labelledby="order-billing-place-heading">
+                                        <div class="mv-user-login-radio d-flex align-items-start gap-2">
+                                            <div class="radio flex-shrink-0 mt-1">
+                                                <input type="radio" name="type_of_place" class="form-check-input input-light-dark checked_require" id="radio-w-infill-1" checked value="home">
+                                                <label for="radio-w-infill-1" class="cr" aria-hidden="true"></label>
+                                            </div>
+                                            <label for="radio-w-infill-1" class="mv-user-login-radio__label mb-0 mt-15p">Home</label>
+                                        </div>
+                                        <div class="mv-user-login-radio d-flex align-items-start gap-2">
+                                            <div class="radio flex-shrink-0 mt-1">
+                                                <input type="radio" name="type_of_place" id="radio-w-infill-2" class="checked_require"  value="office">
+                                                <label for="radio-w-infill-2" class="cr" aria-hidden="true"></label>
+                                            </div>
+                                            <label for="radio-w-infill-2" class="mv-user-login-radio__label mb-0 mt-15p">Office</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="modal-footer">
+                <div class="w-100 admin-form-actions mv-form-admin-actions--end d-flex flex-wrap gap-2 justify-content-end">
+                    <button
+        type="button"
+         data-bs-dismiss="modal"         class="admin-btn admin-btn-cancel" type="button"
+    >
+        Cancel
+    </button>
+                    <button
+    type="button"
+    class="admin-btn admin-btn-primary" id="order_save_billing_address"
+>
+    
+    Save
+</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="order_edit_shipping_address" tabindex="-1" role="dialog" aria-labelledby="order_edit_shipping_address_label" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="order_edit_shipping_address_label">Shipping address</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body mv-form mv-p-0">
+                <div class="mv-form-callout mv-p-12p mv-mb-24p" role="note">
+                    <p class="mv-form-callout__text mv-m-0">Fields marked with a red asterisk are required.</p>
+                </div>
+                <section class="mv-form-section mv-m-0 mv-p-0 mv-mb-0" aria-labelledby="order-modal-shipping-heading">
+                    <h2 id="order-modal-shipping-heading" class="visually-hidden">Shipping address</h2>
+                    <div class="shipping-address-form" id="shipping_address_edit_section">
+                        <div id="ShippingaddressForm">
+                            <section class="order-address-modal-section" aria-labelledby="order-shipping-account-heading">
+                                <h3 id="order-shipping-account-heading" class="order-address-modal-section__heading">Account Information</h3>
+                                <div class="mv-form-grid">
+                                                                <div class="mv-form-grid__cell">
+                                    <div class="form-group row mb-0">
+                                        <label for="shipping_address_first_name" class="col-form-label ltr:ps-3 rtl:pe-3 require">First Name</label>
+                                        <div class="col-sm-12">
+                                            <input type="text" placeholder="First Name" class="form-control form-width inputFieldDesign shipping_has_require" name="shipping_address_first_name" id="shipping_address_first_name" value="Blaine">
+                                        </div>
+                                    </div>
+                                </div>
+                                                                                                <div class="mv-form-grid__cell">
+                                    <div class="form-group row mb-0">
+                                        <label for="shipping_address_last_name" class="col-form-label ltr:ps-3 rtl:pe-3 ">Last Name</label>
+                                        <div class="col-sm-12">
+                                            <input type="text" placeholder="Last Name" class="form-control form-width inputFieldDesign " name="shipping_address_last_name" id="shipping_address_last_name" value="Keller">
+                                        </div>
+                                    </div>
+                                </div>
+                                                                                                <div class="mv-form-grid__cell mv-form-grid__cell--full">
+                                    <div class="form-group row mb-0">
+                                        <label for="shipping_address_company_name" class="col-form-label ltr:ps-3 rtl:pe-3 ">Company name</label>
+                                        <div class="col-sm-12">
+                                            <input type="text" placeholder="Company name" class="form-control form-width inputFieldDesign " name="shipping_address_company_name" id="shipping_address_company_name" value="">
+                                        </div>
+                                    </div>
+                                </div>
+                                                                                                <div class="mv-form-grid__cell">
+                                    <div class="form-group row mb-0">
+                                        <label for="shipping_address_phone" class="col-form-label ltr:ps-3 rtl:pe-3 require">Phone number</label>
+                                        <div class="col-sm-12">
+                                            <input type="text" placeholder="Phone number" class="form-control form-width inputFieldDesign shipping_has_require" name="shipping_address_phone" id="shipping_address_phone" value="0135467989">
+                                        </div>
+                                    </div>
+                                </div>
+                                                                                                <div class="mv-form-grid__cell">
+                                    <div class="form-group row mb-0">
+                                        <label for="shipping_address_email" class="col-form-label ltr:ps-3 rtl:pe-3 ">Email Address</label>
+                                        <div class="col-sm-12">
+                                            <input type="text" placeholder="Email Address" class="form-control form-width inputFieldDesign " name="shipping_address_email" id="shipping_address_email" value="blainekeller@gmail.com">
+                                        </div>
+                                    </div>
+                                </div>
+                                                                </div>
+                            </section>
+
+                            <section class="order-address-modal-section" aria-labelledby="order-shipping-address-heading">
+                                <h3 id="order-shipping-address-heading" class="order-address-modal-section__heading">Address Details</h3>
+                                <div class="mv-form-grid">
+                                                                <div class="mv-form-grid__cell">
+                                    <div class="form-group row mb-0">
+                                        <label for="shipping_address_address_1" class="col-form-label ltr:ps-3 rtl:pe-3 require">Address1</label>
+                                        <div class="col-sm-12">
+                                            <input type="text" placeholder="Address1" class="form-control form-width inputFieldDesign shipping_has_require" name="shipping_address_address_1" id="shipping_address_address_1" value="Road no 1, House no 129">
+                                        </div>
+                                    </div>
+                                </div>
+                                                                                                <div class="mv-form-grid__cell">
+                                    <div class="form-group row mb-0">
+                                        <label for="shipping_address_address_2" class="col-form-label ltr:ps-3 rtl:pe-3 ">Address2</label>
+                                        <div class="col-sm-12">
+                                            <input type="text" placeholder="Address2" class="form-control form-width inputFieldDesign " name="shipping_address_address_2" id="shipping_address_address_2" value="">
+                                        </div>
+                                    </div>
+                                </div>
+                                                                </div>
+                            </section>
+
+                            <section class="order-address-modal-section" aria-labelledby="order-shipping-location-heading">
+                                <h3 id="order-shipping-location-heading" class="order-address-modal-section__heading">Location Details</h3>
+                                <div class="mv-form-grid">
+                                                                <div class="mv-form-grid__cell validSelect">
+                                    <div class="form-group row mb-0">
+                                        <label for="shipping_country" class="col-form-label ltr:ps-3 rtl:pe-3 require">Country</label>
+                                        <div class="col-sm-12">
+                                            <select name="shipping_address_country" id="shipping_country" class="form-control select2 addressSelect shipping_has_require">
+                                                <option value="">Select One</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                                                                                <div class="mv-form-grid__cell validSelect">
+                                    <div class="form-group row mb-0">
+                                        <label for="shipping_state" class="col-form-label ltr:ps-3 rtl:pe-3 require">State</label>
+                                        <div class="col-sm-12">
+                                            <select name="shipping_address_state" id="shipping_state" class="form-control select2 addressSelect shipping_has_require">
+                                                <option value="">Select One</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                                                                                <div class="mv-form-grid__cell validSelect">
+                                    <div class="form-group row mb-0">
+                                        <label for="shipping_city" class="col-form-label ltr:ps-3 rtl:pe-3 require">City</label>
+                                        <div class="col-sm-12">
+                                            <select name="shipping_address_city" id="shipping_city" class="form-control select2 addressSelect shipping_has_require">
+                                                <option value="dhaka">
+                                                    dhaka
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                                                                                <div class="mv-form-grid__cell">
+                                    <div class="form-group row mb-0">
+                                        <label for="shipping_address_zip" class="col-form-label ltr:ps-3 rtl:pe-3 require">Post Code/Zip</label>
+                                        <div class="col-sm-12">
+                                            <input type="text" placeholder="Post Code/Zip" class="form-control form-width inputFieldDesign shipping_has_require" name="shipping_address_zip" id="shipping_address_zip" value="1229">
+                                        </div>
+                                    </div>
+                                </div>
+                                                                </div>
+                            </section>
+
+                            <section class="order-address-modal-section" aria-labelledby="order-shipping-place-heading">
+                                <h3 id="order-shipping-place-heading" class="order-address-modal-section__heading">Place Preference</h3>
+                                <div class="mv-form-grid">
+                                                                <div class="orm-group row mv-mb-18p">
+                                    <span class="col-sm-6 col-form-label text-left d-block require">Type Of Your Place</span>
+                                    <div class="col-md-6 col-12 d-flex flex-column mv-user-login-radios" role="radiogroup" aria-labelledby="order-shipping-place-heading">
+                                        <div class="mv-user-login-radio d-flex align-items-start gap-2">
+                                            <div class="radio flex-shrink-0 mt-1">
+                                                <input type="radio" class="shipping_checked_require" name="shipping_address_type_of_place" id="shipping_radio-w-infill-1" value="home" checked>
+                                                <label for="shipping_radio-w-infill-1" class="cr" aria-hidden="true"></label>
+                                            </div>
+                                            <label for="shipping_radio-w-infill-1" class="mv-user-login-radio__label mb-0 mt-15p">Home</label>
+                                        </div>
+                                        <div class="mv-user-login-radio d-flex align-items-start gap-2">
+                                            <div class="radio flex-shrink-0 mt-1">
+                                                <input type="radio" class="shipping_checked_require" name="shipping_address_type_of_place" id="shipping_radio-w-infill-2" value="office" >
+                                                <label for="shipping_radio-w-infill-2" class="cr" aria-hidden="true"></label>
+                                            </div>
+                                            <label for="shipping_radio-w-infill-2" class="mv-user-login-radio__label mb-0 mt-15p">Office</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="modal-footer border-top">
+                <div class="w-100 admin-form-actions mv-form-admin-actions--end d-flex flex-wrap gap-2 justify-content-end">
+                    <button
+        type="button"
+         data-bs-dismiss="modal"         class="admin-btn admin-btn-cancel" type="button"
+    >
+        Cancel
+    </button>
+                    <button
+    type="button"
+    class="admin-btn admin-btn-primary" id="order_save_shipping_address"
+>
+    
+    Save
+</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+                                                                                                                                                                                                                                                <div class="card-block calculations_div border-top px-2 pt-5" id="calculations_div">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="table-responsive order-calculation-mobile">
+                <table class="table invoice-detail-table">
+                    <thead class="product-list-thead">
+                        <tr class="thead-default">
+                            <th class="w-5"><i class="feather icon-camera ms-1"></i></th>
+                            <th>Products</th>
+                            <th class="align-center">Unit</th>
+                            <th class="align-center w-10">Qty</th>
+                            <th class="align-center">Cost</th>
+                            <th class="text-end w-5">Total</th>
+                            <th class="align-center">Status</th>
+                            <th class="align-center">Tax</th>
+                                                                                </tr>
+                    </thead>
+                    <tbody class="product-list-tbody">
+                                                                                                            <tr class="product-list product-list-tr-view">
+                                <td class="align-middle" data-label="">
+                                    <img src="../../../public/uploads/sizes/small/20221120/abc930448a9f08de458b70e58e9f894e.webp" class="product-img" alt="Product Image">
+                                </td>
+                                <td data-label="Products">
+                                    <div class="text-start">
+                                        <div class="text-dark">
+                                            <a class="text-dark" href="../../../admin/dashboard.html" title="Waist straight Slouchy jeans">
+                                                <span class="mt-1 d-block">Waist straight Slouchy jeans</span>
+                                            </a>
+                                                                                        <p class="text-muted mb-0 small">Vendor : Minimal Lifestyle | SKU : MV007</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td data-label="Unit">
+                                    <div class="text-center fw-bold ms-md-0">
+                                        ea
+                                    </div>
+                                </td>
+                                <td id="product_qty_td_1199" data-label="Qty">
+                                    <div class="text-center fw-bold ms-md-0">
+                                        <span class="product_qty back_action d-inline-block" id="product_qty_1199">1</span>
+                                    </div>
+                                </td>
+                                <td id="product_price_td_1199" data-label="Cost">
+                                    <div class="text-center fw-bold ms-md-0">
+                                        <span class="product_price back_action d-inline-block" id="product_price_1199">$40</span>
+                                    </div>
+                                </td>
+                                <td data-label="Total">
+                                    <div class="text-end fw-bold ms-md-0">$40</div>
+                                </td>
+                                <td class="pb-1" data-label="Status">
+                                                                            <p class="align-center mt-3 mb-0">Refunded</p>
+                                                                    </td>
+                                <td id="product_tax_td_1199" data-label="Tax">
+                                    <div class="text-center fw-bold ms-md-0">
+                                        <span class="back_action d-inline-block" id="product_tax_1199">$2.02</span>
+                                    </div>
+                                </td>
+                                                                                            </tr>
+                                                    
+                    
+                    
+                    <tr class="order-calc-spacer">
+                        <td colspan="8" class="pt-5 no-border"></td>
+                    </tr>
+
+                    <tr class="total-summary-area">
+                        <td colspan="5" class="no-border"></td>
+                        <td colspan="1" class="text-end fw-bold title">Sub Total</td>
+                        <td colspan="2" class="text-end text-dark price subtotal" data-amount="0">$40</td>
+                    </tr>
+                    <tr class="total-summary-area">
+                        <td colspan="5" class="no-border"></td>
+                        <td colspan="1" class="text-end fw-bold title">Fee</td>
+                        <td colspan="2" class="text-end text-dark adjustment-fee price" data-amount="0">$0</td>
+                    </tr>
+                                        <tr class="total-summary-area">
+                        <td colspan="5" class="no-border"></td>
+                        <td colspan="1" class="text-end fw-bold title tax-title">Tax</td>
+                        <td colspan="2" class="text-end text-dark price tax-amount" data-amount="0">$2.02</td>
+                    </tr>
+                                                            <tr class="total-summary-area border-bottom-0">
+                        <td colspan="5" class="no-border"></td>
+                        <td colspan="1" class="text-end fw-bold text-dark title border-bottom-0">Total</td>
+                        <td colspan="2" class="text-end fw-bold text-dark price border-bottom-0 grand-total">$42.02</td>
+                    </tr>
+                                        <tr class="total-summary-area border-bottom-0">
+                        <td colspan="5" class="no-border"></td>
+                        <td colspan="1" class="text-end fw-bold text-dark title border-bottom-0">Due</td>
+                        <td colspan="2" class="text-end fw-bold text-red price border-bottom-0 pb-4 grand-total">
+                            $0
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                            </div>
+                    </div>
+    </div>
+</div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </div>
+
+                                                    <div class="order-details-container">
+                                <div class="card">
+    <div class="card-header">
+        <h5 class="card-title text-uppercase mb-0">Downloadable Product Permission</h5>
+        <div class="card-header-right">
+            <div class="btn-group card-option card-accordion">
+                <button type="button" class="btn dropdown-toggle drop-down-icon text-mute">
+                    <i class="fas fa-angle-down"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="sections-body accordion-body">
+        <div id="download_div">
+                                </div>
+        <div class="product-permissions-body">
+            <div class="row">
+                <div class="status-dropdown col-sm-10 col-12 mb-2 mb-md-0">
+                    <select class="form-control select2" id="search_products" multiple name="grant_access[]">
+                    </select>
+                </div>
+                <button
+    type="button"
+    class="admin-btn admin-btn-primary grant-access col-sm-2 col-12 py-2 py-md-0" id="grant_access"
+>
+    
+    Grant Access
+</button>
+            </div>
+        </div>
+    </div>
+</div>
+                            </div>
+                                            </div>
+                    <div class="col-lg-3 mt-4 mt-lg-0">
+                        <div class="order-actions-container">
+                                                                                                                                                                                                                                                                            <div class="card">
+    <div class="card-header">
+        <h5 class="card-title text-uppercase mb-0">Order Actions</h5>
+        <div class="card-header-right">
+            <div class="btn-group card-option card-accordion">
+                <button type="button" class="btn dropdown-toggle drop-down-icon text-mute">
+                    <i class="fas fa-angle-down"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="order-sections-body sections-body accordion-body">
+                <div class="d-flex order-action-parent">
+            <select class="form-control select2" name="order_action" id="orderAction">
+                <option value="" selected="">Choose an action..</option>
+                <option value="1">Email invoice / order details to customer</option>
+                <option value="3">Resend Order Email (Vendor)</option>
+            </select>
+            <div class="order-mail">
+                <span id="order_action_btn">
+                    <i class="feather icon-chevron-right fa-2x"></i>
+                </span>
+            </div>
+        </div>
+                <div class="border-top py-2">
+            <button
+    type="button"
+    class="admin-btn admin-btn-primary w-100" id="update-order"
+>
+    
+    Update
+</button>
+        </div>
+    </div>
+</div>
+                                                                                                                                    <div class="card">
+        <div class="card-header">
+            <h5 class="card-title text-uppercase mb-0">Delivery Time</h5>
+            <div class="card-header-right">
+                <div class="btn-group card-option card-accordion">
+                    <button type="button" class="btn dropdown-toggle drop-down-icon text-mute">
+                        <i class="fas fa-angle-down"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="order-delivery-sections-body sections-body accordion-body">
+            <div>
+                <span class="order-date-text text-dark d-block mb-2">Delivery date</span>
+                <input id="deliveryDate" type="text" class="form-control inputFieldDesign" value="2026-08-14 07:19:16">
+            </div>
+        </div>
+    </div>
+                                                                                                                                    <div class="card">
+        <div class="card-header">
+            <h5 class="card-title text-uppercase mb-0">Status history</h5>
+            <div class="card-header-right">
+                <div class="btn-group card-option card-accordion">
+                    <button type="button" class="btn dropdown-toggle drop-down-icon text-mute">
+                        <i class="fas fa-angle-down"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="order-sections-body sections-body accordion-body">
+                            <div class="card">
+                    <div class="order-sections-header accordion cursor_pointer">
+                        <h6>Waist straight Slouchy je...</h6>
+                        <span class="order-icon drop-down-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="7" height="5" viewBox="0 0 7 5" fill="none">
+                                <path d="M3.33579 4.92324L0.159846 1.11968C-0.211416 0.675046 0.105388 -4.81444e-07 0.685319 -5.06793e-07L6.31468 -7.52861e-07C6.89461 -7.7821e-07 7.21142 0.675045 6.84015 1.11968L3.66421 4.92324C3.57875 5.02559 3.42125 5.02559 3.33579 4.92324Z" fill="#2C2C2C"/>
+                            </svg>
+                        </span>
+                    </div>
+                    <div class="order-sections-body">
+                                                    <div class="order-notes">
+                                <span class="underline cursor_default">Order status changed to Completed by Daniel William .</span>
+                            </div>
+                            <div class="date-delete-container mb-3">
+                                <span class="date underline cursor_default">14-8-2026 3:19 PM</span>
+                            </div>
+                                            </div>
+                </div>
+                    </div>
+    </div>
+                                                                                                                                    <div class="card">
+    <div class="card-header">
+        <h5 class="card-title text-uppercase mb-0">Note history</h5>
+        <div class="card-header-right">
+            <div class="btn-group card-option card-accordion">
+                <button type="button" class="btn dropdown-toggle drop-down-icon text-mute">
+                    <i class="fas fa-angle-down"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="order-sections-body order-notes-container sections-body accordion-body">
+        <div class="notes max-h-350 overflow-auto">
+                    </div>
+        <div class="add-note-container">
+            <div class="add-note">
+                <span class="add-note-text">Note</span>
+                <span title="Add your personal note." class="add-note-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 6C12 9.31371 9.31371 12 6 12C2.68629 12 0 9.31371 0 6C0 2.68629 2.68629 0 6 0C9.31371 0 12 2.68629 12 6ZM6.66667 10C6.66667 10.3682 6.36819 10.6667 6 10.6667C5.63181 10.6667 5.33333 10.3682 5.33333 10C5.33333 9.63181 5.63181 9.33333 6 9.33333C6.36819 9.33333 6.66667 9.63181 6.66667 10ZM6 1.33333C4.52724 1.33333 3.33333 2.52724 3.33333 4H4.66667C4.66667 3.26362 5.26362 2.66667 6 2.66667H6.06287C6.76453 2.66667 7.33333 3.23547 7.33333 3.93713V4.27924C7.33333 4.62178 7.11414 4.92589 6.78918 5.03421C5.91976 5.32402 5.33333 6.13765 5.33333 7.05409V8.66667H6.66667V7.05409C6.66667 6.71155 6.88586 6.40744 7.21082 6.29912C8.08024 6.00932 8.66667 5.19569 8.66667 4.27924V3.93713C8.66667 2.49909 7.50091 1.33333 6.06287 1.33333H6Z" fill="#898989"/>
+                    </svg>
+                </span>
+            </div>
+            <div class="add-note-text-field">
+                <textarea class="form-control" name="order_note" id="order_note" rows="3"></textarea>
+                <div class="py-2">
+                    <button
+    type="button"
+    class="admin-btn admin-btn-primary w-100" id="updateNote"
+>
+    
+    Save
+</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+                                                                                                                                    <div class="card">
+    <div class="card-header">
+        <h5 class="card-title text-uppercase mb-0">Create PDF</h5>
+        <div class="card-header-right">
+            <div class="btn-group card-option card-accordion">
+                <button type="button" class="btn dropdown-toggle drop-down-icon text-mute">
+                    <i class="fas fa-angle-down"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="order-pdf-btn sections-body accordion-body">
+        <a href="../../../admin/dashboard.html" target=&quot;_blank&quot; ><button class="pdf-inv-btn">PDF Invoice</button></a>
+    </div>
+</div>
+                                                                                                                                    <div class="card">
+    <div class="card-header">
+        <h5 class="card-title text-uppercase mb-0">Track Code</h5>
+        <div class="card-header-right">
+            <div class="btn-group card-option card-accordion">
+                <button type="button" class="btn dropdown-toggle drop-down-icon text-mute">
+                    <i class="fas fa-angle-down"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="order-pdf-btn sections-body accordion-body">
+        <p>Track code: <span class="text-dark">MOAFBKGA5Z</span></p>
+    </div>
+</div>
+                                                                                                                                                                                                                                                                        <div class="card">
+    <div class="card-header">
+        <h5>Delivery</h5>
+        <div class="card-header-right">
+            <div class="btn-group card-option card-accordion">
+                <button type="button" class="btn dropdown-toggle drop-down-icon text-mute">
+                    <i class="fas fa-angle-down"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="sections-body accordion-body">
+        <div class="order-sections-body cursor_pointer">
+            <div class="border-top">
+                <button class="w-100 admin-btn admin-btn-primary" disabled id="assign-carrier-btn" data-bs-toggle="modal" data-bs-target="#assign-carrier-modal">Assign Delivery Boy</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<link rel="stylesheet" href="../../../Modules/Delivery/Resources/assets/css/delivery-module.min.css">
+
+<!-- Delivery Modal -->
+<div class="modal fade mv-assign-carrier-modal" id="assign-carrier-modal" tabindex="-1" aria-labelledby="assign-carrier-modal-label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg mv-assign-carrier-modal__dialog">
+        <div class="modal-content mv-assign-carrier-modal__content">
+            <div class="modal-header mv-assign-carrier-modal__header">
+                <h5 class="modal-title mv-assign-carrier-modal__title" id="assign-carrier-modal-label">Assign Delivery Boy</h5>
+                <button type="button" class="btn-close mv-assign-carrier-modal__close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body mv-assign-carrier-modal__body" id="assign-carrier-modal-body"></div>
+            <div class="modal-footer mv-assign-carrier-modal__footer">
+                <div class="d-flex flex-wrap gap-2 justify-content-end w-100">
+                    <button
+        type="button"
+         data-bs-dismiss="modal"         class="admin-btn admin-btn-cancel"
+    >
+        Close
+    </button>
+                    <button type="button" class="admin-btn admin-btn-primary" id="assign-carrier-modal-refresh-btn">
+                        <i class="feather icon-refresh-cw ltr:me-1 rtl:ms-1" aria-hidden="true"></i>Refresh
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Delivery Modal -->
+
+<script>
+    let ROOT_URL = "https://demo.nix-ecommerce.nixecommerce.net";
+    var MAIN_URL = "https://demo.nix-ecommerce.nixecommerce.net" + '/admin';
+</script>
+
+<script src="../../../Modules/Delivery/Resources/assets/js/delivery-order.min.js"></script>
+                                                                                                                                    <div class="card">
+    <div class="card-header">
+        <h5 class="card-title text-uppercase mb-0">Shipment Tracking</h5>
+        <div class="card-header-right">
+            <div class="btn-group card-option card-accordion">
+                <button type="button" class="btn dropdown-toggle drop-down-icon text-mute">
+                    <i class="fas fa-angle-down"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+        
+    <div class="order-sections-body order-shipment-tracking-container sections-body accordion-body">
+        <div class="add-shipment_track-container">
+                <div class="form-group row">
+                    <label for="name" class="control-label require ltr:ps-3 rtl:pe-3">Choose Provider
+                    </label>
+                    <div class="col-sm-12">
+                        <select class="form-control select-provider select2 sl_common_bx" id="shipping_provider_id" name="shipping_provider_id">
+                                                        
+                        </select>
+                        <small class="form-text text-muted">Select the provider responsible for shipment.</small>
+                    </div>
+                </div>
+
+                <div class="form-group row " id="custom_provider_name">
+                    <label for="provider_name" class="control-label ltr:ps-3 rtl:pe-3 require">Provider Name</label>
+                    <div class="col-sm-12">
+                        <input type="hidden" name="track_type" value="order" id="track_type">
+                        <input type="text" class="form-control inputFieldDesign" value="" name="provider_name" id="provider_name" placeholder="Provider Name">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="tracking_number" class="control-label ltr:ps-3 rtl:pe-3 require">Tracking Number</label>
+                    <div class="col-sm-12">
+                        <input type="text" class="form-control inputFieldDesign" value="" name="tracking_number" id="tracking_number" placeholder="Tracking No">
+                        <input type="hidden" id="tracking_base_url" value="">
+                        <p class="ml-5p m-change mt-2 mb-0 d-none" id="generate_track_link">Update Tracking Link</p>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="tracking_link" class="control-label ltr:ps-3 rtl:pe-3 require">Tracking Link</label>
+                    <div class="col-sm-12">
+                        <input type="text" class="form-control inputFieldDesign" value="" name="tracking_link" id="tracking_link" placeholder="Tracking Link">
+                        <a class="m-change mt-5 mb-0"  href="" target="_blank" id="preview_link">Preview Link</a>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="order_shipped_date" class="control-label ltr:ps-3 rtl:pe-3">Date Shipped</label>
+                    <div class="col-sm-12">
+                        <input type="hidden" name="track_type" id="track_type" value="order">
+                        <input type="hidden" name="product_id" id="product_id">
+                        <input type="text" class="form-control inputFieldDesign" id="order_shipped_date" value="" name="order_shipped_date" placeholder="Date">
+                    </div>
+                </div>
+                <div class="add-note-text-field">
+                    <div>
+                        <button
+    type="button"
+    class="admin-btn admin-btn-primary w-100" id="updateOrderTrack"
+>
+    
+    Save Tracking
+</button>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
+                                                                                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="modal fade" id="delete_modal" tabindex="-1" role="dialog" aria-labelledby="delete_modal_label" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="delete_modal_label">Are you sure?</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form action="https://demo.nix-ecommerce.nixecommerce.net/admin/orders/customize" method="POST" id="order-delete-fee-coupon-form">
+                    <input type="hidden" name="_token" value="YfXguxfpniJmtoyGelVtxtq4F6tqvN5pzDagt4i9" autocomplete="off">                    <input type="hidden" name="order_id" value="2">
+                    <input type="hidden" id="delete_id" name="delete_id" value="">
+                    <input type="hidden" id="action_type" name="type" value="">
+                    <input type="hidden" name="action" value="delete">
+                    <div class="modal-body">
+                        <p class="mb-0">Once performed, this action cannot be undone.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-danger">Yes, Confirm</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        </div>
+
+        <div id="refund-store" class="modal fade display_none" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Refund &nbsp; </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="https://demo.nix-ecommerce.nixecommerce.net/myaccount/refunds" method="post" class="form-horizontal" data-type="refund">
+                        <input type="hidden" name="_token" value="YfXguxfpniJmtoyGelVtxtq4F6tqvN5pzDagt4i9" autocomplete="off">                        <input type="hidden" name="quantity_sent" id="quantity_sent" value="1">
+                        <input type="hidden" name="order_detail_id" id="order_detail_id">
+                        <input type="hidden" name="type" value="admin">
+                        <div class="form-group row mb-3">
+                            <label class="col-3 control-label" for="inputEmail3">Quantity</label>
+                            <div class="col-6 d-flex align-items-center">
+                                <a href="javascript:void(0)" class="text-center px-3 py-2 border" id="refundQtyDec"><span class="inline-block">-</span></a>
+                                <div class="px-3" id="refundQty">1</div>
+                                <a href="javascript:void(0)" class="text-center px-3 py-2 border" id="refundQtyInc"><span class="inline-block">+</span></a>
+                            </div>
+                        </div>
+
+                        <div class="form-group row mt-3 mt-md-0">
+                            <label class="col-3 control-label ltr:pe-0 rtl:ps-0 relative" for="inputEmail3">Reason</label>
+                            <div class="col-8">
+                                <select class="form-control select2" name="refund_reason_id">
+                                                                            <option value="4">Accidental order</option>
+                                                                            <option value="5">Arrived too late</option>
+                                                                            <option value="6">Missing parts or accessories</option>
+                                                                            <option value="7">Damaged during shipping</option>
+                                                                            <option value="8">Wrong item sent</option>
+                                                                            <option value="9">Product is the wrong color</option>
+                                                                            <option value="10">Better price available</option>
+                                                                            <option value="11">Different from what was ordered</option>
+                                                                            <option value="13">Product description was inaccurate</option>
+                                                                            <option value="14">Not satisfied with the quality</option>
+                                                                            <option value="15">Did not like the color</option>
+                                                                            <option value="16">Other reason</option>
+                                                                    </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group row mt-3">
+                            <label class="col-3 control-label ltr:pe-0 rtl:ps-0" for="is_default"></label>
+                            <div class="col-8">
+                                <textarea name="comment" class="form-control" placeholder="Please let me know, why are you want to refund this item." rows="5"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group row mt-3 mt-md-0">
+                            <div class="col-sm-12">
+                                <button
+    type="submit"
+    class="admin-btn admin-btn-primary ltr:float-right rtl:float-left"
+>
+    
+    Submit
+</button>
+                                <button
+        type="button"
+         data-bs-dismiss="modal"         class="admin-btn admin-btn-cancel all-cancel-btn ltr:float-right rtl:float-left"
+    >
+        Close
+    </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+                            </div>
+
+                                                                                    <!-- [ Main Content ] end -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- [ Main Content ] end -->
+
+    <!-- Warning Section start -->
+    <!-- Older IE warning message -->
+    <!--[if lt IE 11]>
+        <div class="ie-warning">
+            <h1>Warning!!</h1>
+            <p>You are using an outdated version of Internet Explorer, please upgrade to any of the following web browsers to access this website.
+            </p>
+            <div class="iew-container">
+                <ul class="iew-download">
+                    <li>
+                        <a href="//www.google.com/chrome/">
+                            <img src="../../../public/datta-able/images/browser/chrome.png" alt="Chrome">
+                            <div>Chrome</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="//www.mozilla.org/en-US/firefox/new/">
+                            <img src="../../../public/datta-able/images/browser/firefox.png" alt="Firefox">
+                            <div>Firefox</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="//www.opera.com">
+                            <img src="../../../public/datta-able/images/browser/opera.png" alt="Opera">
+                            <div>Opera</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="//www.apple.com/safari/">
+                            <img src="../../../public/datta-able/images/browser/safari.png" alt="Safari">
+                            <div>Safari</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="//windows.microsoft.com/en-us/internet-explorer/download-ie">
+                            <img src="../../../public/datta-able/images/browser/ie.png" alt="Image">
+                            <div>IE (11 & above)</div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <p>Sorry for the inconvenience!</p>
+        </div>
+    <![endif]-->
+    <!-- Warning Section Ends -->
+
+    <!-- Required Js -->
+    <script src="../../../public/datta-able/js/pcoded.min.js"></script>
+    <script src="../../../public/datta-able/plugins/select2/js/select2.full.min.js"></script>
+    <script src="../../../public/dist/js/custom/app-layout.min.js"></script>
+    <script src="../../../public/dist/js/custom/admin-layout.min.js"></script>
+
+    <!-- Custom Js -->
+
+    
+    
+        <script>
+        var orderId = "2";
+        var paymentStatus = "Paid";
+        var finalOrderStatus = "7";
+        var orderUrl = "https://demo.nix-ecommerce.nixecommerce.net/admin/orders/update";
+        var orderView = "admin";
+        var customProviderImage = "../../../public/dist/img/default-image.png";
+        var GLOBAL_URL = "https://demo.nix-ecommerce.nixecommerce.net";
+
+        var ADMIN_URL = SITE_URL;
+        var VENDOR_URL = SITE_URL;
+
+        var SITE_URL = "https://demo.nix-ecommerce.nixecommerce.net";
+        var Order_URL = "https://demo.nix-ecommerce.nixecommerce.net/vendor/order/actions";
+        
+        let oldCountry = "Bangladesh";
+        let oldState = "Dhaka";
+        let oldCity = "dhaka";
+
+        let oldShipCountry = "Bangladesh";
+        let oldShipState = "Dhaka";
+        let oldShipCity = "dhaka";
+        let userAddressUrl = "https://demo.nix-ecommerce.nixecommerce.net/admin/user-address";
+        var orderCustomizeUrl = "https://demo.nix-ecommerce.nixecommerce.net/admin/orders/customize";
+        var currentUrl = 'https://demo.nix-ecommerce.nixecommerce.net/admin/orders/view/2';
+        const changeStatusRoute = "https://demo.nix-ecommerce.nixecommerce.net/admin/orders/change-status";
+    </script>
+    <script src="../../../public/datta-able/plugins/sweetalert/js/sweetalert.min.js"></script>
+    <script src="../../../public/dist/js/custom/common.min.js"></script>
+    <!-- select2 JS -->
+    <script src="../../../public/datta-able/plugins/select2/js/select2.full.min.js"></script>
+    <!-- date range picker Js -->
+    <script src="../../../public/dist/js/moment.min.js"></script>
+    <script src="../../../public/dist/plugins/bootstrap-daterangepicker/daterangepicker.min.js"></script>
+    <script src="../../../public/dist/js/custom/invoice.min.js"></script>
+    <script src="../../../public/dist/js/custom/jquery.blockUI.min.js"></script>
+    <script src="../../../public/dist/js/custom/order.min.js"></script>
+    
+    <script src="../../../public/dist/js/custom/site/address.min.js"></script>
+
+    <script src="../../../public/dist/plugins/jQueryUI/jquery-ui.min.js"></script>
+    <script src="../../../public/dist/js/moment.min.js"></script>
+    
+    <script src="../../../public/dist/js/custom/site/invoice_edit.min.js"></script>
+    
+
+    
+    
+    </body>
+
+</html>

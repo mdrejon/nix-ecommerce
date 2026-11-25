@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    
+    <title>Nix Ecommerce | Advance Reports - Total sales by order</title>
+    <!-- HTML5 Shim and Respond.js IE10 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 10]>
+        <script src="../../public/dist/js/respond.min.js"></script>
+    <![endif]-->
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="keywords" content="RoverCRM, perfex, invoice, pos, point of sale, lead, quotation, task, project, support, ticket, crm, hrm, inventory, zohocrm, kanban, customer relationship management, sales, customer, supplier, user, item, variant, laravel, hrsale, woocommerce crm, ecommerce crm, appointment, email template, sms template, url shortner, staff management, timesheet, payroll, project manager, payment, asset management, logistic, human resource, activity">
+<meta name="author" content="demo.nix-ecommerce.nixecommerce.net">
+<meta name="description" content="">    <!-- Favicon icon -->
+                <link rel='shortcut icon' href="../../public/uploads/20221108/08baa7c9b296a9354e9e2748987bec91.ico" type='image/x-icon' />
+        <link rel="stylesheet" href="../../public/datta-able/fonts/fontawesome/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="../../public/datta-able/fonts/material/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="../../public/datta-able/fonts/flag/css/flag-icon.min.css">
+    <link rel="stylesheet" href="../../public/datta-able/plugins/animation/css/animate.min.css">
+    <link rel="stylesheet" href="../../public/datta-able/plugins/bootstrap-v5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../public/datta-able/css/style.min.css">
+    <link rel="stylesheet" href="../../public/datta-able/fonts/feather/css/feather.min.css">
+    <link rel="stylesheet" href="../../public/datta-able/plugins/jquery-scrollbar/css/jquery.scrollbar.min.css">
+    <link rel="stylesheet" href="../../public/datta-able/fonts/datta/datta-icon.min.css">
+    <link rel="stylesheet" href="../../public/datta-able/plugins/jquery-scrollbar/css/perfect-scrollbar.min.css">
+    <link rel="stylesheet" href="../../public/dist/css/custom.min.css">
+    <link rel="stylesheet" href="../../public/dist/css/vendor-responsiveness.min.css">
+    <link rel="stylesheet" href="../../public/dist/css/admin-ui.min.css">
+    <link rel="stylesheet" href="../../public/datta-able/plugins/select2/css/select2.min.css">
+    
+
+    <!--Custom CSS that was written on view-->
+
+    
+            <link rel="stylesheet" href="../../public/dist/plugins/Responsive-2.2.5/css/responsive.dataTables.min.css">
+    <link rel="stylesheet" href="../../public/dist/plugins/bootstrap-daterangepicker/daterangepicker.min.css">
+    <link rel="stylesheet" href="../../Modules/AdvanceReport/Resources/assets/css/style.min.css">
+        <link rel="stylesheet" href="../../Modules/Ticket/Resources/assets/css/chat-widget.min.css">
+
+    
+    <!-- Theme style RTL -->
+    
+
+            <script src="../../public/js/lang/en.js"></script>
+        <script type="text/javascript">
+        'use strict';
+        const BASE_URL = "https://demo.nix-ecommerce.nixecommerce.net";
+        var SITE_URL = "https://demo.nix-ecommerce.nixecommerce.net/vendor";
+        var ADMIN_SITE_URL = "https://demo.nix-ecommerce.nixecommerce.net/admin";
+        var currencySymbol = '$';
+        var decimal_digits = '2';
+        var thousand_separator = ',';
+        var symbol_position = 'before';
+        var dateFormat = 'dd-mm-yyyy';
+        var token = 'PxPnwbLcuxIm5YzXUmhUVa4rIvAAIi29lu8cdiJ6';
+        var app_locale_url = "../../resources/lang/en.json";
+        var row_per_page = '25';
+        var language_direction = 'ltr';
+        var summernote_regex = /<\/*(?:applet|b(?:ase|gsound|link)|embed|frame(?:set)?|ilayer|l(?:ayer|ink)|meta|object|s(?:cript|tyle)|t(?:itle|extarea)|xml)[^>]*?>/gi;
+        window.PHONE_INPUT_CONFIG = {
+        utilJs: "../../public/dist/js/intl-tel-input/utils.min.js",
+        defaultCountryCode: "bd",
+        onlyCountries: []    };
+    var defaultCountryCode = "bd";
+    var allowedPhoneCountryCodes = [];
+    var utilJs = "../../public/dist/js/intl-tel-input/utils.min.js";
+    </script>
+
+    <!-- Required Js -->
+    <script src="../../public/datta-able/plugins/bootstrap-v5/js/popper.min.js"></script>
+    <script src="../../public/datta-able/plugins/bootstrap-v5/js/jquery.min.js"></script>
+    <script src="../../public/dist/js/custom/admin-static-bridge.js"></script>
+    <script src="../../public/datta-able/plugins/bootstrap-v5/js/slim.min.js"></script>
+    <script src="../../public/datta-able/plugins/bootstrap-v5/js/bootstrap.min.js"></script>
+    
+</head>
+
+
+<body >
+        <!-- [ Pre-loader ] start -->
+    <div class="loader-bg">
+        <div class="loader-track">
+            <div class="loader-fill"></div>
+        </div>
+    </div>
+    <!-- [ Pre-loader ] End -->
+
+    <!-- [ navigation menu ] start -->
+        <nav class="pcoded-navbar">
+    <div class="navbar-wrapper">
+        <div class="navbar-brand header-logo">
+            <a href="../dashboard.html" class="b-brand">
+                                <img class="admin-panel-header-logo" src="../../public/uploads/20221108/20d20c52d903d8d09681b6143df36fbf.png" alt="Nix Ecommerce">
+            </a>
+            <a class="mobile-menu" id="mobile-collapse" href="javascript:"><span></span></a>
+        </div>
+        <div class="navbar-content scroll-div">
+            <ul class="nav pcoded-inner-navbar">
+                                                                                                                                    
+                    <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item   ">
+                        <a href='../dashboard.html' class="nav-link"><span class="pcoded-micon"><i class="fas fa-home"></i></span><span class="pcoded-mtext">Dashboard</span></a>
+                                            </li>
+                                                                                                                    
+                    <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item   ">
+                        <a href='../products.html' class="nav-link"><span class="pcoded-micon"><i class="fas fa-cube"></i></span><span class="pcoded-mtext">Products</span></a>
+                                            </li>
+                                                                                                                    
+                    <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item   ">
+                        <a href='../orders.html' class="nav-link"><span class="pcoded-micon"><i class="fas fa-shopping-bag"></i></span><span class="pcoded-mtext">Orders</span></a>
+                                            </li>
+                                                                                                                    
+                    <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item   ">
+                        <a href='../barcode/product.html' class="nav-link"><span class="pcoded-micon"><i class="fas fa-barcode"></i></span><span class="pcoded-mtext">Barcode</span></a>
+                                            </li>
+                                                                                                                    
+                    <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item   pcoded-hasmenu  ">
+                        <a href='javascript:' class="nav-link"><span class="pcoded-micon"><i class="fas fa-table"></i></span><span class="pcoded-mtext">Inventory</span></a>
+                                                    <ul class="pcoded-submenu sub-menu-custom">
+                                             
+                                                                                                                                                <li class=" ">
+                                        <a href="../inventory/location.html" class="d-flex align-items-center"><span class="pcoded-micon"> <i></i></span>Location</a>
+                                    </li>
+                                             
+                                                                                                                                                <li class=" ">
+                                        <a href="../inventory/supplier.html" class="d-flex align-items-center"><span class="pcoded-micon"> <i></i></span>Supplier</a>
+                                    </li>
+                                             
+                                                                                                                                                <li class=" ">
+                                        <a href="../inventory/purchase-order.html" class="d-flex align-items-center"><span class="pcoded-micon"> <i></i></span>Purchase Order</a>
+                                    </li>
+                                             
+                                                                                                                                                <li class=" ">
+                                        <a href="../inventory.html" class="d-flex align-items-center"><span class="pcoded-micon"> <i></i></span>Stock</a>
+                                    </li>
+                                             
+                                                                                                                                                <li class=" ">
+                                        <a href="../inventory/transfer.html" class="d-flex align-items-center"><span class="pcoded-micon"> <i></i></span>Transfer</a>
+                                    </li>
+                                             
+                                                                                                                                                <li class=" ">
+                                        <a href="../inventory/transaction.html" class="d-flex align-items-center"><span class="pcoded-micon"> <i></i></span>Transaction</a>
+                                    </li>
+                                                            </ul>
+                                            </li>
+                                                                                                                                                            
+                    <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item   ">
+                        <a href='../customer.html' class="nav-link"><span class="pcoded-micon"><i class="fas fa-users"></i></span><span class="pcoded-mtext">Customers</span></a>
+                                            </li>
+                                                                                                                    
+                    <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item   ">
+                        <a href='../withdrawals.html' class="nav-link"><span class="pcoded-micon"><i class="far fa-credit-card"></i></span><span class="pcoded-mtext">Withdrawals</span></a>
+                                            </li>
+                                                                                                                                                                                                                                                                
+                    <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item   ">
+                        <a href='../coupons.html' class="nav-link"><span class="pcoded-micon"><i class="fas fa-ticket-alt"></i></span><span class="pcoded-mtext">Coupons</span></a>
+                                            </li>
+                                                                                                                    
+                    <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item   ">
+                        <a href='../transactions.html' class="nav-link"><span class="pcoded-micon"><i class="fas fa-exchange-alt"></i></span><span class="pcoded-mtext">Transactions</span></a>
+                                            </li>
+                                                                                                                    
+                    <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item   ">
+                        <a href='../homes.html' class="nav-link"><span class="pcoded-micon"><i class="fas fa-building"></i></span><span class="pcoded-mtext">Decorate Shop</span></a>
+                                            </li>
+                                                                                                                    
+                    <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item   ">
+                        <a href='../export/products.html' class="nav-link"><span class="pcoded-micon"><i class="fas fa-download"></i></span><span class="pcoded-mtext">Export Products</span></a>
+                                            </li>
+                                                                                                                    
+                    <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item   ">
+                        <a href='../refund-requests.html' class="nav-link"><span class="pcoded-micon"><i class="fas fa-retweet"></i></span><span class="pcoded-mtext">Refunds</span></a>
+                                            </li>
+                                                                                                                    
+                    <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item   ">
+                        <a href='../import/products.html' class="nav-link"><span class="pcoded-micon"><i class="fas fa-download"></i></span><span class="pcoded-mtext">Import Products</span></a>
+                                            </li>
+                                                                                                                    
+                    <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item   ">
+                        <a href='../reviews.html' class="nav-link"><span class="pcoded-micon"><i class="fas fa-star"></i></span><span class="pcoded-mtext">Reviews</span></a>
+                                            </li>
+                                                                                                                    
+                    <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item   ">
+                        <a href='../kyc.html' class="nav-link"><span class="pcoded-micon"><i class="far fa-address-card"></i></span><span class="pcoded-mtext">KYC</span></a>
+                                            </li>
+                                                                                                                    
+                    <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item   ">
+                        <a href='../reports.html' class="nav-link"><span class="pcoded-micon"><i class="fas fa-chart-bar"></i></span><span class="pcoded-mtext">Reports</span></a>
+                                            </li>
+                                                                                                                    
+                    <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item   pcoded-trigger active">
+                        <a href='../advance-reports.html' class="nav-link"><span class="pcoded-micon"><i class="fas fa-chart-bar"></i></span><span class="pcoded-mtext">Advance Reports</span></a>
+                                            </li>
+                                                                                                                    
+                    <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item   ">
+                        <a href='../ticket/list.html' class="nav-link"><span class="pcoded-micon"><i class="fas fa-ticket-alt"></i></span><span class="pcoded-mtext">Tickets</span></a>
+                                            </li>
+                            </ul>
+        </div>
+    </div>
+</nav>
+    <!-- [ navigation menu ] end -->
+
+    <!-- [ Header ] start -->
+        <header class="navbar pcoded-header navbar-expand-lg navbar-light">
+    <div class="m-header header-background-color">
+        <a class="mobile-menu" id="mobile-collapse1" href="javascript:"><span></span></a>
+        <a href="../dashboard.html" class="b-brand">
+            <span class="b-title">Nix Ecommerce</span>
+        </a>
+    </div>
+    <a class="mobile-menu" id="mobile-header" href="javascript:">
+        <i class="feather icon-more-horizontal"></i>
+    </a>
+    <div class="collapse navbar-collapse">
+        <ul class="navbar-nav d-flex flex-row flex-wrap nav-menu ltr:float-left ltr:me-auto ltr:ms-2 rtl:float-right rtl:ms-auto rtl:me-2">
+            <li class="ltr:ms-3 rtl:me-3 nav-parent nav-parent--mobile-sidebar d-lg-none">
+                <button type="button" class="mobile-sidebar-toggle-btn" id="mobile-sidebar-toggle-btn" aria-label="Toggle sidebar">
+                    <i class="feather icon-menu"></i>
+                    <span>Menu</span>
+                </button>
+            </li>
+            <li class="ltr:ms-3 rtl:me-3 nav-parent nav-parent--mobile-hide d-lg-none">
+                <button type="button" class="mobile-header-hide-btn" id="mobile-header-hide-btn" aria-label="Hide mobile header">
+                    <i class="feather icon-eye-off"></i>
+                    <span>Hide Header</span>
+                </button>
+            </li>
+                            
+                <li class="ltr:ms-3 rtl:me-3 nav-parent ">
+                    <a href="javascript:" class="full-screen text-decoration-none ltr:ps-2 rtl:pe-2" onclick="javascript:toggleFullScreen()"><i class="feather icon-maximize"></i></a>
+                </li>
+                            
+                <li class="ltr:ms-3 rtl:me-3 nav-parent ">
+                    <a class="d-flex align-items-center text-decoration-none" href="../../../frontend/index.html" target="_blank">
+                <i class="feather icon-globe"></i><span class="list-curent-color ltr:ms-2 rtl:me-2">Visit Site</span></a>
+                </li>
+                            
+                <li class="ltr:ms-3 rtl:me-3 nav-parent ">
+                    <a class="d-flex align-items-center text-decoration-none" href="../dashboard.html" target="_blank">
+                <i class="feather icon-external-link"></i><span class="ltr:ms-2 rtl:me-2 list-curent-color">Customer Panel</span></a>
+                </li>
+                                                                
+                <li class="ltr:ms-3 rtl:me-3 nav-parent ">
+                    <a class="d-flex align-items-center text-decoration-none" href="../../../frontend/shop/jamal.html" target="_blank">
+                        <i class="feather icon-external-link"></i><span class="ltr:ms-2 rtl:me-2 list-curent-color">Shop</span></a>
+                </li>
+                        
+        </ul>
+                <ul class="navbar-nav nav-icon ltr:ms-lg-auto ltr:ms-2 ltr:me-lg-2 rtl:me-lg-auto rtl:me-2 rtl:ms-lg-2">
+            <li class="header-icon-item header-icon-item--notification">
+                <div class="dropdown">
+                    <a class="dropdown-toggle header-notification-icon" href="#" data-bs-toggle="dropdown">
+                        <i class="icon feather icon-bell"></i>
+                        <span class="mobile-notification-count">0</span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-end notification">
+                        <div class="noti-head">
+                            <h6 class="d-inline-block m-b-0">Notifications</h6>
+                            <div class="float-right">
+                                <a href="../notifications/mark-as-read.html" class="m-r-10">mark all as read</a>
+                            </div>
+                        </div>
+                        <ul class="noti-body scroll-noti header-notification-body">
+                            
+                        </ul>
+                        <div class="noti-footer">
+                            <a href="../notifications.html">show all</a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+                                    <li class="header-icon-item header-icon-item--language">
+                <div class="dropdown">
+                    <a class="dropdown-toggle flag flag-icon-background flag-icon-gb" id="dropdown-flag" href="javascript:" data-bs-toggle="dropdown"></a>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-end notification">
+                        <div class="noti-head">
+                            <h6 class="d-inline-block m-b-0">Select Language</h6>
+                        </div>
+                        <ul class="noti-body scroll-noti">
+                                                        <li class="notification">
+                                <div class="media lang d-flex" id="en" data-shortname="en" >
+                                    <img class="img-radius" src='../../public/datta-able/fonts/flag/flags/4x3/gb.svg' alt="en.jpg">
+                                    <div class="media-body">
+                                        <p><span>English</span></p>
+                                    </div>
+                                </div>
+                            </li>
+                                                        <li class="notification">
+                                <div class="media lang d-flex" id="bn" data-shortname="bn" >
+                                    <img class="img-radius" src='../../public/datta-able/fonts/flag/flags/4x3/bd.svg' alt="">
+                                    <div class="media-body">
+                                        <p><span>Bengali</span></p>
+                                    </div>
+                                </div>
+                            </li>
+                                                        <li class="notification">
+                                <div class="media lang d-flex" id="fr" data-shortname="fr" >
+                                    <img class="img-radius" src='../../public/datta-able/fonts/flag/flags/4x3/fr.svg' alt="">
+                                    <div class="media-body">
+                                        <p><span>French</span></p>
+                                    </div>
+                                </div>
+                            </li>
+                                                        <li class="notification">
+                                <div class="media lang d-flex" id="zh" data-shortname="zh" >
+                                    <img class="img-radius" src='../../public/datta-able/fonts/flag/flags/4x3/cn.svg' alt="">
+                                    <div class="media-body">
+                                        <p><span>Chinese</span></p>
+                                    </div>
+                                </div>
+                            </li>
+                                                        <li class="notification">
+                                <div class="media lang d-flex" id="ar" data-shortname="ar" >
+                                    <img class="img-radius" src='../../public/datta-able/fonts/flag/flags/4x3/sa.svg' alt="">
+                                    <div class="media-body">
+                                        <p><span>Arabic</span></p>
+                                    </div>
+                                </div>
+                            </li>
+                                                        <li class="notification">
+                                <div class="media lang d-flex" id="be" data-shortname="be" >
+                                    <img class="img-radius" src='../../public/datta-able/fonts/flag/flags/4x3/be.svg' alt="">
+                                    <div class="media-body">
+                                        <p><span>Byelorussian</span></p>
+                                    </div>
+                                </div>
+                            </li>
+                                                        <li class="notification">
+                                <div class="media lang d-flex" id="bg" data-shortname="bg" >
+                                    <img class="img-radius" src='../../public/datta-able/fonts/flag/flags/4x3/bg.svg' alt="">
+                                    <div class="media-body">
+                                        <p><span>Bulgarian</span></p>
+                                    </div>
+                                </div>
+                            </li>
+                                                        <li class="notification">
+                                <div class="media lang d-flex" id="ca" data-shortname="ca" >
+                                    <img class="img-radius" src='../../public/datta-able/fonts/flag/flags/4x3/es.svg' alt="">
+                                    <div class="media-body">
+                                        <p><span>Catalan</span></p>
+                                    </div>
+                                </div>
+                            </li>
+                                                        <li class="notification">
+                                <div class="media lang d-flex" id="et" data-shortname="et" >
+                                    <img class="img-radius" src='../../public/datta-able/fonts/flag/flags/4x3/ee.svg' alt="">
+                                    <div class="media-body">
+                                        <p><span>Estonian</span></p>
+                                    </div>
+                                </div>
+                            </li>
+                                                        <li class="notification">
+                                <div class="media lang d-flex" id="nl" data-shortname="nl" >
+                                    <img class="img-radius" src='../../public/datta-able/fonts/flag/flags/4x3/nl.svg' alt="">
+                                    <div class="media-body">
+                                        <p><span>Dutch</span></p>
+                                    </div>
+                                </div>
+                            </li>
+                                                    </ul>
+                    </div>
+                </div>
+            </li>
+                        <li class="ltr:me-2 rtl:ms-2 header-icon-item header-icon-item--settings">
+                <div class="dropdown drp-user">
+                    <a href="javascript:" class="dropdown-toggle text-decoration-none" data-bs-toggle="dropdown">
+                        <i class="icon feather icon-settings f-20 ltr:ms-0 rtl:me-0"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-end profile-notification">
+                        <div class="pro-head">
+                            <img src="../../public/uploads/20221010/7b28339091f2b31678ef9e77fb9067a3.webp" class="img-radius" alt="User-Profile-Image">
+                            <span>Jamal</span>
+                            <a href="../../admin/login.html" class="dud-logout" title="Logout">
+                                <i class="feather icon-log-out"></i>
+                            </a>
+                        </div>
+                        <ul class="pro-body">
+                            <li><a href="../profile.html" class="dropdown-item"><i class="feather icon-user"></i> Profile</a></li>
+                            <li><a href="../activity.html" class="dropdown-item"><i class="feather icon-activity"></i> Login Activities</a></li>
+                            <li><a href="../../admin/login.html" class="dropdown-item"><i class="feather icon-lock"></i> Sign Out</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="notification-loader d-none">
+        <div class="d-flex justify-content-center align-items-center h-100">
+            <div class="spinner-grow w-40p h-40" role="status"></div>
+        </div>
+    </div>
+</header>
+        <!-- [ Header ] end -->
+
+    <!-- [ Main Content ] start -->
+    <div class="pcoded-main-container">
+        <div class="pcoded-wrapper">
+            <div class="pcoded-content">
+                <div class="pcoded-inner-content">
+                    <!-- [ breadcrumb ] start -->
+                    <div id="notifications" class="row no-print">
+    <div class="col-md-12">
+                <div class="noti-alert pad no-print">
+                                                                                                                                                                    <div class="top-notification noti-alert pad no-print js-alert d-none">
+                <div class="alert alert-success">
+                    <strong class="alertText"></strong>
+                    <button type="button" class="btn-close float-right notification-close" aria-label="Close"></button>
+                </div>
+            </div>
+                    </div>
+    </div>
+</div>
+
+                    <!-- [ breadcrumb ] end -->
+                    <div class="main-body">
+                        <div class="page-wrapper">
+                            <!-- [ Main Content ] start -->
+                                                                                    <div class="row">
+                                <div class="col-sm-12 list-container">
+                                        <div class="col-sm-12 list-container advance-report-container">
+    <div class="report-page-header mt-4">
+        <div class="report-header-left-section">
+            <a href="../advance-reports.html" class="report-back-link">
+                <i class="fa fa-arrow-left"></i> Back to Reports
+            </a>
+            <h1 class="report-page-title">Total sales by order</h1>
+        </div>
+        <div class="report-header-right-section">
+            <div class="report-header-search-wrapper">
+                <i class="fa fa-search report-header-search-icon"></i>
+                <input type="text" class="report-header-search-input" id="reportTableSearch" placeholder="Search in table...">
+                <button type="button" class="report-header-search-clear" id="reportTableSearchClear" style="display: none;" title="Clear search">
+                    <i class="fa fa-times"></i>
+                </button>
+            </div>
+                                    <a
+        href="../dashboard.html"
+        class="admin-btn admin-btn-cancel advance-report-export-link" id="exportBtn" title="Export to CSV"
+    >
+                    <i class="fa fa-download"></i> Export CSV
+            </a>
+                    </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-lg-8 col-xl-9 mt-3 order-2 order-lg-1">
+            <div class="bg-white p-2 p-md-4" id="report-module">
+                <div id="report-content" class="report-content-wrapper">
+                    <div id="report">
+        
+            <div class="table-wrapper" id="tableWrapper">
+        <div class="sticky-header" id="stickyHeader">
+        <div class="sticky-header-inner" id="stickyHeaderInner">
+            <table class="table advance-report-table display nowrap comparison-table" id="advanceReportTable">
+                <thead>
+                    <tr>
+                                                    <th class="sortable sorting" data-column="order_date" data-sort="">
+    Order Date
+</th>
+                                                    <th class="sortable sorting" data-column="order_reference" data-sort="">
+    Reference
+</th>
+                                                    <th class="sortable sorting" data-column="customer_name" data-sort="">
+    Customer
+</th>
+                                                    <th class="text-right sortable sorting" data-column="total_quantity" data-sort="">
+    Total Quantity
+</th>
+                                                    <th class="text-right sortable sorting" data-column="order_total" data-sort="">
+    Total
+</th>
+                                                    <th class="text-right sortable sorting" data-column="order_paid" data-sort="">
+    Paid
+</th>
+                                                    <th class="text-right sortable sorting" data-column="item_sales" data-sort="">
+    Item Sales
+</th>
+                                                    <th class="text-right sortable sorting" data-column="cost_total" data-sort="">
+    Cost Total
+</th>
+                                                    <th class="text-right sortable sorting" data-column="gross_profit" data-sort="">
+    Gross Profit
+</th>
+                                                    <th class="text-right sortable sorting" data-column="profit_margin" data-sort="">
+    Profit Margin %
+</th>
+                                                    <th class="sortable sorting" data-column="channel" data-sort="">
+    Channel
+</th>
+                                                    <th class="sortable sorting" data-column="payment_status" data-sort="">
+    Payment Status
+</th>
+                                                    <th class="sortable sorting" data-column="order_status" data-sort="">
+    Order Status
+</th>
+                                            </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+
+    <div class="table-scroll-container" id="tableContainer">
+        <table class="table advance-report-table display nowrap comparison-table" id="mainTable" style="width:100%">
+            <thead>
+                <tr>
+                                            <th class="sortable sorting" data-column="order_date" data-sort="">
+    Order Date
+</th>
+                                            <th class="sortable sorting" data-column="order_reference" data-sort="">
+    Reference
+</th>
+                                            <th class="sortable sorting" data-column="customer_name" data-sort="">
+    Customer
+</th>
+                                            <th class="text-right sortable sorting" data-column="total_quantity" data-sort="">
+    Total Quantity
+</th>
+                                            <th class="text-right sortable sorting" data-column="order_total" data-sort="">
+    Total
+</th>
+                                            <th class="text-right sortable sorting" data-column="order_paid" data-sort="">
+    Paid
+</th>
+                                            <th class="text-right sortable sorting" data-column="item_sales" data-sort="">
+    Item Sales
+</th>
+                                            <th class="text-right sortable sorting" data-column="cost_total" data-sort="">
+    Cost Total
+</th>
+                                            <th class="text-right sortable sorting" data-column="gross_profit" data-sort="">
+    Gross Profit
+</th>
+                                            <th class="text-right sortable sorting" data-column="profit_margin" data-sort="">
+    Profit Margin %
+</th>
+                                            <th class="sortable sorting" data-column="channel" data-sort="">
+    Channel
+</th>
+                                            <th class="sortable sorting" data-column="payment_status" data-sort="">
+    Payment Status
+</th>
+                                            <th class="sortable sorting" data-column="order_status" data-sort="">
+    Order Status
+</th>
+                                    </tr>
+            </thead>
+            <tbody>
+                                                            <tr class="comparison-row" data-row-type="summary">
+                            <td class="font-weight-400 first-row"><div>--</div></td>
+                            <td class="font-weight-400 first-row"><div>--</div></td>
+                            <td class="font-weight-400 first-row"><div>--</div></td>
+                            <td class="text-right font-weight-600 first-row" data-sort="1">
+                                <div> 1</div>
+                            </td>
+                            <td class="text-right font-weight-600 first-row" data-sort="50">
+                                <div>$50</div>
+                            </td>
+                            <td class="text-right font-weight-600 first-row" data-sort="0">
+                                <div>$0</div>
+                            </td>
+                            <td class="text-right font-weight-600 first-row" data-sort="50">
+                                <div>$50</div>
+                            </td>
+                            <td class="text-right font-weight-600 first-row" data-sort="50">
+                                <div>$50</div>
+                            </td>
+                            <td class="text-right font-weight-600 first-row" data-sort="0">
+                                <div>$0</div>
+                            </td>
+                            <td class="text-right font-weight-600 first-row" data-sort="0">
+                                <div>$0%</div>
+                            </td>
+                            <td class="font-weight-400 first-row"><div>--</div></td>
+                            <td class="font-weight-400 first-row"><div>--</div></td>
+                            <td class="font-weight-400 first-row"><div>--</div></td>
+                        </tr>
+                                                <tr class="comparison-row">
+                            <td class="font-weight-400" data-sort="2026-10-26">
+                                <div>26-10-2026</div>
+                            </td>
+                            <td class="font-weight-500" data-sort="ORD-0046">
+                                <div>ORD-0046</div>
+                            </td>
+                            <td class="font-weight-400" data-sort="Agatha Williams">
+                                <div>Agatha Williams</div>
+                            </td>
+                            <td class="text-right font-weight-600" data-sort="1.00000000">
+                                <div> 1</div>
+                            </td>
+                            <td class="text-right font-weight-600" data-sort="50">
+                                <div>$50</div>
+                            </td>
+                            <td class="text-right font-weight-600" data-sort="0.00000000">
+                                <div>$0</div>
+                            </td>
+                            <td class="text-right" data-sort="50.0000000000000000">
+                                <div>$50</div>
+                            </td>
+                            <td class="text-right" data-sort="50.0000000000000000">
+                                <div>$50</div>
+                            </td>
+                            <td class="text-right" data-sort="0">
+                                <div>$0</div>
+                            </td>
+                            <td class="text-right" data-sort="0">
+                                <div>$0%</div>
+                            </td>
+                            <td class="font-weight-400" data-sort="Web">
+                                <div>Web</div>
+                            </td>
+                            <td class="font-weight-400" data-sort="Unpaid">
+                                <div>Unpaid</div>
+                            </td>
+                            <td class="font-weight-400" data-sort="Pending Payment">
+                                <div>Pending Payment</div>
+                            </td>
+                        </tr>
+                                                                        </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="report-pagination-wrapper">
+        <div class="report-pagination-content">
+            <div class="report-pagination-info">
+                Showing 1 to 1 of 1 entries
+            </div>
+                    </div>
+    </div>
+    </div>
+
+<script defer src="../../Modules/AdvanceReport/Resources/assets/js/render-report.min.js"></script>
+                    <div id="report-loading-overlay" class="report-loading-overlay" style="display: none;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-lg-4 col-xl-3 px-2 mt-3 order-1 order-lg-2">
+            <div class="filter-sidebar-container bg-white">
+                <div class="filter-header">
+                    <h3 class="filter-title">Filters</h3>
+                    <div class="filter-separator"></div>
+                </div>
+                <form action="https://demo.nix-ecommerce.nixecommerce.net/vendor/advance-reports/total-sales-by-order" method="get" class="form-horizontal" id="reportForm">
+                    <div class="filter-body">
+                        <div class="form-group filter-data date-picker-field" id="date-picker-field">
+                            <label for="date-range" class="filter-label">Date range</label>
+                            <div class="date-range-input-wrapper">
+                                <i class="fa fa-calendar date-range-icon"></i>
+                                <input type="text" class="date-range-input" id="daterange-btn" readonly placeholder="Select date range">
+                            </div>
+                            <input class="form-control" id="startfrom" type="hidden" name="from" value="2026-10-26">
+                            <input class="form-control" id="endto" type="hidden" name="to" value="2026-11-25">
+                        </div>
+                                                                        <div class="form-group filter-data payment-status-field mb-40" id="payment-status-field">
+                            <label for="payment_status" class="filter-label">Payment Status</label>
+                            <select class="form-control select2 filter-select" id="payment_status" name="payment_status">
+                                <option value="">All Statuses</option>
+                                <option value="Paid" >Paid</option>
+                                <option value="Unpaid" >Unpaid</option>
+                                <option value="Partial" >Partially Paid</option>
+                            </select>
+                        </div>
+                        <div class="form-group filter-data order-status-field mb-40 mt-65" id="order-status-field">
+                            <label for="order_status" class="filter-label">Order Status</label>
+                            <select class="form-control select2 filter-select" id="order_status" name="order_status">
+                                <option value="">All Statuses</option>
+                                                                                                    <option value="1" >
+                                        Pending Payment
+                                    </option>
+                                                                    <option value="2" >
+                                        Failed
+                                    </option>
+                                                                    <option value="3" >
+                                        Processing
+                                    </option>
+                                                                    <option value="4" >
+                                        Completed
+                                    </option>
+                                                                    <option value="5" >
+                                        On hold
+                                    </option>
+                                                                    <option value="6" >
+                                        Cancelled
+                                    </option>
+                                                                    <option value="7" >
+                                        Refunded
+                                    </option>
+                                                                    <option value="22" >
+                                        Partial Payment
+                                    </option>
+                                                                    <option value="23" >
+                                        Assigned
+                                    </option>
+                                                                    <option value="24" >
+                                        Pickup
+                                    </option>
+                                                                    <option value="25" >
+                                        Delivered
+                                    </option>
+                                                            </select>
+                        </div>
+                        <div class="form-group filter-data channel-field mb-45 mt-65" id="channel-field">
+                            <label for="channel" class="filter-label">Channel</label>
+                            <select class="form-control select2 filter-select" id="channel" name="channel">
+                                <option value="">All Channels</option>
+                                <option value="web" >Web</option>
+                                <option value="pos" >POS</option>
+                                <option value="invoice" >Invoice</option>
+                            </select>
+                        </div>
+                                            </div>
+                    <div class="filter-footer mt-4">
+                        <button
+    type="submit"
+    class="admin-btn admin-btn-primary w-100 advance-report-filter-apply" id="applyFilterBtn"
+>
+    <span class="btn-text">Apply</span>
+                            <span class="btn-loading-spinner" style="display: none;">
+                                <span class="spinner-border spinner-border-sm ms-2" role="status" aria-hidden="true"></span>
+                            </span>
+    
+</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+            <div class="chat-parent-container">
+    <div class="chat-toggle-container">
+        <div class="chat-toggle-button">
+            <svg class="chat-message-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 19" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M7.94606 4.0182e-07H10.0539C11.4126 -1.49762e-05 12.5083 -2.74926e-05 13.3874 0.0894005C14.2948 0.181709 15.0817 0.377504 15.7779 0.842653C16.3238 1.20745 16.7926 1.6762 17.1573 2.22215C17.6225 2.91829 17.8183 3.70523 17.9106 4.61264C18 5.49173 18 6.58738 18 7.94604V8.05396C18 9.41262 18 10.5083 17.9106 11.3874C17.8183 12.2948 17.6225 13.0817 17.1573 13.7778C16.7926 14.3238 16.3238 14.7926 15.7778 15.1573C15.1699 15.5636 14.4931 15.7642 13.7267 15.8701C13.1247 15.9534 12.4279 15.9827 11.6213 15.9935L10.7889 17.6584C10.0518 19.1325 7.94819 19.1325 7.21115 17.6584L6.37872 15.9935C5.57211 15.9827 4.87525 15.9534 4.2733 15.8701C3.50685 15.7642 2.83014 15.5636 2.22215 15.1573C1.6762 14.7926 1.20745 14.3238 0.842653 13.7778C0.377504 13.0817 0.181709 12.2948 0.0894005 11.3874C-2.74926e-05 10.5083 -1.49762e-05 9.41261 4.0182e-07 8.05394V7.94606C-1.49762e-05 6.58739 -2.74926e-05 5.49174 0.0894005 4.61264C0.181709 3.70523 0.377504 2.91829 0.842653 2.22215C1.20745 1.6762 1.6762 1.20745 2.22215 0.842653C2.91829 0.377504 3.70523 0.181709 4.61264 0.0894005C5.49174 -2.74926e-05 6.58739 -1.49762e-05 7.94606 4.0182e-07ZM4.81505 2.07913C4.06578 2.15535 3.64604 2.29662 3.33329 2.50559C3.00572 2.72447 2.72447 3.00572 2.50559 3.33329C2.29662 3.64604 2.15535 4.06578 2.07913 4.81505C2.00121 5.58104 2 6.57472 2 8C2 9.42527 2.00121 10.419 2.07913 11.1849C2.15535 11.9342 2.29662 12.354 2.50559 12.6667C2.72447 12.9943 3.00572 13.2755 3.33329 13.4944C3.60665 13.6771 3.96223 13.8081 4.54716 13.889C5.14815 13.9721 5.92075 13.9939 7.00436 13.9986C7.40885 14.0004 7.75638 14.2421 7.91233 14.5886L9 16.7639L10.0877 14.5886C10.2436 14.2421 10.5912 14.0004 10.9956 13.9986C12.0792 13.9939 12.8518 13.9721 13.4528 13.889C14.0378 13.8081 14.3933 13.6771 14.6667 13.4944C14.9943 13.2755 15.2755 12.9943 15.4944 12.6667C15.7034 12.354 15.8446 11.9342 15.9209 11.1849C15.9988 10.419 16 9.42527 16 8C16 6.57472 15.9988 5.58104 15.9209 4.81505C15.8446 4.06578 15.7034 3.64604 15.4944 3.33329C15.2755 3.00572 14.9943 2.72447 14.6667 2.50559C14.354 2.29662 13.9342 2.15535 13.1849 2.07913C12.419 2.00121 11.4253 2 10 2H8C6.57473 2 5.58104 2.00121 4.81505 2.07913Z"
+                    fill="#2C2C2C"></path>
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M5 6C5 5.44772 5.44772 5 6 5L12 5C12.5523 5 13 5.44772 13 6C13 6.55228 12.5523 7 12 7L6 7C5.44772 7 5 6.55228 5 6Z"
+                    fill="#2C2C2C"></path>
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M5 10C5 9.44772 5.44772 9 6 9H9C9.55228 9 10 9.44772 10 10C10 10.5523 9.55228 11 9 11H6C5.44772 11 5 10.5523 5 10Z"
+                    fill="#2C2C2C"></path>
+            </svg>
+            <span>Messages</span>
+                            <span class="chat-unread-count none">0</span>
+                    </div>
+    </div>
+    <div class="chat-view-container chat-hidden" data-refreshurl="https://demo.nix-ecommerce.nixecommerce.net/chat/inbox-refresh">
+        <div class="chat-view-header">
+            <div class="chat-view-header-text">
+                <svg class="chat-message-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 19" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M7.94606 4.0182e-07H10.0539C11.4126 -1.49762e-05 12.5083 -2.74926e-05 13.3874 0.0894005C14.2948 0.181709 15.0817 0.377504 15.7779 0.842653C16.3238 1.20745 16.7926 1.6762 17.1573 2.22215C17.6225 2.91829 17.8183 3.70523 17.9106 4.61264C18 5.49173 18 6.58738 18 7.94604V8.05396C18 9.41262 18 10.5083 17.9106 11.3874C17.8183 12.2948 17.6225 13.0817 17.1573 13.7778C16.7926 14.3238 16.3238 14.7926 15.7778 15.1573C15.1699 15.5636 14.4931 15.7642 13.7267 15.8701C13.1247 15.9534 12.4279 15.9827 11.6213 15.9935L10.7889 17.6584C10.0518 19.1325 7.94819 19.1325 7.21115 17.6584L6.37872 15.9935C5.57211 15.9827 4.87525 15.9534 4.2733 15.8701C3.50685 15.7642 2.83014 15.5636 2.22215 15.1573C1.6762 14.7926 1.20745 14.3238 0.842653 13.7778C0.377504 13.0817 0.181709 12.2948 0.0894005 11.3874C-2.74926e-05 10.5083 -1.49762e-05 9.41261 4.0182e-07 8.05394V7.94606C-1.49762e-05 6.58739 -2.74926e-05 5.49174 0.0894005 4.61264C0.181709 3.70523 0.377504 2.91829 0.842653 2.22215C1.20745 1.6762 1.6762 1.20745 2.22215 0.842653C2.91829 0.377504 3.70523 0.181709 4.61264 0.0894005C5.49174 -2.74926e-05 6.58739 -1.49762e-05 7.94606 4.0182e-07ZM4.81505 2.07913C4.06578 2.15535 3.64604 2.29662 3.33329 2.50559C3.00572 2.72447 2.72447 3.00572 2.50559 3.33329C2.29662 3.64604 2.15535 4.06578 2.07913 4.81505C2.00121 5.58104 2 6.57472 2 8C2 9.42527 2.00121 10.419 2.07913 11.1849C2.15535 11.9342 2.29662 12.354 2.50559 12.6667C2.72447 12.9943 3.00572 13.2755 3.33329 13.4944C3.60665 13.6771 3.96223 13.8081 4.54716 13.889C5.14815 13.9721 5.92075 13.9939 7.00436 13.9986C7.40885 14.0004 7.75638 14.2421 7.91233 14.5886L9 16.7639L10.0877 14.5886C10.2436 14.2421 10.5912 14.0004 10.9956 13.9986C12.0792 13.9939 12.8518 13.9721 13.4528 13.889C14.0378 13.8081 14.3933 13.6771 14.6667 13.4944C14.9943 13.2755 15.2755 12.9943 15.4944 12.6667C15.7034 12.354 15.8446 11.9342 15.9209 11.1849C15.9988 10.419 16 9.42527 16 8C16 6.57472 15.9988 5.58104 15.9209 4.81505C15.8446 4.06578 15.7034 3.64604 15.4944 3.33329C15.2755 3.00572 14.9943 2.72447 14.6667 2.50559C14.354 2.29662 13.9342 2.15535 13.1849 2.07913C12.419 2.00121 11.4253 2 10 2H8C6.57473 2 5.58104 2.00121 4.81505 2.07913Z"
+                        fill="#2C2C2C"></path>
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M5 6C5 5.44772 5.44772 5 6 5L12 5C12.5523 5 13 5.44772 13 6C13 6.55228 12.5523 7 12 7L6 7C5.44772 7 5 6.55228 5 6Z"
+                        fill="#2C2C2C"></path>
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M5 10C5 9.44772 5.44772 9 6 9H9C9.55228 9 10 9.44772 10 10C10 10.5523 9.55228 11 9 11H6C5.44772 11 5 10.5523 5 10Z"
+                        fill="#2C2C2C"></path>
+                </svg>
+                <span>Messages</span>
+            </div>
+            <div class="chat-view-close-button">
+                <span class="chat-message-icon m-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 11 11"
+                        fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M0.402728 0.402728C0.939699 -0.134243 1.8103 -0.134243 2.34727 0.402728L10.5973 8.65273C11.1342 9.1897 11.1342 10.0603 10.5973 10.5973C10.0603 11.1342 9.1897 11.1342 8.65273 10.5973L0.402728 2.34727C-0.134243 1.8103 -0.134243 0.939699 0.402728 0.402728Z"
+                            fill="#2C2C2C"></path>
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M10.5973 0.402728C10.0603 -0.134243 9.1897 -0.134243 8.65273 0.402728L0.402728 8.65273C-0.134243 9.1897 -0.134243 10.0603 0.402728 10.5973C0.939699 11.1342 1.8103 11.1342 2.34727 10.5973L10.5973 2.34727C11.1342 1.8103 11.1342 0.939699 10.5973 0.402728Z"
+                            fill="#2C2C2C"></path>
+                    </svg>
+                </span>
+            </div>
+        </div>
+        <div class="chat-view-body">
+            <div class="chat-view-sidebar chat-header-sidebar-mobile">
+    <div class="chat-inbox-loader-overlay">
+        <span class="loader-container">
+            <span class="icon-spinner"></span>
+        </span>
+    </div>
+            <div class="chat-sidebar-topbar">
+            <input type="text" class="chat-sidebar-topbar-input" placeholder="Type name" />
+        </div>
+        <div class="chat-sidebar-users">
+                                <div class="chat-sidebar-user  "
+                id="shop_1"
+                data-url="https://demo.nix-ecommerce.nixecommerce.net/chat/get-conversations/MjQ=">
+                <div class="chat-sidebar-user-img">
+                    <img class="chat-sidebar-img"
+                        src="../../public/uploads/20221011/0c0e523246dc1f0c9ba45287f1d2bd32.webp" />
+                </div>
+                <div class="chat-sidebar-user-details">
+                    <div class="chat-sidebar-user-name">
+                        Gizmo Tizmo</div>
+                                                                <div class="chat-sidebar-user-text">
+                                                            You:
+                                                        Chat initiated.
+                        </div>
+                                    </div>
+            </div>
+                                <div class="chat-sidebar-user  "
+                id="user_3"
+                data-url="https://demo.nix-ecommerce.nixecommerce.net/chat/get-conversations/MjE=">
+                <div class="chat-sidebar-user-img">
+                    <img class="chat-sidebar-img"
+                        src="../../public/uploads/20221011/9fc645587d663b00682d11d0458bab0e.webp" />
+                </div>
+                <div class="chat-sidebar-user-details">
+                    <div class="chat-sidebar-user-name">
+                        Joopie’s Gallery</div>
+                                                                <div class="chat-sidebar-user-text">
+                                                            You:
+                                                        wrwrwww
+                        </div>
+                                    </div>
+            </div>
+            </div>
+    </div>
+            <div class="chat-view-inbox">
+    <div class="chat-inbox-body">
+        <div class="chat-inbox-loader-overlay">
+            <span class="loader-container">
+                <span class="icon-spinner"></span>
+            </span>
+        </div>
+                    <div class="chat-inbox-sidebar-toggle secondary-chat-sidebar-toggle-button">
+                <svg class="chat-message-icon m-0" id="Capa_1" enable-background="new 0 0 461.516 461.516" height="512"
+                    viewBox="0 0 461.516 461.516" width="512" xmlns="http://www.w3.org/2000/svg">
+                    <g>
+                        <path
+                            d="m185.746 371.332c41.251.001 81.322-13.762 113.866-39.11l122.778 122.778c9.172 8.858 23.787 8.604 32.645-.568 8.641-8.947 8.641-23.131 0-32.077l-122.778-122.778c62.899-80.968 48.252-197.595-32.716-260.494s-197.594-48.252-260.493 32.716-48.252 197.595 32.716 260.494c32.597 25.323 72.704 39.06 113.982 39.039zm-98.651-284.273c54.484-54.485 142.82-54.486 197.305-.002s54.486 142.82.002 197.305-142.82 54.486-197.305.002c-.001-.001-.001-.001-.002-.002-54.484-54.087-54.805-142.101-.718-196.585.239-.24.478-.479.718-.718z" />
+                    </g>
+                </svg>
+            </div>
+            <div class="no-msg-container" class="chat-history">
+                <div class="no-message-svg">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="37" height="37" viewBox="0 0 37 37"
+                        fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M16.4244 7.92335e-07H20.5809C23.26 -2.9531e-05 25.4205 -5.42118e-05 27.1539 0.176286C28.9432 0.358306 30.495 0.744388 31.8677 1.6616C32.9442 2.38092 33.8685 3.30524 34.5879 4.38178C35.5051 5.75449 35.8912 7.30622 36.0732 9.09552C36.2495 10.829 36.2495 12.9894 36.2495 15.6685V15.8813C36.2495 18.5604 36.2495 20.7209 36.0732 22.4543C35.8912 24.2436 35.5051 25.7954 34.5879 27.1681C33.8685 28.2446 32.9442 29.1689 31.8677 29.8883C30.6688 30.6893 29.3344 31.0849 27.8231 31.2938C26.6361 31.4579 25.262 31.5158 23.6715 31.5371L22.03 34.8199C20.5767 37.7267 16.4286 37.7266 14.9753 34.8199L13.3339 31.5371C11.7433 31.5158 10.3692 31.4579 9.18224 31.2938C7.6709 31.0849 6.33652 30.6893 5.13764 29.8883C4.0611 29.1689 3.13678 28.2446 2.41746 27.1681C1.50025 25.7954 1.11417 24.2436 0.932145 22.4543C0.755805 20.7209 0.75583 18.5604 0.75586 15.8813V15.6686C0.75583 12.9894 0.755805 10.829 0.932145 9.09552C1.11417 7.30622 1.50025 5.75449 2.41746 4.38178C3.13678 3.30524 4.0611 2.38092 5.13764 1.6616C6.51034 0.744388 8.06208 0.358306 9.85138 0.176286C11.5848 -5.42118e-05 13.7453 -2.9531e-05 16.4244 7.92335e-07ZM10.2505 4.09977C8.77303 4.25007 7.94536 4.52863 7.32866 4.94069C6.68274 5.37229 6.12815 5.92688 5.69655 6.5728C5.28449 7.18951 5.00593 8.01717 4.85563 9.49464C4.70198 11.0051 4.69959 12.9645 4.69959 15.7749C4.69959 18.5854 4.70198 20.5448 4.85563 22.0552C5.00593 23.5327 5.28449 24.3604 5.69655 24.9771C6.12815 25.623 6.68274 26.1776 7.32866 26.6092C7.86769 26.9693 8.56885 27.2278 9.72225 27.3872C10.9073 27.551 12.4308 27.5941 14.5675 27.6035C15.3651 27.6069 16.0504 28.0836 16.3579 28.7668L18.5027 33.0562L20.6474 28.7668C20.9549 28.0836 21.6402 27.6069 22.4378 27.6035C24.5745 27.5941 26.098 27.551 27.2831 27.3872C28.4365 27.2278 29.1376 26.9693 29.6767 26.6092C30.3226 26.1776 30.8772 25.623 31.3088 24.9771C31.7208 24.3604 31.9994 23.5327 32.1497 22.0552C32.3033 20.5448 32.3057 18.5854 32.3057 15.7749C32.3057 12.9645 32.3033 11.0051 32.1497 9.49464C31.9994 8.01718 31.7208 7.18951 31.3088 6.5728C30.8772 5.92688 30.3226 5.37229 29.6767 4.94069C29.06 4.52863 28.2323 4.25007 26.7548 4.09977C25.2444 3.94612 23.285 3.94374 20.4745 3.94374H16.5308C13.7203 3.94374 11.7609 3.94612 10.2505 4.09977Z"
+                            fill="#B0B0B0" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M10.6147 11.8312C10.6147 10.7422 11.4976 9.85937 12.5866 9.85937L24.4178 9.85937C25.5068 9.85937 26.3897 10.7422 26.3897 11.8312C26.3897 12.9203 25.5068 13.8031 24.4178 13.8031L12.5866 13.8031C11.4976 13.8031 10.6147 12.9203 10.6147 11.8312Z"
+                            fill="#B0B0B0" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M10.6147 19.7187C10.6147 18.6297 11.4976 17.7468 12.5866 17.7468H18.5022C19.5912 17.7468 20.4741 18.6297 20.4741 19.7187C20.4741 20.8077 19.5912 21.6906 18.5022 21.6906H12.5866C11.4976 21.6906 10.6147 20.8077 10.6147 19.7187Z"
+                            fill="#B0B0B0" />
+                    </svg>
+                    <p class="new-conv ltr:ml-3 rtl:mr-3">
+                        Once you start a new conversation, you&#039;ll see it listed here</p>
+                </div>
+            </div>
+            </div>
+</div>
+        </div>
+    </div>
+</div>
+
+
+                                    </div>
+                            </div>
+                                                                                    <!-- [ Main Content ] end -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- [ Main Content ] end -->
+
+    <!-- Warning Section start -->
+    <!-- Older IE warning message -->
+    <!--[if lt IE 11]>
+        <div class="ie-warning">
+            <h1>Warning!!</h1>
+            <p>You are using an outdated version of Internet Explorer, please upgrade to any of the following web browsers to access this website.
+            </p>
+            <div class="iew-container">
+                <ul class="iew-download">
+                    <li>
+                        <a href="//www.google.com/chrome/">
+                            <img src="../../public/datta-able/images/browser/chrome.png" alt="Chrome">
+                            <div>Chrome</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="//www.mozilla.org/en-US/firefox/new/">
+                            <img src="../../public/datta-able/images/browser/firefox.png" alt="Firefox">
+                            <div>Firefox</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="//www.opera.com">
+                            <img src="../../public/datta-able/images/browser/opera.png" alt="Opera">
+                            <div>Opera</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="//www.apple.com/safari/">
+                            <img src="../../public/datta-able/images/browser/safari.png" alt="Safari">
+                            <div>Safari</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="//windows.microsoft.com/en-us/internet-explorer/download-ie">
+                            <img src="../../public/datta-able/images/browser/ie.png" alt="Image">
+                            <div>IE (11 & above)</div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <p>Sorry for the inconvenience!</p>
+        </div>
+    <![endif]-->
+    <!-- Warning Section Ends -->
+    
+    <!-- Required Js -->
+    <script src="../../public/dist/plugins/jQueryUI/jquery-ui.min.js"></script>
+    <script src="../../public/datta-able/js/pcoded.min.js"></script>
+    <!-- Custom Js -->
+    <script src="../../public/datta-able/plugins/select2/js/select2.full.min.js"></script>
+    <script src="../../public/dist/js/custom/app-layout.min.js"></script>
+    <script src="../../public/dist/js/custom/admin-layout.min.js"></script>
+                    <script type="text/javascript">
+        'use strict';
+        var startDate = "2026-10-26";
+        var endDate = "2026-11-25";
+        var currentSearch = "";
+    </script>
+        <script src="../../public/dist/js/moment.min.js"></script>
+        <script src="../../public/dist/plugins/DataTables-1.10.21/js/jquery.dataTablesCus.min.js"></script>
+        <script src="../../public/dist/plugins/Responsive-2.2.5/js/dataTables.responsive.min.js"></script>
+        <script src="../../public/dist/plugins/bootstrap-daterangepicker/daterangepicker.min.js"></script>
+        <script src="../../Modules/AdvanceReport/Resources/assets/js/report-config.min.js"></script>
+        <script src="../../Modules/AdvanceReport/Resources/assets/js/common.min.js"></script>
+        <script src="../../Modules/AdvanceReport/Resources/assets/js/table.min.js"></script>
+        <script src="../../Modules/AdvanceReport/Resources/assets/js/report-show.min.js"></script>
+        <script src="../../Modules/AdvanceReport/Resources/assets/js/report-list.min.js"></script>
+        <script src="../../Modules/AdvanceReport/Resources/assets/js/report.min.js"></script>
+        <script src="../../public/dist/js/xss.min.js"></script>
+    <script src="../../Modules/Ticket/Resources/assets/js/chat.min.js"></script>
+            <script src="../../public/dist/js/custom/vendor-layout.min.js"></script>
+            
+    </body>
+
+</html>
+

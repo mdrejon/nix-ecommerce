@@ -1,0 +1,482 @@
+/**
+ * Admin → Taxes (Modules/Tax). Scoped under #tax-settings-page.
+ */
+
+#tax-settings-page #topNav-v-pills-tabContent.tax-content {
+    padding: 0 12px 16px !important;
+    box-shadow: unset !important;
+}
+
+@media (min-width: 576px) {
+    #tax-settings-page #topNav-v-pills-tabContent.tax-content {
+        padding: 0 20px 20px !important;
+    }
+}
+
+@media (min-width: 992px) {
+    #tax-settings-page #topNav-v-pills-tabContent.tax-content {
+        padding: 0 24px 24px !important;
+    }
+}
+
+/* Save (primary): full width below md — options footer, rate toolbars, modals */
+@media (max-width: 767.98px) {
+    #tax-settings-page .tax-setting-btn.admin-btn,
+    #tax-settings-page .update-btn,
+    #tax-settings-page .tax-class-modal__btn-save.admin-btn {
+        width: 100% !important;
+        max-width: 100% !important;
+        display: block;
+        box-sizing: border-box;
+    }
+}
+
+/* —— Tax rate tables (standard + per-class) —— */
+#tax-settings-page .tax-rate-table-responsive {
+    -webkit-overflow-scrolling: touch;
+}
+
+#tax-settings-page .tax-rate-table {
+    margin-bottom: 0;
+}
+
+#tax-settings-page .tax-rate-table thead th:nth-child(5) {
+    width: 110px;
+}
+
+#tax-settings-page .tax-rate-table thead th,
+#tax-settings-page .tax-rate-table tbody td {
+    padding: 10px 8px !important;
+    vertical-align: middle;
+}
+
+@media (min-width: 768px) {
+    #tax-settings-page .tax-rate-table thead th,
+    #tax-settings-page .tax-rate-table tbody td {
+        padding: 10px 8px !important;
+        height: auto !important;
+        min-height: 56px;
+    }
+}
+
+#tax-settings-page .tax-rate-table thead th {
+    padding: 12px 10px !important;
+    background-color: #f1f5f9;
+    border-bottom: 2px solid #e2e8f0 !important;
+    border-top: none !important;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #475569;
+    white-space: nowrap;
+}
+
+#tax-settings-page .tax-rate-table tbody tr.tax-rate-row {
+    background-color: #fff;
+    transition: background-color 0.15s ease;
+}
+
+#tax-settings-page .tax-rate-table tbody tr.tax-rate-row:nth-child(even) {
+    background-color: #f8fafc;
+}
+
+/* Tax rate inputs — clearly editable (desktop + mobile) */
+#tax-settings-page .tax-rate-table .tax-rate-input {
+    width: 100%;
+    min-width: 0;
+    min-height: 38px;
+    padding: 8px 10px !important;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.4;
+    color: #0f172a !important;
+    background-color: #fff !important;
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 6px !important;
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.05) !important;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+#tax-settings-page .tax-rate-table .tax-rate-input::placeholder {
+    color: #94a3b8;
+    font-weight: 400;
+}
+
+#tax-settings-page .tax-rate-table .tax-rate-input:hover {
+    border-color: #94a3b8 !important;
+    background-color: #fff !important;
+}
+
+#tax-settings-page .tax-rate-table .tax-rate-input:focus {
+    border-color: #3b82f6 !important;
+    background-color: #fff !important;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.18) !important;
+    outline: none !important;
+}
+
+#tax-settings-page .tax-rate-table .tax-rate-input--numeric {
+    text-align: center;
+    font-variant-numeric: tabular-nums;
+}
+
+#tax-settings-page .tax-rate-table .tax-rate-input.geolocale-country,
+#tax-settings-page .tax-rate-table .tax-rate-input.geolocale-state {
+    padding-right: 30px !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2364748b' d='M3 4.5L6 7.5L9 4.5'/%3E%3C/svg%3E") !important;
+    background-repeat: no-repeat !important;
+    background-position: right 10px center !important;
+    background-size: 12px !important;
+}
+
+#tax-settings-page .tax-rate-table .action-btn {
+    margin-top: 0;
+}
+
+#tax-settings-page .tax-rate-table .action-btn i {
+    cursor: pointer;
+    font-size: 20px;
+}
+
+#tax-settings-page .tax-rate-table .tax-rate-table__switch {
+    padding-left: 0 !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 38px;
+    margin: 0 auto;
+    vertical-align: middle;
+}
+
+/* Override datta-able .cr { top: 7px } — keep switches vertically centered in rows */
+#tax-settings-page .tax-rate-table .tax-rate-table__switch input[type="checkbox"] + .cr {
+    top: 0 !important;
+    margin: 0;
+    vertical-align: middle;
+}
+
+#tax-settings-page .tax-rate-table .tax-rate-meta-wrap {
+    vertical-align: middle !important;
+}
+
+@media (min-width: 768px) {
+    #tax-settings-page .tax-rate-table .tax-rate-meta-wrap {
+        padding: 10px 8px !important;
+    }
+
+    #tax-settings-page .tax-rate-table .tax-rate-meta-row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        min-height: 38px;
+        margin: 0;
+    }
+
+    #tax-settings-page .tax-rate-table .tax-rate-meta-row > [class*="col-"] {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #tax-settings-page .tax-rate-table .tax-rate-meta-row .delete-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 38px;
+    }
+}
+
+#tax-settings-page .tax-rate-meta-label {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #64748b;
+    margin-bottom: 0.35rem;
+}
+
+@media (max-width: 767.98px) {
+    #tax-settings-page .tax-rate-table tbody tr.tax-rate-row td.tax-rate-meta-wrap {
+        padding-top: 0.75rem !important;
+        margin-top: 0.25rem;
+        border-top: 1px solid #e2e8f0 !important;
+    }
+
+    #tax-settings-page .tax-rate-table tbody tr.tax-rate-row .tax-rate-meta-row {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    /* Full-width delete control (mobile tax rate row) — flat dark red */
+    #tax-settings-page .tax-rate-delete-mobile.btn {
+        margin-top: 0.75rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 0.7rem 1rem;
+        min-height: 2.75rem;
+        font-size: 0.875rem;
+        font-weight: 600;
+        line-height: 1.25;
+        letter-spacing: 0.01em;
+        color: #fff !important;
+        background-color: #b91c1c !important;
+        border: 1px solid #991b1b !important;
+        border-radius: 8px;
+        box-shadow: 0 1px 2px rgba(69, 10, 10, 0.2);
+        transition: background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease, transform 0.08s ease;
+    }
+
+    #tax-settings-page .tax-rate-delete-mobile.btn:hover {
+        color: #fff !important;
+        background-color: #991b1b !important;
+        border-color: #7f1d1d !important;
+        box-shadow: 0 2px 4px rgba(69, 10, 10, 0.25);
+    }
+
+    #tax-settings-page .tax-rate-delete-mobile.btn:active {
+        color: #fff !important;
+        background-color: #7f1d1d !important;
+        border-color: #450a0a !important;
+        transform: translateY(1px);
+        box-shadow: 0 1px 2px rgba(24, 6, 6, 0.35);
+    }
+
+    #tax-settings-page .tax-rate-delete-mobile.btn:focus-visible {
+        outline: 2px solid #fecaca;
+        outline-offset: 2px;
+    }
+
+    #tax-settings-page .tax-rate-delete-mobile__icon {
+        font-size: 0.95rem;
+        opacity: 0.95;
+    }
+}
+
+#tax-settings-page .tax-setting .switch:not(.tax-rate-table__switch) {
+    padding-left: 15px;
+}
+
+/* Add / edit tax class modals + “Add new class” trigger */
+#tax-settings-page .tax-class-modal__dialog {
+    width: 100%;
+    max-width: min(28rem, calc(100vw - 1.5rem));
+    margin: 0.75rem auto;
+}
+
+#tax-settings-page .tax-class-modal__body {
+    padding: 1rem 1rem 0.25rem;
+}
+
+@media (min-width: 576px) {
+    #tax-settings-page .tax-class-modal__body {
+        padding: 1.25rem 1.25rem 0.5rem;
+    }
+}
+
+#tax-settings-page .tax-class-modal__footer .admin-btn {
+    min-height: 2.5rem;
+    justify-content: center;
+}
+
+@media (max-width: 575.98px) {
+    #tax-settings-page .tax-class-modal__footer {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+}
+
+#tax-settings-page .tax-add-class-trigger {
+    min-height: 2.75rem;
+    padding: 0.65rem 1rem;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    line-height: 1.3;
+    color: #fff !important;
+    background-color: #111827 !important;
+    border: 1px solid #0f172a !important;
+    border-radius: 8px;
+    box-shadow: none;
+    transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease, transform 0.06s ease;
+}
+
+#tax-settings-page .tax-add-class-trigger:hover {
+    color: #fff !important;
+    background-color: #1f2937 !important;
+    border-color: #111827 !important;
+}
+
+#tax-settings-page .tax-add-class-trigger:active {
+    color: #fff !important;
+    background-color: #0f172a !important;
+    border-color: #020617 !important;
+    transform: translateY(1px);
+}
+
+#tax-settings-page .tax-add-class-trigger:focus-visible {
+    outline: 2px solid #e5e7eb;
+    outline-offset: 2px;
+}
+
+#tax-settings-page .tax-rate-table.table-hover tbody tr:hover {
+    background: #fff !important;
+}
+
+#tax-settings-page .tax-rate-table + .add-btn,
+#tax-settings-page .tax-setting .add-btn {
+    margin-left: 0;
+}
+
+@media (min-width: 576px) {
+    #tax-settings-page .tax-setting .add-btn {
+        margin-left: 10px;
+    }
+}
+
+/* Mobile: one card per rate row, label + field stacked */
+@media (max-width: 767.98px) {
+    #tax-settings-page .tax-rate-table-responsive {
+        overflow: visible;
+    }
+
+    #tax-settings-page .tax-rate-table thead {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+    }
+
+    #tax-settings-page .tax-rate-table tbody tr.tax-rate-row {
+        display: block;
+        border: 1px solid #e2e8f0;
+        border-radius: 10px;
+        margin-bottom: 1rem;
+        padding: 0.65rem 0.85rem 0.85rem;
+        background: #fff;
+        box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06);
+    }
+
+    #tax-settings-page .tax-rate-table tbody tr.tax-rate-row td,
+    #tax-settings-page .tax-rate-table tbody tr.tax-rate-row th {
+        display: block;
+        width: 100% !important;
+        max-width: 100%;
+        border: none !important;
+        height: auto !important;
+        min-height: 0;
+        padding: 0.55rem 0 !important;
+        text-align: start !important;
+    }
+
+    #tax-settings-page .tax-rate-table tbody tr.tax-rate-row td[data-label]::before {
+        content: attr(data-label);
+        display: block;
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: #64748b;
+        margin-bottom: 0.35rem;
+    }
+
+    #tax-settings-page .tax-rate-table tbody tr.tax-rate-row td .tax-rate-input {
+        width: 100%;
+    }
+
+    #tax-settings-page .tax-rate-table tbody tr.tax-rate-empty {
+        display: block;
+        border: 1px dashed #cbd5e1;
+        border-radius: 10px;
+        margin-bottom: 1rem;
+        background: #f8fafc;
+    }
+
+    #tax-settings-page .tax-rate-table tbody tr.tax-rate-empty td {
+        display: block;
+        width: 100% !important;
+        border: none !important;
+        padding: 1rem !important;
+        height: auto !important;
+        text-align: center !important;
+    }
+
+    #tax-settings-page .tax-rate-table tbody tr.tax-rate-toolbar {
+        display: block;
+        border: none;
+        background: transparent;
+        padding: 0.25rem 0 0.5rem;
+    }
+
+    #tax-settings-page .tax-rate-table tbody tr.tax-rate-toolbar td {
+        display: block;
+        width: 100% !important;
+        border: none !important;
+        padding: 0.5rem 0 !important;
+        height: auto !important;
+    }
+}
+
+.spinner-border {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    vertical-align: text-bottom;
+    border: 2px solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    animation: spinner-border 0.75s linear infinite;
+    animation-delay: 0s;
+}
+
+.spinner-border-sm {
+    width: 15px;
+    height: 15px;
+    border-width: 2px;
+}
+
+.warningMessage {
+    display: none;
+}
+
+#tax-settings-page .tax-help-table th {
+    padding-left: 10px !important;
+}
+
+#tax-settings-page .tax-help-table td {
+    padding-top: 10px !important;
+    padding-bottom: 0 !important;
+}
+
+@media (max-width: 575.98px) {
+    #tax-settings-page .tax-help-table th,
+    #tax-settings-page .tax-help-table td {
+        display: block;
+        width: 100% !important;
+        border-bottom: 1px solid #e5e7eb;
+    }
+
+    #tax-settings-page .tax-help-table tr {
+        display: block;
+        margin-bottom: 0.5rem;
+    }
+}
+
+.tax-rate-loader {
+    width: 25px;
+    height: 25px;
+    border-width: 3px;
+}
+
+@media only screen and (min-width: 768px) {
+    .tax-table {
+        width: 218px;
+    }
+}
